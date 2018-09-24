@@ -1,0 +1,119 @@
+@font-face {
+    src: url("../fonts/HelsinkiXXL-Thin.ttf");
+}
+
+html {
+    margin: 0;
+    height: 30%;
+    width: 100%;
+}
+
+body {
+    font-family: "Avenir Next", sans-serif;
+    list-style-type: none;
+}
+
+.fixed-bckg {
+    min-height: 500px;
+    background: url("../images/bckgtop.jpg") no-repeat fixed center;
+    background-size: cover;
+}
+
+.logo {
+    margin-top: 50px;
+    padding-top: 50px;
+    position: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #7ACC00;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333333;
+    color: #7ACC00;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #7ACC00
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.right {
+    float: right;
+    background-color: transparent;
+}
+
+footer {
+    background-color: #333333;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #7ACC00;
+    text-decoration: none;
+}
+
+
+/* Applies Booststrap to the footer */
+
+@media (min-width: 992px) {
+    .col-md-1-5 { width: 20%; }
+    .col-md-2-5 { width: 40%; }
+    .col-md-3-5 { width: 60%; }
+    .col-md-4-5 { width: 80%; }
+    .col-md-5-5 { width: 100%; }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-1-5 { width: 20%; }
+    .col-lg-2-5 { width: 40%; }
+    .col-lg-3-5 { width: 60%; }
+    .col-lg-4-5 { width: 80%; }
+    .col-lg-5-5 { width: 100%; }
+}
