@@ -4,18 +4,18 @@
 }
 
 body {
-	font-family: RaleWay-Regular, Helvetica, sans-serif;
+	font-family: RaleWay-Regular, Menlo, Helvetica, sans-serif;
 	text-decoration: none;
 	list-style-type: none;
 	margin: 0;
-	/* background-color: white; */
-	/* color: #333333; */
+	background-color: #191919;
+	color: #191919;
 }
 .dropbtn {
-    background-color: #333333;
+    background-color: #191919;
     color: white;
     padding: 16px;
-    font-size: 16px;
+    font-size: 12px;
     border: none;
 }
 
@@ -27,7 +27,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333333;
+    background-color: #77CA00;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -40,26 +40,47 @@ body {
     display: block;
 }
 
-.dropdown-content a:hover { background-color: #333333; color: #77CA00 }
+.dropdown-content a:hover { background-color: #191919; color: #62D7D8; }
 
-.dropdown:hover .dropdown-content { display: block; }
+.dropdown:hover .dropdown-content { display: block; margin-top: 15px;}
 
 .dropdown:hover .dropbtn { background-color: #77CA00; }
 
 .fixed-bckg {
-	min-height: 500px;
-	background: url("../images/earthbckg.jpg") no-repeat fixed center;
-	background-color: #333333;
+	background: url("../images/astronautBckg.jpg") no-repeat fixed center;
+	background-color: #191919;
 	background-size: cover;
 	margin: 0;
 	padding-top: 0;
+	height: 100%;
+}
+
+.rectangle {background-color: #191919;}
+
+.container-fluid img {vertical-align: middle;}
+
+.container-fluid .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #7ACC00;
+  width: 100%;
+  padding: 20px;
 }
 
 nav {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	background-color: #333;
+	/* background-color: #191919; */
+	position: sticky;
+	font-size: 12px;
+}
+ul {
+  display: block;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 2px;
 }
 
 nav li {
@@ -67,20 +88,16 @@ nav li {
 }
 
 nav li a {
-	display: block;
+	display: inline-grid;
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 }
 
-nav li a:hover:not(.active) {
-	background-color: white;
-}
+nav li a:hover:not(.active) {	 }
 
-nav li a.active {
-	background-color: #77CA00;
-}
+nav li a:active { background-color: #62D9D7; }
 
 nav li.right {
 	float: right;
@@ -90,35 +107,14 @@ nav li.right {
 	nav li.right,
 	nav li {
 		float: none;
+
 	}
 }
 
-/* Creates the burger menu*/
-/* .container {
-    display: inline-block;
-    cursor: pointer;
-		margin: 20px;
-}
+.logo2 { text-align: center; }
 
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: white;
-    margin: 6px 0;
-    transition: 0.4s;
-}
+.logo2 img { display: block; margin-left: auto; margin-right: auto; width: 30%; margin-top: 10%;}
 
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-} */
 main {
 	padding: 20px;
 	background-color: white;
@@ -134,7 +130,7 @@ div.gallery {
 }
 
 div.gallery:hover {
-	/* border: 1px solid #777; */
+	border: 1px solid #777;
 	width: auto;
 }
 
@@ -162,8 +158,8 @@ div.desc {
 
 @media only screen and (max-width: 700px) {
 	.responsive {
-		/* width: 49.9999%; */
-		grid-template-columns: auto auto;
+		width: 49.9999%;
+		grid-template-columns: auto;
 		margin: 6px 0;
 	}
 }
@@ -171,6 +167,7 @@ div.desc {
 @media only screen and (max-width: 500px) {
 	.responsive {
 		width: 100%;
+		display: center;
 	}
 }
 
@@ -211,6 +208,8 @@ input[type=text] {
 	border-bottom: 2px solid #77CA00;
 }
 
+input[type=submit] { color: white; background-color: #77CA00; height: 4em; width: 12em; margin-bottom: 2em; border-radius: 4em;}
+
 footer a {
 	text-decoration: none;
 	color: #62D9D7;
@@ -225,21 +224,17 @@ footer h5, h4, th {
 
 .grid-container {
 	display: grid;
-	grid-template-columns: auto auto auto auto auto;
+	grid-template-columns: repeat(5, 1fr);
 	/* Determines the amount of columns*/
-	background-color: #313131;
+	background-color: #191919;
+	grid-auto-rows: auto;
 	padding: 10px;
 }
 
-.grid-item {
-	/* background-color: rgba(255, 255, 255, 0.8); */
-	/* border: 1px solid rgba(0, 0, 0, 0.8); */
+
+ .grid-item {
 	padding: 10px;
 	font-size: 12px;
 	text-align: center;
 }
-
-/* table {
-	text-align: center;
-	padding: 10px;
-} */
+.copyright { display: center; position: absolute;}

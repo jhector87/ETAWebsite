@@ -4,25 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ETA</title>
-	<link rel="stylesheet" href="../res/css/aboutStyling.css" />
+	<link rel="stylesheet" href="../res/css/mainStyling.css" />
 </head>
 
 <body>
-	<nav>
-
-		<ul id="loginCart">
-			<li><a href="signing.html">Login</a></li>
-			<li><a href="../html/contact.html">Cart</a></li>
-		</ul>
-		<ul id="mainMenu">
-			<li><a href="../html/home.html"><img src="../images/logoWhite.png" height="15" alt="Home" target="_blank" style="padding-right:20px" /></a></li>
-			<li><a class="active" href="../html/about.html">What is ETA?</a></li>
-			<li><a href="../html/product.html">Product</a></li>
-			<li><a href="../html/pricing.html">Pricing</a></li>
-			<li><a href="../html/pricing.html">Tutorials</a></li>
-		</ul>
-
-	</nav>
+<?php include("navigation.php"); ?>
 	<main>
 		<!--For our animations to look good, the animated elements need to be able to be scrolled to. For this example I've added dummy content to the top -->
 		<div class="main-container">
