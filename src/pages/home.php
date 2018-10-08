@@ -7,6 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+$(document).ready(function(){
+        $('#logo-animation').fadeIn(3000).removeClass('hidden');
+			});
+</script>
 </head>
 
 <body class="container-fluid" id="id">
@@ -20,7 +25,9 @@
     <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei.</p>
   </div> -->
 
-<div class="logo2"><img src="../../src/res/icons/png/002-antenna.png"></div>
+<div class="logo2" id="logo-animation"><img src="../../src/res/icons/png/002-antenna.png"><br>
+<h2 style="color:white; background: rgba(0.0,0.0, 0.0, 0.5)">Be as efficient as if it was your second nature.</h2>
+</div>
 	</div>
 
 	<main>
