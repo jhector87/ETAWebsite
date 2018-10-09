@@ -76,6 +76,7 @@ nav {
 	/* background-color: #191919; */
 	position: sticky;
 	font-size: 12px;
+	vertical-align: middle;
 }
 ul {
   display: block;

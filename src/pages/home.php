@@ -110,7 +110,7 @@ $(document).ready(function(){
 
 	</main>
 
-	<footer>
+	<footer style="display: center;">
 		<?php include("../pages/footer.php"); ?>
 	</footer>
 </body>

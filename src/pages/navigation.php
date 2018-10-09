@@ -1,13 +1,8 @@
 <nav class="col-12">
 	<ul class="left ">
-		<li class="logo active"><a href="home2.php"><img src="../res/images/logoWhite.png" alt="Home" height="30"></a></li>
+		<li class="logo active"><a href="home.php"><img src="../res/images/logoWhite.png" alt="Home" height="30"></a></li>
 		<!-- <a href="home2.php" class="logo"><img src="../res/images/logoWhite.png" alt="Home" height="30"></a> -->
 
-		<!-- This is the burger menu -->
-		<!-- <div class="container" onclick="myFunction(this)">
-			<div class="bar1"></div>
-			<div class="bar2"></div>
-			<div class="bar3"></div> -->
 
 		<li><a href="about.php">Why ETA?</a></li>
 		<div class="dropdown">
