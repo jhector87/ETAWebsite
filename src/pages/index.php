@@ -23,22 +23,24 @@ $pageId = get_param('id', 0);
 </head>
 
 <body>
-<nav><span>Navigation</span>
+<nav>
     <?php
-//    include("navigation.php");
-    $navs = array(0 => 'WHY ETA?', 'PLANS', 'TUTORIALS', 'CART', 'SIGN-IN');
-   foreach ($navs as $nav)
-            echo "<a href=\"index.php?id=$nav\">$nav</a>";
+//        include("navigation.php");
+    $navs = array(0 => ' why eta? ', 'plans ', 'tutorials ');
+            foreach ($navs as $nav)
+            echo "<a href=\"index.php?id=$nav\">" . strtoupper($nav) . "</a>";
 
     ?>
 </nav>
 <main>
     <?php
-//    $nav = isset($_GET["id"]);
-//        echo "<a href=\"index.php?id=$nav\">$nav</a>";
-
-    echo isset($_GET['id']) ? $_GET['id'] : 0;
-//    render_content($page_id);
+        $currentPage = isset($_GET['id']) ? $_GET['id'] : 0;
+//
+        render_content($currentPage);
+//
+//    if (trim($currentPage) == "why eta?") $currentPage = "home";
+//    elseif (trim($currentPage) == "sign-in") $currentPage = "siging";
+//    include("". $currentPage . ".php");
     ?>
 </main>
 </body>

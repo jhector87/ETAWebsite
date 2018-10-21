@@ -39,7 +39,7 @@ function render_navigation($language, $pageId)
 // Renders the language navigation.
 function render_languages($language, $pageId)
 {
-    $languages = array('de', 'fr', 'en');
+    $languages = array('en', 'fr');
     $urlBase = $_SERVER['PHP_SELF'];
     add_param($urlBase, 'id', $pageId);
     foreach ($languages as $lang) {
@@ -50,12 +50,12 @@ function render_languages($language, $pageId)
 
 }
 
-// The translation function.
+//// The translation function.
 function t($key)
 {
     global $language;
     $texts = array();
-    $file = file("languages/messages_$language.txt");
+    $file = file("../res/languages/messages_$language.txt");
     foreach ($file as $line) {
         $keyVal = explode('=', $line);
         $texts[$keyVal[0]] = $keyVal[1];
@@ -66,6 +66,8 @@ function t($key)
     } else {
         return "[$key]";
     }
-}// Set langauage and page ID as global variables.
-$language = get_param('lang', 'de');
+}
+
+// Set langauage and page ID as global variables.
+$language = get_param('lang', 'en');
 $pageId = get_param('id', 0);

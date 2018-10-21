@@ -1,0 +1,7 @@
+about=WHY ETA?
+plans=PLANS
+tutorials=TUTORIALS
+database=Database
+file_sharing=File Sharing
+security=Security
+instant_access=Instant Access

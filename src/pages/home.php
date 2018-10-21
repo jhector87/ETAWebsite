@@ -17,8 +17,6 @@
 <body class="container-fluid">
 <div class="fixed-bckg" id="rectangle">
 
-    <?php include("navigation.php") ?>
-
     <div class="logo2" id="logo-animation"><img src="../res/icons/png/002-antenna.png"><br>
         <h2 style="color:white; background: rgba(0.0,0.0, 0.0, 0.5)">Be as efficient as if it was your second nature.</h2>
     </div>
