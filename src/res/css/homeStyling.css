@@ -1,3 +1,0 @@
-.col-12 { wdith: 100;}
-
-@media (min-width: 768px) { ["col-*"] {width: 100%; } }
