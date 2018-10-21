@@ -1,3 +1,10 @@
+<?php
+require_once("helper.php");
+
+$language = get_param('lang', 'en');
+$pageId = get_param('id', 0);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,13 +25,21 @@
 <body>
 <nav><span>Navigation</span>
     <?php
-    for ($i = 0; $i < 5; $i++)
-        echo "<a href=\"index.php?id=$i\">Page $i</a>"; ?>
+//    include("navigation.php");
+    $navs = array(0 => 'WHY ETA?', 'PLANS', 'TUTORIALS', 'CART', 'SIGN-IN');
+   foreach ($navs as $nav)
+            echo "<a href=\"index.php?id=$nav\">$nav</a>";
+
+    ?>
 </nav>
 <main>
-    <span>Main Area</span>
-    [Content of Page
-    <?php echo isset($_GET[’id’]) ? $_GET[’id’] : 0; ?>]
+    <?php
+//    $nav = isset($_GET["id"]);
+//        echo "<a href=\"index.php?id=$nav\">$nav</a>";
+
+    echo isset($_GET['id']) ? $_GET['id'] : 0;
+//    render_content($page_id);
+    ?>
 </main>
 </body>
 </html>

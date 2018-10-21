@@ -69,6 +69,8 @@ body {
   padding: 20px;
 }
 
+/*nav a { margin-top: 20px; }*/
+
 nav {
 	list-style-type: none;
 	margin: 0;
