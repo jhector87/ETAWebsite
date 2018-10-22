@@ -33,12 +33,12 @@ $pageId = get_param('id', 0);
 </nav>
 <main>
     <?php
-    $currentPage = isset($_GET['id']) ? $_GET['id'] : 0;
+    $currentPage = isset($_GET['id']) ? $_GET['id'] : 'home';
     //
     //        render_content($currentPage); // Using render_content function, you can manipulate  the languages
 
     if (trim($currentPage) == "why eta?") $currentPage = "home";
-    elseif (trim($currentPage) == "sign-in") $currentPage = "siging";
+    elseif (trim($currentPage) == "sign-in") $currentPage = "login";
     include("" . $currentPage . ".php");
     ?>
 </main>
