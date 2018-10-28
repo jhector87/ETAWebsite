@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ETA</title>
-</head>
-<body>
-
-</body>
-</html>
+<h1> Students</h1>
+<h1> BUSINESS</h1>
+<h1> ENTERPRISE</h1>
