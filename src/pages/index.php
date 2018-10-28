@@ -53,7 +53,7 @@ $pageId = get_param('id', 0);
     ?>
 </main>
 
-<footer  style="display: inline-block; position: fixed;">
+<footer >
     <?php include("footer.php"); ?>
 </footer>
 </body>
