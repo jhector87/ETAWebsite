@@ -1,28 +1,24 @@
-<html lang="en">
 
 <head>
 <!--    <meta charset="UTF-8">-->
 <!--    <title>ETA</title>-->
 <!--    <link rel="stylesheet" href="../res/css/mainStyling.css"/>-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<!--    <script>-->
-<!--        $(document).ready(function () {-->
-<!--            $('#logo-animation').fadeIn(3000).removeClass('hidden');-->
-<!--        });-->
-<!--    </script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#logo-animation').fadeIn(3000).removeClass('hidden');
+        });
+    </script>
 </head>
 
-<body class="container-fluid">
 <div class="fixed-bckg" id="rectangle">
 
     <div class="logo2" id="logo-animation"><img src="../res/icons/png/002-antenna.png"><br>
         <h2 style="color:white; background: rgba(0.0,0.0, 0.0, 0.5)">Be as efficient as if it was your second nature.</h2>
     </div>
 </div>
-
-<main>
 
     <div class="responsive">
         <div class="gallery">
@@ -80,6 +76,7 @@
                     porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Cras justo
                     odio, dapibus ac facilisis in, egestas eget quam. Cras mattis consectetur purus sit amet fermentum. Duis
                     mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            </div>
             <a>
                 <img src="../res/images/png/008-data-link.png" alt="DATA" width="512" height="312">
             </a>
@@ -164,22 +161,15 @@
 
     <!-- Creates a request access -->
     <div class="quickrequest oval" id="#top">
-        <form action="login.php" method="post">
+        <form action="js/animation.js" method="post">
             <p><input type="text" placeholder="Please enter your email..." name="email"></p>
             <p><textarea name="comment" placeholder="Please enter a short message here describing your request..."
                          rows="5" cols="60" style="border-color: #66CC00;"></textarea></p>
             <br>
-            <a href=accept="../../src/config/request.php"/><input type="submit" value="Submit request"></a><br>
+            <a href="/src/config/request.php"></a><input type="submit" value="Submit request"><br>
             <a style="margin-top: 10px;"><img src="../res/icons/rocket-2.png"></a>
         </form>
 
 
     </div>
 
-</main>
-
-<!--<footer style="display: inline-block;">-->
-<!--    --><?php //include("../pages/footer.php"); ?>
-<!--</footer>-->
-</body>
-</html>
