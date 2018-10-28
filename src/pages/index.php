@@ -25,10 +25,8 @@ $pageId = get_param('id', 0);
 <body>
 <nav>
     <?php
-    //        include("navigation.php");
-    $navs = array(0 => ' why eta? ', 'plans ', 'tutorials ', 'login');
-    foreach ($navs as $nav)
-        echo "<a href=\"index.php?id=$nav\">" . strtoupper($nav) . "</a>";
+            include("navigation.php");
+
     ?>
 </nav>
 <main>
@@ -37,8 +35,15 @@ $pageId = get_param('id', 0);
     //
     //        render_content($currentPage); // Using render_content function, you can manipulate  the languages
 
-    if (trim($currentPage) == "why eta?") $currentPage = "home";
-    elseif (trim($currentPage) == "sign-in") $currentPage = "login";
+    $homePage = "<a href='index.php'><img src='../res/images/logoWhite.png' alt='Home' height='30'></a>";
+    $cartPage = "<a href='cart.php'><img src='../res/icons/png/004-shopping-bag.png' alt='Cart' height='20'></a>";
+
+    $loginPage = "<img src='../res/icons/png/173-user.png' height='20' alt='Log in/Sign Up'>";
+
+     if (trim($currentPage) == $homePage) $currentPage = "home";
+    elseif (trim($currentPage) == "why eta?") $currentPage = "about";
+    elseif (trim($currentPage) == $cartPage) $currentPage = "cart";
+    elseif (trim($currentPage) == $loginPage) $currentPage = "login";
     include("" . $currentPage . ".php");
     ?>
 </main>

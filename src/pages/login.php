@@ -20,8 +20,8 @@ if (isset($_POST["Login"])) {
     $userName = $_POST["email"];
     $password = $_POST["password"];
 
-//    if ($userName == "user@gmail.com" && $password == "abcd123") {
-    if (userInDB($userName)) {
+    if ($userName == "user@gmail.com" && $password == "abcd123") {
+//    if (userInDB($userName)) {
         global $username;
         $name = explode('@', $userName);
         echo "Welcome $name[0]!";
