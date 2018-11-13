@@ -1,18 +1,29 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jpro
- * Date: 28.10.18
- * Time: 15:46
- */
-
-$mailTo = "jonathan@hectorgraphics.ch";
-$subject = "I could use your help!";
-$body = $_POST["comment"];
-$headers = "From: Jonathan With Love!";
-
-if (mail($mailTo, $subject, $body, $headers)) {
-	print("The email was successfully sent to ETA Service Department!");
+require_once "Mail.php";
+$from = "Sandra Sender <sender@example.com>";
+$to = "Ramona Recipient <recipient@example.com>";
+$subject = "Hi!";
+$body = "Hi,\n\nHow are you?";
+$host = "mail.example.com";
+$username = "smtp_username";
+$password = "smtp_password";
+$headers = array(
+	'From' => $from,
+	'To' => $to,
+	'Subject' => $subject
+);
+$smtp = Mail::factory(
+	'smtp',
+	array(
+		'host' => $host,
+		'auth' => true,
+		'username' => $username,
+		'password' => $password
+	)
+);
+$mail = $smtp->send($to, $headers, $body);
+if (PEAR::isError($mail)) {
+	echo ("<p>" . $mail->getMessage() . "</p>");
 } else {
-	print("missing details!");
+	echo ("<p>Message successfully sent!</p>");
 }

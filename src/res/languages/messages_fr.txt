@@ -1,7 +1,0 @@
-about=POURQUOI ETA?
-plans=PLANS
-tutorials=TUTORIELS
-database=Base de données
-file_sharing=Gestion de fichier
-security=Sécurité
-instant_access=Accèss instantané

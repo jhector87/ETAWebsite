@@ -3,7 +3,7 @@
     <body>
 
 <?php
-required "configs.php";
+require "configs.php";
 getConfigs();
 
         // if there is POST data, insert into the database

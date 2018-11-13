@@ -1,0 +1,71 @@
+body { text-align: center; }
+
+.home { display: block; width: 100%;}
+
+a:hover { color: #62D9D7;}
+
+.title {
+	text-align: center;
+	margin: fill;
+	height: 100%;
+	padding-bottom: 15%;
+	padding-top: 12.5%;
+}
+.title h2 { color: 	white; padding-top: 20px; } 
+
+.responsive { display: inline-block; background-image:linear-gradient(180deg, #0E0829, #3F2033); }
+
+.gallery {
+	padding: 2.5% 12.5%;
+	display: flex;
+	position: relative;
+vertical-align: center;
+}
+
+/* Clears all the things that constraints */
+.responsive::after { content: ""; clear: both; display: table; }
+/* .gallery { text-align: left; float: left;} */
+.icon { width: 40%; height: 312px; float: left; margin: 10px; vertical-align: center; top: 50%; }
+.desc { margin-left: 10%; width: 60%; height: auto; float: left; }
+
+
+form { display: inline-block; width: 100%;}
+
+form p span { padding-top: 20px; padding-bottom: 20px; opacity: 0.85; color: darkgray; font-size: 36px;  }
+footer {  
+    color: #ffffff;
+    text-align: center;
+	font-size: 12px;
+	padding-top: 10em;
+	vertical-align: center;
+}
+
+footer a {
+	text-decoration: none;
+	color: #62D9D7;
+	/* padding: 10px; */
+}
+
+footer a:hover {
+	color: #77CA00;
+}
+
+footer h5 { opacity: 0.75; }
+
+.grid-container {
+	/* display: inline-grid;
+	grid-template-columns: repeat(5, 1fr); /* determines the amount of columns needed */
+	/* background-color: #191919;
+	grid-auto-rows: auto; */
+	padding: 10px;
+	/* width: 100%;
+	text-align: left; */
+}	
+
+.grid-item {
+	padding: 10px;
+	/* font-size: 12px;
+	text-align: center;	 */
+}
+
+.copyright { position: relative; width: 100%; margin-bottom: 10px; background-color: #212121; }
