@@ -17,3 +17,9 @@ $(document).ready(function () {
     }
   });
 });
+
+$(document).ready(function() {
+  if ($(this).scrollTop() > 0) {
+  $('.nav').fadeOut();
+  }
+})

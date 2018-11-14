@@ -1,4 +1,4 @@
-body { text-align: center; }
+/* body { text-align: center;	 } */
 
 .home { display: block; width: 100%;}
 
@@ -19,7 +19,7 @@ a:hover { color: #62D9D7;}
 	padding: 2.5% 12.5%;
 	display: flex;
 	position: relative;
-vertical-align: center;
+	vertical-align: center;
 }
 
 /* Clears all the things that constraints */
