@@ -1,3 +1,7 @@
+<head> 
+    <!-- <link rel="stylesheet" href="../res/css/homeStyling.css" type='text/css'/> -->
+</head>
+
 <div>
 </div>
 <div class='home'>

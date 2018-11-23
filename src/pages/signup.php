@@ -1,19 +1,35 @@
-<link rel="stylesheet" href="../res/css/formStyling.css">
+<?php
+    include ("../includes/handlers/register.php");
+?>
 
-<h3>SIGN UP SHEET</h3>
-<h3>Personal Details</h3>
-<form>
-    <p>First name: <input type="text" name="first_name"  placeholder="eg. James"></p>
-    <p>Last name: <input type="text" name="name" placeholder="eg. Chaplin"></p>
-    <p>Middle name/s: <input type="text" name="name" placeholder="eg. Kirsten"></p>
-    <p>Username: <input type="text" name="username" placeholder="eg. Kirsten"></p>
-    <p>Age: <input type="number" name="age" placeholder="eg. 82"></p>
-    <p>Email: <input type="text" name="email" placeholder="eg. john@eta.com"></p>
-    <p>Address: <input type="text" name="address" placeholder="e.g William St. 21-32"</p>
-    <p>Zip Code: <input type="number" name="address" placeholder="e.g 2331"></p>
-    <p>City: <input type="text" name="address" placeholder="e.g NY or BE"></p>
-    <p>Country: <label>
-            <select>
+<body>
+        <form action="../pages/index.php?id=login" method="post">
+        <h1>Sign up</h1>
+        <p>
+            <label for='username'>Username: </label>
+            <input id='username' name='username' type="text" placeholder="eg. jessie873" required>
+</p>
+        <p>
+            <label for='firstName'>First name: </label>
+            <input id='firstName' name='firstName' type="text" placeholder="eg. John" required>
+</p>
+        <p>
+            <label for='lastName'>Last name: </label>
+            <input id='lastName' name='lastName' type="text" placeholder="eg. Appleseed" required>
+</p>
+        <p>
+            <label for='address'>Address : </label>
+            <input id='address' name='address' type="text" placeholder="eg. Stiglimattstrasse 23" required>
+</p>
+        <p>
+            <label for='zipcode'>Zip code: </label>
+            <input id='zipcode' name='zipcode' type="text" placeholder="eg. 3250" required>
+
+            <label for='city'>City: </label>
+            <input id='city' name='city' type="text" placeholder="eg. Berne" required>
+</p>
+ <p><label for='country'>Country: </label>
+            <select id='country' name='country'>
                 <?php
                 $countries = array(0 => 'Australia', 'France', 'German', 'Great-Britain', 'Japan', 'New Zealand', 'Switzerland', 'USA');
                 foreach ($countries as $country)
@@ -22,11 +38,26 @@
             </select>
         </label>
     </p>
-</form>
+    <p>
+    <label for='email'>Email: </label>
+    <input id="email" type="email" placeholder="e.g john@eta.com" required>
+    </p>
+    <p>
+    <label for="emailConfirm">Confirm email: </label>
+    <input id="emailConfirm" type="email" required>
+    </p>
+<p>
+            <label for="passsword">Password: </label>
+            <input  id="password" name="password" type="password" placeholder="e.g 123hun73"  required>
+</p>
+<p>
+            <label for="passwordConfirm">Confirm passsword: </label>
+            <input  id="passwordConfirm" name="passwordConfirm" type="password" required>
+</p>
+            <button type="submit" name="signUpBtn" value="Sign up" alt="Login">Sign up</button>
+            
+        </form>
+</body>
+</html>
 
-<h3>Shipping Address</h3>
-<p><input type="radio" name="addressOption">Same as above
-<input type="radio" name="addressOption" style="padding-left: 10em;">Other</p>
-
-<p> <input type="submit" name="submit" value="Submit Details"></p>
 
