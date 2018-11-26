@@ -1,0 +1,17 @@
+home=Willkomen
+about=UBER ETA
+plans=OPTIONEN
+tutorials=TUTORIALS
+title=Wo efficienz ist normal
+database=Databaken
+file_sharing=Dokument uberladen
+security=Sicherheit
+instant_access=Sofort erlaubt
+education=Schule
+student_plan=1 - 5 Students / Lehre
+business=Business
+business_plan=10 - 100 Mitarbeiter/in
+buy_now=Zu Warenkorber
+contact_us=Kontakt
+basket_alert_student=Meherer über 5 Abonnieren in Warenkorber, für besser preis, bitte zu uns an email shicken!
+basket_alert_business=Meherer über 10 Abonnieren in Warenkorber, für besser preis, denken für ein Enterprise Edition!

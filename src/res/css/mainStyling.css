@@ -24,8 +24,9 @@ body {
 .left { float: left; }
 
 nav li .right { float: right; }
-.lang { float: right; margin-top: 15px; }
+.lang { float: right; padding-top: 0px; padding-right: 10px; }
 .lang:last-child { padding-right: 10px;}
+.menu { margin-top: 15px; }
 
 nav {
 	/* /* list-style-type: none; */
@@ -66,7 +67,7 @@ nav {
 
 	body::after { content: ""; clear: both; display: block; }
 
-	main { padding-top: 30px;}
+	main { padding: 50px 20px;}
 
 /* 
 @media screen and (max-width: 768px) {

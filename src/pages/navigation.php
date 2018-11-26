@@ -5,17 +5,3 @@ $login = "<img src='../res/icons/png/173-user.png' height='20' alt='Log in/Sign 
 
 
 $navs = array('home' => $home, 'about' => 'why eta?', 'plans' => 'plans', 'tutorials' => 'tutorials','login' => $login, 'cart' => $cart);
-
-
-// foreach ($navs as $keyMainNav => $nav) {
-// 	// if ($keyMainNav == 'en') {
-// 	// 	$currentLang = $keyMainNav;
-// 	// 	$keyMainNav = 'home';
-// 	// 	$nav = $keyMainNav; 
-// 	// }
-// 		echo "<a href='index.php?lang=en&id=$keyMainNav'>" . $nav . "</a>";
-// }
-
-// foreach ($langNavs as $keyLangNav => $lang) {
-// 		echo "<a href='index.php?lang=$keyLangNav&id=$keyMainNav'>" . $lang. "</a>";
-// }

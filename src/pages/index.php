@@ -22,30 +22,31 @@ if (is_file("../res/css/{$pageId}Styling.css"))
 <body>
 
 <nav>
+	<div class='menu'>
 	<?php
 	global $navs;
 
-if (trim($pageId) == 'home') $pageId = "home";
-elseif (trim($pageId) == "why eta?") $pageId = "about";
-elseif (trim($pageId) == 'cart') $pageId = "cart";
-elseif (trim($pageId) == 'login') $pageId = "login";
-	
-render_navigation($language, $pageId);
-?>
+	if (trim($pageId) == 'home') $pageId = "home";
+	elseif (trim($pageId) == "why eta?") $pageId = "about";
+	elseif (trim($pageId) == 'cart') $pageId = "cart";
+	elseif (trim($pageId) == 'login') $pageId = "login";
+
+	render_navigation($language, $pageId);
+	?>
+	</div>
 <div class='lang'><?php render_languages($language, $pageId); ?> </div>
 </nav>
 <main>
 	<?php
-// include_once("navigation.php");
+require_once("navigation.php");
+global $navs;
 $currentPage = isset($_GET['id']) ? $_GET['id'] : 'home';
-	//            render_content($currentPage); // Using render_content function, you can manipulate  the languages
 
-// if (trim($currentPage) == 'home') $currentPage = "home";
+// if (trim($currentPage) == "home") $currentPage = "home";
 // elseif (trim($currentPage) == "why eta?") $currentPage = "about";
-// elseif (trim($currentPage) == 'cart') $currentPage = "cart";
-// elseif (trim($currentPage) == 'login') $currentPage = "login";
-// include("" . $currentPage . ".php");
-render_content($currentPage);
+// elseif (trim($currentPage) == "cart") $currentPage = "cart";
+// elseif (trim($currentPage) == "login") $currentPage = "login";
+render_content($currentPage . ".php");
 ?>
 </main>
 </body>

@@ -7,8 +7,7 @@
 <div class='home'>
 <div class="fixed-bckg" id="rectangle top">
     <div class="title"><img src="../res/icons/png/002-antenna.png"><br>
-        <h2>Be as efficient as if it was your second
-            nature.</h2>
+        <h2><?php echo t('title') ?></h2>
     </div>
 <!-- </div> -->
 
@@ -18,7 +17,7 @@
             <img src="../res/images/png/005-cloud-server.png" alt="CLOUD SERVER" width='300'>
         </a>
         <div class="desc">
-            <h3>Database</h3>
+            <h3><?php echo t('database') ?></h3>
             <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor idnibh ultricies
                 vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis
                 euismod semper. <br><br>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
@@ -46,7 +45,7 @@
     <div class="gallery">
        
         <div class="desc">
-            <h3>Data Transfer</h3>
+            <h3><?php echo t('file_sharing') ?></h3>
             <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor idnibh ultricies
                 vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis
                 euismod semper. <br><br>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
@@ -79,7 +78,7 @@
             <img src="../res/images/png/031-security.png" alt="SECURITY" width='300'>
         </a>
         <div class="desc">
-            <h3>Security</h3>
+            <h3><?php echo t('security') ?></h3>
             <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor idnibh ultricies
                 vehicula ut id elit. Nulla vitae elit libero, a pharetra augue. Vestibulum id ligula porta felis
                 euismod semper. <br><br>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
