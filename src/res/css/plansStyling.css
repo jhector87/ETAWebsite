@@ -1,7 +1,6 @@
 h1 { display: flex; align-items: center; justify-content: center; opacity: 0.5;}
-h2 { background-color: rgb(235, 99, 99); width: 100%; height: 20%;}
-h2 #student { background-color: rgb(80, 190, 122); width: 100%; height: 20%; }
-
+h2 { background-color: rgb(235, 99, 99); width: 100%; height: 50%;}
+h4 { opacity: 0.5;}
 
 div.gallery {
     border: 1px solid #ccc;

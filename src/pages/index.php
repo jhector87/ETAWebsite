@@ -23,21 +23,21 @@ if (is_file("../res/css/{$pageId}Styling.css"))
 
 <nav>
 	<?php
-		include("navigation.php");
-	?>
+include("navigation.php");
+?>
 </nav>
 <main>
 	<?php
-		include_once("navigation.php");
-		$currentPage = isset($_GET['id']) ? $_GET['id'] : 'home';
+include_once("navigation.php");
+$currentPage = isset($_GET['id']) ? $_GET['id'] : 'home';
 	//            render_content($currentPage); // Using render_content function, you can manipulate  the languages
 
-		if (trim($currentPage) == 'home') $currentPage = "home";
-		elseif (trim($currentPage) == "why eta?") $currentPage = "about";
-		elseif (trim($currentPage) == 'cart') $currentPage = "cart";
-		elseif (trim($currentPage) == 'login') $currentPage = "login";
-		include("" . $currentPage . ".php");
-	?>
+if (trim($currentPage) == 'home') $currentPage = "home";
+elseif (trim($currentPage) == "why eta?") $currentPage = "about";
+elseif (trim($currentPage) == 'cart') $currentPage = "cart";
+elseif (trim($currentPage) == 'login') $currentPage = "login";
+include("" . $currentPage . ".php");
+?>
 </main>
 </body>
 </html>

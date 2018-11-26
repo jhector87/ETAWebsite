@@ -20,7 +20,7 @@ function inputCleaner($inputText)
 
 
 
-if (isset($_POST['username'])) {
-    $user = usernameCleaner($_POST['username']);
+if (isset($_POST['usernameLogin'])) {
+    $user = usernameCleaner($_POST['usernameLogin']);
     echo "<script type='text/javascript'>alert('Log in $user successful!');</script>";
 }

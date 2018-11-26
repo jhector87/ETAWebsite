@@ -120,7 +120,7 @@
                      rows="5" cols="60" style="border-color: #66CC00;"></textarea></p>
         <br>
         <a href="/src/config/request.php"></a><input type="submit" value="Submit request"
-                                                     onclick="alert('Your request was successfully received. One of our agents will soon contact you.')"><br>
+                                                     onclick="alert('Your request was successfully received. One of our agents will be in contact with you within the next 24 hours.')"><br>
     </form>
 
 
