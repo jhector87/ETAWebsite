@@ -25,18 +25,18 @@ if (isset($_POST['signUpBtn'])) {
     $firstName = sanitizeForm($_POST['firstName']);
     $lastName = sanitizeForm($_POST['lastName']);
     $address = sanitizeForm($_POST['address']);
-    $zipcode = sanitizeZForm($_POST['zipcode']);
+    $zipcode = sanitizeForm($_POST['zipcode']);
     $city = sanitizeForm($_POST['city']);
     $country = $_POST['country'];
-    $email = sanitizeForm($_POST['email']);
-    $emailConfirm = sanitizeForm($_POST['emailConfirm']);
-    $password = sanitizePassword($_POST['password']);
-    $passwordConfirm = sanitizePassword($_POST['passwordConfirm']);
+    $email = sanitizeForm(isset($_POST['email']));
+    $emailCnf = sanitizeForm(isset($_POST['emailConfirm']));
+    $password = sanitizePassword(isset($_POST['password']));
+    $passwordCnf = sanitizePassword(isset($_POST['passwordConfirm']));
 
-    $wasSuccessful = $account->register($username, $firstName, $lastName, $lastName, $address, $zipcode, $city, $country, $email, $emailConfirm, $password, $passwordConfirm);
+    $wasSuccessful = $account->register($username, $firstName, $lastName, $lastName, $address, $zipcode, $city, $country, $email, $emailCnf, $password, $passwordCnf);
 
-    // if ($wasSuccessful == true) {
-    //     header("Location: index.php?id=home");
-    // }
+    if ($wasSuccessful == true) {
+        header("Location: index.php?id=home");
+    }
 }
 ?>

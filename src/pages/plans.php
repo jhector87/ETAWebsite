@@ -1,13 +1,3 @@
-<script>
-  
-    var clicks = 0;
-    function moreThanTwo(clicked_id) {
-        clicks++
-        if (clicks > 5 && clicked_id == "Student") alert("You added more than 5 items in your basket, you might want to consider an Enterprise version");
-        else if (clicks > 10 && clicked_id == "Business") alert("You added more than 10 items in your basket, you might want to consider an Enterprise version");
-    };
-    </script>
-
 
 <span class="plans">
 <h1>Make your choice</h1>
@@ -77,11 +67,21 @@
             <li>Add a description of the image here</li>
         </ul>
     </div>
-            <button onclick='alert("Please send a request form and one of our agents will be on contact with you!")' id='Enterprise'><a href='Contact Us</button>
+            <button><a href='../includes/handlers/requestForm.php'>Contact Us</a></button>
   </div>
 </div>
 
 <div class="clearfix"></div>
 </div>
 </span>
+
+<script>
+  
+    var clicks = 0;
+    function moreThanTwo(clicked_id) {
+        clicks++
+        if (clicks > 5 && clicked_id == "Student") alert("You added more than 5 items in your basket, you might want to consider an Enterprise version");
+        else if (clicks > 10 && clicked_id == "Business") alert("You added more than 10 items in your basket, you might want to consider an Enterprise version");
+    };
+    </script>
 
