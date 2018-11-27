@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jpro
- * Date: 22.10.18
- * Time: 08:35
- * @param $user
- */
 
 function testUserInput($user)
 {

@@ -1,0 +1,26 @@
+button {
+    width: 175px;
+    height: 55px;
+    background-color: limegreen;
+    border-radius: 30px;
+    text-decoration: none;
+    border: none;
+    position: relative;
+    bottom: 2em;
+    top: 2em;
+    margin-bottom: 3em;
+}
+
+.signinForm {
+text-align: center;
+padding-top: 10em;
+}
+form { display: inline-block;}
+
+.signupForm {
+    text-align: center;
+    margin-top: 5em;
+    
+}
+
+
