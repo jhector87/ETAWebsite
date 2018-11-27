@@ -23,7 +23,7 @@ function add_param(&$url, $name, $value)
 function render_content($pageId)
 {
 	// echo t('content') . " $pageId";
-	 include (t($pageId));
+	include(t($pageId));
 }
 
 // Renders the navigation for the passed language and page ID.
@@ -47,7 +47,6 @@ function render_navigation($language, $pageId)
 // Renders the language navigation.
 function render_languages($language, $pageId)
 {
-	// TODO: Make the language take this a menu 
 	$languages = array('de', 'fr', 'en');
 	$urlBase = $_SERVER['PHP_SELF'];
 	add_param($urlBase, 'id', $pageId);
@@ -66,40 +65,18 @@ function t($key)
 	$texts = array();
 	$file = file("../res/languages/messages_$language.txt");
 	foreach ($file as $line) {
-		// echo $line . "<br>";
 		$keyVal = explode('=', $line);
-		// echo $keyVal[1]; 	
-		// $texts[$keyVal[0]] = isset($keyVal[1]) ? $keyVal[1] : null; // Assigns left-hand side to right-hand side
-		$texts[$keyVal[0]] = $keyVal[0] == $key ? $keyVal[1] : null; // Assigns left-hand side to right-hand side
-		// if ($keyVal[0] == $key) $texts[$keyVal[0]] = $keyVal[1];
+		$texts[$keyVal[0]] = isset($keyVal[0]) ? $keyVal[1] : null; 
 	}
 
-	if (isset($texts[$key][$language])) {
-		return $texts[$key][$language];
+	if (isset($texts[$key])) {
+		return $texts[$key];
 	} else {
 		return "$key";
 	}
-
-	// global $language;
-	// $texts = array(
-	// 	'page' => array(
-	// 		'de' => 'Seite',
-	// 		'fr' => 'Page',
-	// 		'en' => 'Page'
-	// 	),
-	// 	'content' => array(
-	// 		'de' => 'Willkommen auf der Seite ',
-	// 		'fr' => 'Bienvenue sur la page ',
-	// 		'en' => 'Welcome to page '
-	// 	)
-	// );
-	// if (isset($texts[$key][$language])) {
-	// 	return $texts[$key][$language];
-	// } else {
-	// 	return "[$key]";
-	// }
 }
 
+//TODO: Load the LANGUAGE file only once
 
 // Set langauage and page ID as global variables.
 $language = get_param('lang', 'en');

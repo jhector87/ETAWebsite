@@ -1,16 +1,21 @@
-home=Home
+home=HOME
 about=WHY ETA?
 plans=PLANS
 tutorials=TUTORIALS
+login=LOGIN
+cart=CART
 title=Where efficiency is your second nature
 database=Database
 file_sharing=File Sharing
 security=Security
 instant_access=Instant Access
+choose_plan=Choose a plan
 education=Education
-student_plan=1 - 5 Students / Teachers
+education_plan=1 - 5 Students / Teachers
 business=Business
 business_plan=10 - 100 Employees
+enterprise=Enterprise 
+enterprise_plan=> 100 Employees
 buy_now=Add to Cart
 contact_us=Get in touch
 basket_alert_student=basket_alert=You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!

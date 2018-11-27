@@ -7,7 +7,7 @@
   <div class="gallery">
       <!-- <img src="../res/images/png/005-cloud-server.png" alt="CLOUD SERVER"  width="600" height="400"> -->
       <h2><span id='student'><?php echo t('education') ?></span></h2>
-      <h4></h4>
+      <h4><?php echo t('education_plan') ?></h4>
     <div class="desc">
         <ul>
             <li>Add a description of the image here</li>
@@ -31,7 +31,7 @@
   <div class="gallery">
       <!-- <img src="../res/images/png/005-cloud-server.png" alt="CLOUD SERVER"  width="600" height="400"> -->
       <h2 id='business'><?php echo t('business') ?></h2>
-      <h4></h4>
+      <h4><?php echo t('business_plan') ?></h4>
     <div class="desc">
         <ul>
             <li>Add a description of the image here</li>
@@ -53,7 +53,7 @@
   <div class="gallery">
       <!-- <img src="../res/images/png/005-cloud-server.png" alt="CLOUD SERVER"  width="600" height="400"> -->
       <h2><?php echo t('entreprise') ?></h2>
-      <h4>> 100 Employees</h4>
+      <h4><?php echo t('enterprise_plan') ?></h4>
     <div class="desc">
         <ul>
             <li>Add a description of the image here</li>
@@ -83,5 +83,6 @@
         if (clicks > 5 && clicked_id == "Student") alert(" <?php echo t('basket_alert_student') ?>");
         else if (clicks > 10 && clicked_id == "Business") alert(" <?php echo t('basket_alert_business') ?>");
     };
-    </script>
+    
+</script>
 
