@@ -2,6 +2,8 @@ button {
     width: 175px;
     height: 55px;
     background-color: limegreen;
+    text-decoration: none;
+    text-decoration-color: aliceblue;
     border-radius: 30px;
     text-decoration: none;
     border: none;
@@ -11,16 +13,25 @@ button {
     margin-bottom: 3em;
 }
 
-.signinForm {
-text-align: center;
-padding-top: 10em;
-}
-form { display: inline-block;}
-
-.signupForm {
+.form {
     text-align: center;
-    margin-top: 5em;
-    
+    margin: fill;
+    height: 100%;
+    padding-bottom: 15%;
+    padding-top: 7.5%;
+
 }
 
+input { border-bottom-color: limegreen; text-decoration: none; }
 
+form { float: left; position: relative; left: 30%}
+
+.signinForm { padding-right: 10em; position: absolute; top: 30%; left: 25%; border-right: white double; }
+.signupForm {  margin-left: 30%; }
+
+@media only screen and (max-width: 900px) {
+    .form {
+        width: 100%;
+        margin: fill;
+    }
+}

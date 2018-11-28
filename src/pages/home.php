@@ -5,7 +5,7 @@
 <div>
 </div>
 <div class='home'>
-<div class="fixed-bckg" id="rectangle top">
+<div class="fixed-bckg">
     <div class="title"><img src="../res/icons/png/002-antenna.png"><br>
         <h2><?php echo t('title') ?></h2>
     </div>
@@ -111,13 +111,11 @@
 
 
 <!-- Creates a request access -->
-<!-- <!-- <div class="quickrequest oval"> -->
+  <div class="quickrequest">
    <?php
    include ('../includes/handlers/requestForm.php')
    ?>
 
 </div>
 </div>
-<footer>
-</footer>
 

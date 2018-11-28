@@ -1,15 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jpro
- * Date: 18.09.18
- * Time: 17:54
- */
- function getConfigs() {
- $user = "root";
-	$pwd = "";
-$database = "phpCourse";
-         $conn = new mysqli("127.0.0.1", $user, $pwd, $database);
-			 }
+ob_start();
 
-?>
+$timezone = date_default_timezone_set("Europe/Zurich");
+$host = "localhost";
+$user = "root";
+$pwd = "";
+$database = "ETAWebsite";
+
+$conn = mysqli_connect($host, $user, $pwd, $database);
+
+if (mysqli_connect_errno()) {
+	echo "Failed to connect: " . mysqli_connect_errno();
+}

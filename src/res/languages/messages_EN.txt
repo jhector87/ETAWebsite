@@ -9,6 +9,7 @@ database=Database
 file_sharing=File Sharing
 security=Security
 instant_access=Instant Access
+submit_request=Submit Request
 choose_plan=Choose a plan
 education=Education
 education_plan=1 - 5 Students / Teachers

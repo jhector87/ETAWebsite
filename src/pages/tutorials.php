@@ -1,10 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ETA</title>
-</head>
-<body>
-
-</body>
-</html>
+<div><a href="../res/vids/Blurry Video Of People Working.mp4" width="1fr"></a></div>

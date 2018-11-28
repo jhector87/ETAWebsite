@@ -65,13 +65,13 @@ function t($key)
 	$texts = array();
 	$file = file("../res/languages/messages_$language.txt");
 	foreach ($file as $line) {
-		$keyVal = explode('=', $line);
+		$keyVal = explode('=', trim($line));
 		$texts[$keyVal[0]] = isset($keyVal[0]) ? $keyVal[1] : null; 
 	}
 
 	if (isset($texts[$key])) {
 		return $texts[$key];
-	} else {
+	} else {  
 		return "$key";
 	}
 }

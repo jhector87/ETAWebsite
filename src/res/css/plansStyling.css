@@ -1,95 +1,99 @@
 .plans {
-    text-align: center;
-    margin: fill;
-    height: 100%;
-    padding-bottom: 15%;
-    padding-top: 12.5%;
+	text-align: center;
+	margin: fill;
+	height: 100%;
+	padding-bottom: 15%;
+	padding-top: 12.5%;
+
 }
 
 h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.5;
-    padding-top: 60px;
-    padding-bottom: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0.5;
+	padding-top: 60px;
+	padding-bottom: 0;
 }
 
 h2 {
-    background-color: rgb(235, 99, 99);
-    width: 100%;
-    height: 50%;
+	background-color: rgb(235, 99, 99);
+	width: 100%;
+	height: 50%;
 }
 
 h4 {
-    opacity: 0.5;
+	opacity: 0.5;
 }
 
 div.gallery {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding-top: 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	padding-top: 15px;
+	background-color: #3a2132;
+	opacity: 0.3%;
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
+	border: 1px solid #777;
 }
 
-div.gallery img {
-    width: 60%;
-    height: auto;
-    position: relative;
-    left: 20%;
-    top: 10%;
-}
+/*div.gallery img {*/
+	/*width: 60%;*/
+	/*height: auto;*/
+	/*position: relative;*/
+	/*left: 20%;*/
+	/*top: 10%;*/
+/*}*/
 
 div.desc {
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    margin-bottom: 40px;
+	padding: 15px;
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 40px;
 }
 
 .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-    padding-top: 5%;
-    padding-top: 5%;
-    border-radius: 20px;
-    margin: 20px 10px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+	/*padding: 0 6px;*/
+	float: left;
+	width: 24.99999%;
+	padding-top: 5%;
+	border-radius: 30px;
+	margin: 20px 10px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	left: 10%;
 }
 
 button {
-    width: 75%;
-    height: 55px;
-    background-color: limegreen;
-    border-radius: 30px;
-    text-decoration: none;
-    border: none;
-    position: relative;
-    bottom: 2em;
+	width: 75%;
+	height: 55px;
+	background-color: limegreen;
+	border-radius: 30px;
+	text-decoration: none;
+	border: none;
+	position: relative;
+	bottom: 2em;
 }
 
 @media only screen and (max-width: 900px) {
-    .responsive {
-        width: 49.99999%;
-        /* width: 100%; */
-        margin: 6px 0;
-    }
+	.responsive {
+		width: 49.99999%;
+		/* width: 100%; */
+		margin: 6px 0;
+	}
 }
 
 @media only screen and (max-width: 768px) {
-    .responsive {
-        width: 100%;
-    }
+	.responsive {
+		width: 100%;
+	}
 }
 
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+/*.clearfix:after {*/
+	/*content: "";*/
+	/*display: table;*/
+	/*clear: both;*/
+/*}*/

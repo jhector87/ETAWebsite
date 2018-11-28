@@ -29,7 +29,7 @@ a:hover { color: #62D9D7;}
 .desc { margin-left: 10%; width: 60%; height: auto; float: left; }
 
 
-form { display: inline-block; width: 100%;}
+form { display: inline-block; text-align: center; width: 100%; background-color: transparent;}
 
 form p span { padding-top: 20px; padding-bottom: 20px; opacity: 0.85; color: darkgray; font-size: 36px;  }
 footer {  
