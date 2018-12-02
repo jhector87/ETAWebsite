@@ -58,7 +58,7 @@ function render_languages($language, $pageId)
 
 }
 
-//// The translation function.
+// The translation function.
 function t($key)
 {
 	global $language;
@@ -78,6 +78,6 @@ function t($key)
 
 //TODO: Load the LANGUAGE file only once
 
-// Set langauage and page ID as global variables.
+// Set language and page ID as global variables.
 $language = get_param('lang', 'en');
 $pageId = get_param('id', 0);

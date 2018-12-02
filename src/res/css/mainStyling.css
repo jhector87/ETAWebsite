@@ -102,6 +102,8 @@ nav {
 	padding: 7em;
 }
 
+form { color: #ffffff;}
+
 form button {
 	width: 250px;
 	height: 55px;

@@ -1,4 +1,5 @@
-<? $product = $_GET['product_details'];
+<?
+$product = $_POST['product_details'];
 
 function getProductDetails()
 {

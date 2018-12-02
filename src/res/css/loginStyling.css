@@ -1,3 +1,4 @@
+nav:hover { color: #62D9D7; }
 button {
     width: 175px;
     height: 55px;
@@ -15,16 +16,17 @@ button {
 
 .form {
     text-align: center;
-    margin: fill;
+    /*margin: fill;*/
     height: 100%;
     padding-bottom: 15%;
     padding-top: 7.5%;
+    text-decoration: none;
 
 }
 
-input { border-bottom-color: limegreen; text-decoration: none; }
+input { border-bottom-color: limegreen; text-decoration: none; color: #ffffff; }
 
-form { float: left; position: relative; left: 30%}
+form { float: left; position: relative; left: 30%; color: white;}
 
 .signinForm { padding-right: 10em; position: absolute; top: 30%; left: 25%; border-right: white double; }
 .signupForm {  margin-left: 30%; }

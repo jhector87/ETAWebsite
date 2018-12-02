@@ -6,7 +6,7 @@ if (isset($_POST['signUpBtn'])) {
 	$lastName = sanitizeForm($_POST['lastName']);
 	$address = sanitizeForm($_POST['address']);
 	$zipcode = sanitizeForm($_POST['zipcode']);
-	$city = sanitizeForm($_POST['city']);
+	$city = $_POST['city'];
 	$country = $_POST['country'];
 	$email = sanitizeForm(isset($_POST['email']));
 	$emailCnf = sanitizeForm(isset($_POST['emailConfirm']));

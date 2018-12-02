@@ -33,4 +33,4 @@ city=City:
 country=Country:
 email=Email:
 cnf_email=Confirm Email:
-cnf_pwd=Password:
+cnf_pwd=Confirm Password:
