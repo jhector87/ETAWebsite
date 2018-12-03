@@ -5,18 +5,20 @@
 
 body {
 	font-family: RaleWay-Regular, Menlo, Helvetica, sans-serif;
-	text-decoration: none;
-	margin: 0;
+	/*text-decoration: none;*/
+	/*margin: 0;*/
 	/*background-image: linear-gradient(180deg, #0E0829, #3F2033);*/
 	/*background: white url("../images/plan_light_wallpaper.png") no-repeat fixed center;*/
 	color: white;
 	/* display: flex; */
-	min-height: 100%;
+	/*min-height: 100%;*/
 	background: white url("../images/plan_dark-wallpaper.png") no-repeat fixed center;
 	background-size: cover;
+	display: table;
 	margin: 0;
 	padding-top: 0;
 	height: 100%;
+	width: 100%;
 }
 
 .fixed-bckg {
@@ -48,7 +50,7 @@ nav {
 	height: 15px;
 }
 
-nav:after { background-color: #212121;}
+/*nav:after { background-color: #212121;}*/
 
 nav a {
 	margin-top: 20px;
@@ -95,7 +97,7 @@ nav {
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;}
 
-.error { color: red;}
+.errorMessage { color: #00edd2; font-size: 12px; display: block; margin-top: 13px; }
 
 .quickrequest {
 	background-image: linear-gradient(180deg, #2e1725, #3F2033);
@@ -103,11 +105,21 @@ nav {
 }
 
 form { color: #ffffff;}
+form input[type="email"] {
+	border: none;
+	border-bottom: limegreen;
+	width: 80%; font-size: 14px;
+	margin: 20px auto;
+	text-align: center;
+}
+
+form input[type="email"] { border-bottom: #00edd2; }
 
 form button {
 	width: 250px;
 	height: 55px;
-	background-color: limegreen;
+	/*background-color: limegreen;*/
+	background-image:  -webkit-linear-gradient(180deg, #00edd2, #00b9e5);
 	border-radius: 30px;
 	/*text-decoration: none;*/
 	border: none;
@@ -115,5 +127,12 @@ form button {
 	bottom: 2em;
 }
 
-form input { background-color: transparent; border-bottom: limegreen;}
-textarea { background-color: transparent; }
+form input {
+	background-color: transparent;
+	/*border-bottom: limegreen;*/
+}
+
+textarea {
+	background-color: transparent;
+	border-color: #00edd2;
+}

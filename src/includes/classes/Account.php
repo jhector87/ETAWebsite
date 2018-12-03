@@ -1,4 +1,5 @@
 <?php
+
 	class Account {
 
 		private $con;
@@ -7,6 +8,18 @@
 		public function __construct($con) {
 			$this->con = $con;
 			$this->errorArray = array();
+		}
+		
+		public function login($un, $pw) {
+			$encryptedPw = md5($pw);
+			$query = mysqli_query($this->con, "SELECT * FROM Users WHERE user_name='$un' AND password='$encryptedPw'");
+			
+			if (mysqli_num_rows($query) == 1) {
+				return true;
+			} else {
+				array_push($this->errorArray, ErrorMessages::$loginFailed);
+				return false;
+			}
 		}
 
 		public function register($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $em2, $pw, $pw2) {
@@ -22,6 +35,7 @@
 				return $this->insertUserDetails($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $pw);
 			}
 			else {
+				array_push($this->errorArray, ErrorMessages::$loginFailed);
 				return false;
 			}
 
@@ -39,9 +53,8 @@
 			$profilePic = "../res/icons/png/230-user-1.png";
 			$date = date("Y-m-d");
 
-			echo "INSERT INTO Users VALUES ($un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', '$encryptedPw', '$date', '$profilePic');";
 			$result = mysqli_query($this->con, "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signup_date, profile_pic)
-VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', '$encryptedPw', '$date', '$profilePic');");
+VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', '$encryptedPw', '$date', '$profilePic')");
 
 			return $result;
 		}

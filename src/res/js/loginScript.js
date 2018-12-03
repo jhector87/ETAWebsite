@@ -1,5 +1,11 @@
-$('usernameSignUp').innerHTML = loginSuccessful;
+$(document).ready(function() {
+   $("#hideLogin").click(function() {
+       $("#loginForm").hide();
+       $("#registerForm").show();
+   });
 
-function loginSuccessful() {
-    alert("Jonathan");
-}
+   $("#hideRegister").click(function() {
+       $("#loginForm").show();
+       $("#registerForm").hide();
+   });
+});

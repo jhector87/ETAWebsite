@@ -47,7 +47,7 @@ footer a {
 }
 
 footer a:hover {
-	color: #77CA00;
+	/*color: #77CA00;*/
 }
 
 footer h5 { opacity: 0.75; }

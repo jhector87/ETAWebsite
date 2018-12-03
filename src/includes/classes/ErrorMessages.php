@@ -15,4 +15,9 @@ class ErrorMessages
 	public static $passwordsDoNotMatch = "Your passwords do not match!";
 	public static $passwordNotAlphanumeric = "Your password must be a mixture of characters and numbers!";
 	public static $passwordCharacters = "Your password must be between 6 and 25 characters!";
+	
+	public static $loginFailed = "Please check your username or password otherwise sign up!";
+	public static $loginRequiredToAccessCart = "You need to log in to access your cart";
+	
+	
 }
