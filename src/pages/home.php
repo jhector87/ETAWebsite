@@ -6,9 +6,10 @@
 </div>
 <div class='home'>
 <div class="fixed-bckg">
-    <div class="title"><img src="../res/icons/png/002-antenna.png"><br>
-        <h2><?php echo t('title') ?></h2>
+    <div class="title hidden" id="animate"><img src="../res/icons/png/002-antenna.png"><br>
+        <h2 id="animate hidden"><?php echo t('title') ?></h2>
     </div>
+
 <!-- </div> -->
 
 <div class="responsive">
@@ -118,4 +119,5 @@
 
 </div>
 </div>
+
 

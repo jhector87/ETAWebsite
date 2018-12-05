@@ -107,7 +107,7 @@ nav {
 form { color: #ffffff;}
 form input[type="email"] {
 	border: none;
-	border-bottom: limegreen;
+	/*border-bottom: limegreen;*/
 	width: 80%; font-size: 14px;
 	margin: 20px auto;
 	text-align: center;

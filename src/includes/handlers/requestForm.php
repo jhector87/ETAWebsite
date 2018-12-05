@@ -1,8 +1,8 @@
 <form action="../../pages/index.php?lang=en&id=home" method="post">
 	<p><span> Quick request </span></p>
-	<p><input type="email" placeholder="Please enter your email..." name="email" col="60"></p>
+	<p><input type="email" placeholder="Please enter your email..." name="email"></p>
 	<p> <textarea name="comment" placeholder="Please enter a short message here describing your request..."
-	              rows="8" cols="80" style="border-color: #66CC00;"> </textarea></p>
+	              rows="8" cols="80"> </textarea></p>
 	<br>
 	<button type="submit" value="Submit request"
 	        onclick="alert('Your request was successfully received. ' +

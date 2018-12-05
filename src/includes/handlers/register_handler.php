@@ -26,7 +26,7 @@ if(isset($_POST['signUpBtn'])) {
 	$lastName = sanitizeFormString($_POST['lastName']);
 	$address = sanitizeFormString($_POST['address']);
 	$zipcode = sanitizeFormString($_POST['zipcode']);
-	$city = $_POST['city'];
+	$city = $_POST['city']; // No need to sanitize the form since they are options.
 	$country = $_POST['country'];
 	$email = sanitizeFormString($_POST['email']);
 	$emailcnf = sanitizeFormString($_POST['emailConfirm']);

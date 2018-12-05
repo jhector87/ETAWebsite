@@ -12,12 +12,16 @@ instant_access=Instant Access
 submit_request=Submit Request
 choose_plan=Choose a plan
 education=Education
+education_abo=Students and/or Teachers Edition
 education_plan=1 - 5 Students / Teachers
 business=Business
+business_abo=Business Edition
 business_plan=10 - 100 Employees
-enterprise=Enterprise 
+enterprise=Enterprise
+enterprise_abo=Enterprise Edition
 enterprise_plan=> 100 Employees
 buy_now=Add to Cart
+pay_now=Pay Now
 contact_us=Get in touch
 basket_alert_student=basket_alert=You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!
 basket_alert_business=You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition!

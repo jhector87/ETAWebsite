@@ -76,14 +76,12 @@
 </div>
 
 <script>
-
     var clicks = 0;
-
+    // Provides a suggestion if the amount of clicks is over the limit.
     function moreThanTwo(clicked_id) {
         clicks++;
         if (clicks > 5 && clicked_id === "student") alert(" <?php echo t('basket_alert_student') ?>");
         else if (clicks > 10 && clicked_id === "business") alert(" <?php echo t('basket_alert_business') ?>");
     }
-
 </script>
 

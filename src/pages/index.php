@@ -4,11 +4,10 @@ require_once("../includes/handlers/helper.php");
 $language = get_param('lang', 'en');
 $pageId = get_param('id', 0);
 
-
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en, de, fr">
 
 <head>
 	<meta charset="UTF-8">
@@ -19,8 +18,9 @@ $pageId = get_param('id', 0);
 	?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="../res/js/loginScript.js"></script>
-<!--	<script src="../res/js/animation.js" type="text/javascript"></script>-->
+	<?php
+	if (is_file("../res/js/{$pageId}Script.js")) echo '<script src="../res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
+	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
