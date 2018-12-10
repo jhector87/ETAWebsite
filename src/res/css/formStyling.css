@@ -4,34 +4,34 @@
 }
 
 h1 { color: darkgray; align-content: center; font-family: sans-serif; }
-* { background-color: #191919; color: white; font-family: RaleWay-Regular, Menlo, Helvetica, sans-serif;}
+* { color: white; font-family: RaleWay-Regular, Menlo, Helvetica, sans-serif;}
 
-.quickrequest {
-    padding: 10px;
-    text-align: center;
-}
+/*.quickrequest {*/
+    /*padding: 10px;*/
+    /*text-align: center;*/
+/*}*/
 
-form {
-    display: inline-block;
-    padding: 20px;
-    margin: 10px;
+/*form {*/
+    /*display: inline-block;*/
+    /*padding: 20px;*/
+    /*margin: 10px;*/
 
-}
+/*}*/
 
-input[type=text] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-bottom: 2px solid #77CA00;
-}
+/*input[type=text] {*/
+    /*width: 100%;*/
+    /*padding: 12px 20px;*/
+    /*margin: 8px 0;*/
+    /*box-sizing: border-box;*/
+    /*border: none;*/
+    /*border-bottom: 2px solid #77CA00;*/
+/*}*/
 
-input[type=submit] {
-    color: white;
-    background-color: #77CA00;
-    height: 4em;
-    width: 12em;
-    margin-bottom: 2em;
-    border-radius: 4em;
-}
+/*input[type=submit] {*/
+    /*color: white;*/
+    /*background-color: #77CA00;*/
+    /*height: 4em;*/
+    /*width: 12em;*/
+    /*margin-bottom: 2em;*/
+    /*border-radius: 4em;*/
+/*}*/

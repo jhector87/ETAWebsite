@@ -22,10 +22,10 @@
 <!--</nav>-->
 
 <?php
-$logo = "<img src='../res/images/logoWhite.png' alt='Home' height='30'>";
-$cart = "<img src='../res/icons/png/004-shopping-bag.png' alt='Cart' height='20' style='float: right;'>";
-$login ="<img src='../res/icons/png/173-user.png' height='20' alt='Log in/Sign Up' style='float: right;'>";
+$home = "<img src='../res/images/logoWhite.png' alt='Home' height='30' style='margin-left: 20px;'>";
+$cart = "<img src='../res/icons/png/004-shopping-bag.png' alt='Cart' height='20' style='float: right; margin-right:10px;'>";
+$login ="<img src='../res/icons/png/173-user.png' height='20' alt='Log in/Sign Up' style='float: right;  margin-right:10px;  '>";
 
-$navs = array(0 => $logo, ' why eta? ', 'plans ', 'tutorials ', $login, $cart);
+$navs = array(0 => $home, ' why eta? ', 'plans ', 'tutorials ', 'EN', 'FR', $login, $cart);
 foreach ($navs as $nav)
     echo "<a href=\"index.php?id=$nav\">" . strtoupper($nav) . "</a>";
