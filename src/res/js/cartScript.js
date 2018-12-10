@@ -1,5 +1,6 @@
 i = 0;
 function addItem() {
-    $('.itemAmount').innerText = 'Quantity' + i++;
+    alert("I'm in the cart");
+    $('#itemQuantity').innerText = 'Quantity' + i++;
 
 };

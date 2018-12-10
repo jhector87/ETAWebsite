@@ -20,7 +20,7 @@ function sanitizeFormString($inputText) {
 
 
 if(isset($_POST['signUpBtn'])) {
-	//Register button was pressed
+	// Register button was pressed
 	$username = sanitizeFormUsername($_POST['username']);
 	$firstName = sanitizeFormString($_POST['firstName']);
 	$lastName = sanitizeFormString($_POST['lastName']);
@@ -35,7 +35,6 @@ if(isset($_POST['signUpBtn'])) {
 
 	$wasSuccessful = $account->register($username, $firstName, $lastName, $address, $zipcode, $city, $country, $email, $emailcnf, $password,
 										$passwordcnf);
-	echo $wasSuccessful;
 
 	// FIXME: Cannot find the proper page to go back to when everything is successful
 	if($wasSuccessful == true) {

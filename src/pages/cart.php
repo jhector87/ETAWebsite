@@ -6,6 +6,8 @@ include("../config/configs.php");
 if (isset($_SESSION['userLoggedIn'])) {
 	$userLoggedIn = $_SESSION['userLoggedIn'];
 } else header("Location: index.php?id=login&lang=en");
+
+include("cartItems.php");
 ?>
 
 <div id="currentItemsInCartContainer">
@@ -15,7 +17,7 @@ if (isset($_SESSION['userLoggedIn'])) {
 			<div class="content">
 				<div class="currentItem">
 						<span class="itemLink">
-							<img src="../res/icons/education_icon.png" class="itemPicture">
+							<img src="../res/icons/education_icon.png" class="itemPicture" alt="Student">
 						</span>
 					<div class="itemInfo">
 						
@@ -24,7 +26,7 @@ if (isset($_SESSION['userLoggedIn'])) {
 						</span>
 						
 						<span class="itemAmount">
-							<span onclick="addItem()">Quantity: 1</span>
+							<span id="itemQuantity" onclick="addItem()">Quantity: 1</span>
 						</span>
 					
 					</div>

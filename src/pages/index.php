@@ -36,6 +36,7 @@ $pageId = get_param('id', 0);
 		?>
 	</div>
 	<div class='lang'><?php render_languages($language, $pageId); ?> </div>
+	
 </nav>
 <main>
 	<?php

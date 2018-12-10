@@ -14,6 +14,7 @@ function getValueInput($name)
 }
 
 // Let's the user know about how to access the cart
+// FIXME: There's no redirect on the website
 //if (isset($_SESSION['userLoggedIn']) == false) {
 //	echo "<div
 //style='text-align:center; padding-top: 50px; padding-bottom:  0px; color: red; background-color: black;'>".
@@ -77,11 +78,12 @@ if (isset($_POST['registerForm'])) {
 						       value="<?php getValueInput('username'); ?>" required>
 					</p>
 					
+					<p>
 						<?php echo $account->getError(ErrorMessages::$firstNameNotLongEnough) ?>
 						<label for='firstName'><?php echo t('first_name'); ?> </label>
 						<input id='firstName' name='firstName' type="text" placeholder="eg. John"
 						       value="<?php getValueInput('firstName'); ?>" required>
-						
+					
 					</p>
 					
 					<p>
@@ -89,7 +91,7 @@ if (isset($_POST['registerForm'])) {
 						<label for='lastName'><?php echo t('last_name'); ?> </label>
 						<input id='lastName' name='lastName' type="text" placeholder="eg. Appleseed"
 						       value="<?php getValueInput('lastName'); ?>" required>
-						
+					
 					</p>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$invalidAddress) ?>
@@ -97,7 +99,7 @@ if (isset($_POST['registerForm'])) {
 						<label for='address'><?php echo t('address') ?> </label>
 						<input id='address' name='address' type="text" placeholder="eg. Stiglimattstrasse 23"
 						       value="<?php getValueInput('address'); ?>" required>
-						
+					
 					</p>
 					<p>
 						<label for='zipcode'><?php echo t('zip_code'); ?> </label>
@@ -114,7 +116,7 @@ if (isset($_POST['registerForm'])) {
 							}
 							?>
 						</select>
-						
+					
 					</p>
 					<p>
 						<label for='country'><?php echo t('country') ?> </label>
@@ -134,7 +136,7 @@ if (isset($_POST['registerForm'])) {
 						<label for='email'><?php echo t('email'); ?> </label>
 						<input id='email' name='email' type="email" placeholder="eg. jessie@eta.com" value="<?php getValueInput('email'); ?>"
 						       required>
-						
+					
 					</p>
 					<p>
 						<label for='emailConfirm'><?php echo t('cnf_email'); ?> </label>
@@ -150,7 +152,7 @@ if (isset($_POST['registerForm'])) {
 						<label for='password'><?php echo t('pwd'); ?> </label>
 						<input id='password' name='password' type="password" placeholder="eg. 123uh178" value="<?php getValueInput('password'); ?>"
 						       required>
-						
+					
 					</p>
 					
 					<p>

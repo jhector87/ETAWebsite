@@ -1,3 +1,7 @@
+<?php
+include_once("cartItems.php");
+?>
+
 <span class="plans">
 <h1><?php echo t('choose_plan') ?></h1>
 <div class="row">
@@ -23,7 +27,7 @@
         </ul>
 
     </div>
-            <button onClick='moreThanTwo(this.id)' id='student'><?php echo t('buy_now') ?></button>
+            <button onClick='moreThanLim(this.id)' id='student'><?php echo t('buy_now') ?></button>
   </div>
 </div>
 
@@ -44,7 +48,7 @@
             <li>Add a description of the image here</li>
         </ul>
     </div>
-            <button onClick='moreThanTwo(this.id)' id='business'><?php echo t('buy_now') ?></button>
+            <button onClick='moreThanLim(this.id); addToCart(this.id)' id='business'><?php echo t('buy_now') ?></button>
   </div>
 </div>
 
@@ -78,10 +82,14 @@
 <script>
     var clicks = 0;
     // Provides a suggestion if the amount of clicks is over the limit.
-    function moreThanTwo(clicked_id) {
+    function moreThanLim(clicked_id) {
         clicks++;
         if (clicks > 5 && clicked_id === "student") alert(" <?php echo t('basket_alert_student') ?>");
         else if (clicks > 10 && clicked_id === "business") alert(" <?php echo t('basket_alert_business') ?>");
+    }
+    
+    function addToCart(clicked_id) {
+        $('#business').onclick( alert('I\'m clicked' + clicked_id) );
     }
 </script>
 

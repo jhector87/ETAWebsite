@@ -31,11 +31,11 @@ class Account {
 		$this->validatePasswords($pw, $pw2);
 		
 		if(empty($this->errorArray) == true) {
-			//Insert into db
+			// Insert into db
 			return $this->insertUserDetails($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $pw);
 		}
 		else {
-			array_push($this->errorArray, ErrorMessages::$loginFailed);
+			array_push($this->errorArray, ErrorMessages::$loginRequiredToAccessCart);
 			return false;
 		}
 		
@@ -97,15 +97,15 @@ VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', 
 	private function validateAddress($add, $zip, $ct) {
 //			switch ($ct) {
 //				case 'Switzerland':
-		if(preg_match('/^\d{4}', $zip)) {
-			array_push($this->errorArray, ErrorMessages::$invalidZipCode);
-			return;
-		}
-		
-		if (preg_match('^[A-z]+([\s[A-z]?)+\s+\d+', $add)) {
-			array_push($this->errorArray, ErrorMessages::$invalidAddress);
-			return;
-		}
+//		if(preg_match('/\d{4}', $zip)) {
+//			array_push($this->errorArray, ErrorMessages::$invalidZipCode);
+//			return;
+//		}
+//
+//		if (preg_match('^[A-z]+([\s[A-z]?)+\s+\d+', $add)) {
+//			array_push($this->errorArray, ErrorMessages::$invalidAddress);
+//			return;
+//		}
 //					break;
 
 
@@ -118,14 +118,11 @@ VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', 
 			return;
 		}
 
-//			if(!filter_var($em, FILTER_VALIDATE_EMAIL)) {
-//				array_push($this->errorArray, ErrorMessages::$invalidEmail);
-//				return;
-//			}
-		if(preg_match('/^[\w\.]+@[\w\.]+$/', $em)) {
-			array_push($this->errorArray, ErrorMessages::$invalidEmail);
-			return;
-		}
+
+//		if(preg_match('/^[\w\.]+@[\w\.]+$/', $em)) {
+//			array_push($this->errorArray, ErrorMessages::$invalidEmail);
+//			return;
+//		}
 		
 		$checkEmailQuery = mysqli_query($this->con, "SELECT email FROM Users WHERE email='$em'");
 		if(mysqli_num_rows($checkEmailQuery) != 0) {

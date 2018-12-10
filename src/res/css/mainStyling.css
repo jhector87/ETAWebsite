@@ -136,3 +136,9 @@ textarea {
 	background-color: transparent;
 	border-color: #00edd2;
 }
+
+#stickyCart {
+	margin:0;
+	position: sticky;
+	bottom: 0px;
+}

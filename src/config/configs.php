@@ -5,8 +5,8 @@ session_start();
 $timezone = date_default_timezone_set("Europe/Zurich");
 $host = "localhost";
 $user = "root";
-$pwd = "";
-$database = "ETAWebsite";
+$pwd = "root";
+$database = "ETA";
 
 $conn = mysqli_connect($host, $user, $pwd, $database);
 

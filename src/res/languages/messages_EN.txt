@@ -23,7 +23,7 @@ enterprise_plan=> 100 Employees
 buy_now=Add to Cart
 pay_now=Pay Now
 contact_us=Get in touch
-basket_alert_student=basket_alert=You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!
+basket_alert_student=You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!
 basket_alert_business=You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition!
 sign_in=Sign in
 username=Username:
