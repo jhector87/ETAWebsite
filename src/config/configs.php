@@ -11,5 +11,5 @@ $database = "ETA";
 $conn = mysqli_connect($host, $user, $pwd, $database);
 
 if (mysqli_connect_errno()) {
-	echo "Failed to connect: " . mysqli_connect_errno();
+	echo "<h2 style='text-align: center; align-items: center; margin-top: 60px;'>Failed to connect: " . mysqli_connect_errno() . "</h2>";
 }

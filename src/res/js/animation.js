@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $('.title').fadeIn(3000).removeClass('hidden');
+  $('#animate').fadeIn(3000).removeClass('hidden');
 });
 
 $(document).ready(function () {

@@ -1,6 +1,8 @@
 /* body { text-align: center;	 } */
 #animate.hidden { display: none; }
 
+nav .lang .active { text-decoration: underline; }
+
 .home { display: block; width: 100%;}
 
 a:hover { color: #62D9D7;}
@@ -15,6 +17,7 @@ a:hover { color: #62D9D7;}
 .title h2 { color: 	white; padding-top: 20px; } 
 
 .responsive { display: inline-block; background-image:linear-gradient(180deg, #0E0829, #3F2033); }
+/*.responsive { display: inline-block; background-color: white; } !* only to see the menu in effect *!*/
 
 .gallery {
 	padding: 2.5% 12.5%;
