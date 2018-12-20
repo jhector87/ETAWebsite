@@ -20,7 +20,12 @@
 	/*min-width: 280px;*/
 }
 
+#itemInCartRight span { color: white; }
+#itemInCartRight span:hover { color: #00b9e5; }
+#itemInCartRight img { width: 57px; height: 100%; padding-right: 10px; padding-left: 15px;}
 
+#itemInCartLeft .itemAmount { text-align: left; float: left; min-width: 50px; padding-right: 20px;}
+#itemInCartLeft .description { float: left;}
 #itemInCartLeft .itemName { display: table; padding-bottom: 8px;}
 
 #itemInCartLeft .itemPicture {

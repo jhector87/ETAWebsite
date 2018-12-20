@@ -2,7 +2,7 @@
 include("../config/configs.php");
 include("../includes/classes/Account.php");
 include("../includes/classes/ErrorMessages.php");
-$account = new Account($conn);
+$account = new Account($con);
 
 include("../includes/handlers/register_handler.php");
 include("../includes/handlers/login_handler.php");
@@ -13,9 +13,15 @@ function getValueInput($name)
 	if (isset($_POST[$name])) echo $_POST[$name];
 }
 
+$t = time() + 60 * 60 * 24 * 30; // expires in 30 days
+setcookie("firstName", $_POST["firstname"], $t);
+setcookie("lastName", $_POST["lastname"], $t);
+setcookie("loginUsername", $_POST["loginUsername"], $t);
+
 // Let's the user know about how to access the cart
 // FIXME: There's no redirect on the website
-//if (isset($_SESSION['userLoggedIn']) == false) {
+if(isset($_SESSION['userLoggedIn'])) echo "Logged in";
+//if (!isset($_SESSION['userLoggedIn'])) {
 //	echo "<div
 //style='text-align:center; padding-top: 50px; padding-bottom:  0px; color: red; background-color: black;'>".
 //ErrorMessages::$loginRequiredToAccessCart . "</div>";
@@ -33,7 +39,7 @@ if (isset($_POST['registerForm'])) {
 	echo '<script>
                 $(document).ready(function() {
                     $("#loginForm").show();
-                $("#registerForm").hide();
+                    $("#registerForm").hide();
                 });
 			</script>';
 }
@@ -45,13 +51,14 @@ if (isset($_POST['registerForm'])) {
 		<div id="inputContainer">
 			<!-- Creates a request access -->
 			<div id="loginForm">
-				<form action="../pages/index.php?id=login" method="post">
+				<!-- TODO: PARSE THE LANGUAGE -->
+				<form action="../pages/index.php?id=cart&lang=en" method="post">
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
 						<label for='loginUsername'><?php echo t('username') ?> </label>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
-						       value="<?php getValueInput('loginUsername') ?>" required>
+						       value="<?php getValueInput('loginUsername'); ?>" required>
 					</p>
 					<p>
 						<label for="loginPassword"><?php echo t('pwd') ?> </label>
@@ -66,10 +73,9 @@ if (isset($_POST['registerForm'])) {
 				</form>
 			</div>
 			
-			<!--		</div>-->
 			
 			<div id="registerForm">
-				<form action="../pages/index.php?id=login" method="post">
+				<form action="../pages/index.php?id=cart&lang=' . $language . '" method="post">
 					<!-- <form method="post"> -->
 					<h2><?php echo t('sign_up') ?></h2>
 					<p>
@@ -141,8 +147,7 @@ if (isset($_POST['registerForm'])) {
 					<p>
 						<label for='emailConfirm'><?php echo t('cnf_email'); ?> </label>
 						<input id='emailConfirm' name='emailConfirm' type="email" placeholder="eg. jessie@eta.com"
-						       value="<?php getValueInput('emailConfirm'); ?>"
-						       required>
+						       value="<?php getValueInput('emailConfirm'); ?>" required>
 					</p>
 					
 					<p>
@@ -171,6 +176,8 @@ if (isset($_POST['registerForm'])) {
 			</div>
 		</div>
 	</div>
+	
+	<!-- SIDE INFORMATION -->
 	<div id="loginText">
 		<h1><?php echo t('login_title_h1') ?></h1>
 		<h2><?php echo t('login_title_h2') ?></h2>

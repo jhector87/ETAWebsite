@@ -20,5 +20,6 @@ class ErrorMessages
 	public static $loginFailed = "Please check your username or password otherwise sign up!";
 	public static $loginRequiredToAccessCart = "You need to log in to access your cart!";
 	
+	public static $userDetailsRetrievalFailed = "Sorry but your details was not able to be retrieved! \n Try again later";
 	
 }

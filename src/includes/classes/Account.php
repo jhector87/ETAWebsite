@@ -16,7 +16,6 @@ class Account
 	{
 		$encryptedPw = md5($pw);
 		$query = mysqli_query($this->con, "SELECT * FROM Users WHERE user_name='$un' AND password='$encryptedPw'");
-		
 		if (mysqli_num_rows($query) == 1) {
 			return true;
 		} else {

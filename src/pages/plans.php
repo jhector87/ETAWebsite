@@ -1,8 +1,18 @@
 <?php
-include_once("cartItems.php");
+session_start();
+
+include("../config/configs.php");
+include("../includes/classes/Account.php");
+//include("../includes/handlers/cart_handler.php");
+
 ?>
 
+
+
 <span class="plans">
+	<?php
+	if (isset($_SESSION['userLoggedIn'])) echo "Session Started";
+	?>
 <h1><?php echo t('choose_plan') ?></h1>
 <div class="row">
 
@@ -27,7 +37,7 @@ include_once("cartItems.php");
         </ul>
 
     </div>
-            <button onClick='moreThanLim(this.id)' id='student'><?php echo t('buy_now') ?></button>
+            <button onclick='moreThanLim(this.id); addToCart(this.id);' id='student'><?php echo t('buy_now') ?></button>
   </div>
 </div>
 
@@ -48,7 +58,7 @@ include_once("cartItems.php");
             <li>Add a description of the image here</li>
         </ul>
     </div>
-            <button onClick='moreThanLim(this.id); addToCart(this.id)' id='business'><?php echo t('buy_now') ?></button>
+            <button onclick='moreThanLim(this.id); addToCart(this.id);' id='business'><?php echo t('buy_now') ?></button>
   </div>
 </div>
 
@@ -79,17 +89,9 @@ include_once("cartItems.php");
 </div>
 </div>
 
-<script>
-    var clicks = 0;
-    // Provides a suggestion if the amount of clicks is over the limit.
-    function moreThanLim(clicked_id) {
-        clicks++;
-        if (clicks > 5 && clicked_id === "student") alert(" <?php echo t('basket_alert_student') ?>");
-        else if (clicks > 10 && clicked_id === "business") alert(" <?php echo t('basket_alert_business') ?>");
-    }
-    
-    function addToCart(clicked_id) {
-        $('#business').onclick( alert('I\'m clicked' + clicked_id) );
-    }
-</script>
+<div id="cart_items">
+	<?php include_once("cartItems.php"); ?>
+</div>
+
+<script src="../res/js/cartScript.js" type="text/javascript"></script>
 

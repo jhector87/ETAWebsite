@@ -39,7 +39,7 @@ if(isset($_POST['signUpBtn'])) {
 	// FIXME: Cannot find the proper page to go back to when everything is successful
 	if($wasSuccessful == true) {
 		$_SESSION['userLoggedIn'] = $username;
-		header("Location: index.php?id=cart");
+		header("Location: index.php?id=cart&lang=en");
 	}
 
 }

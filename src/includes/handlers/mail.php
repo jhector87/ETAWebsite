@@ -1,5 +1,5 @@
 <?php
-require_once "Mail.php";
+require_once "mail.php";
 $from = "Sandra Sender <sender@example.com>";
 $to = "Ramona Recipient <recipient@example.com>";
 $subject = "Hi!";
