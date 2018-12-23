@@ -1,39 +1,63 @@
 <!--//if ($_POST['student'] && $_POST['id'] == 'cart') echo '<script> alert("Button clicked in cartItems!"); </script>';-->
 <!--//else echo "<h1 style='padding: 80px; align-content: center; text-align: center; '>CART EMPTY</h1>";-->
 
+<?php
+$product_query = mysqli_query($con, "SELECT * FROM Products");
+
+$resultArray = array();
+
+while ($row = mysqli_fetch_array($product_query))
+	array_push($resultArray, $row['prod_name_ref']);
+
+$jsonArray = json_encode($resultArray);
+
+?>
+
+<script src="../res/js/Cart.js"></script>
+
+<script>
+	
+	$(document).ready(function () {
+        currentCart = <?php echo $jsonArray; ?>;
+		productElement = new Cart();
+		setProduct(currentCart[2], currentCart, true);
+    });
+
+	function setProduct(prodName, prodQuant, itemChosen) {
+	    // AJAX CALL TO DATABASE
+       $.post("../includes/handlers/ajax/getProdJson.php", { prodId: prodName}, function (data) {
+           var item = JSON.parse(data);
+           
+	      console.log(item.prod_name);
+	      // productElement.setItem(data.prod_name);
+       });
+		
+		
+	}
+	
+	function itemChosen() {
+	    $('<?php $_GET["id"] ?> ').click().toString();
+	}
+</script>
+
 <div id="currentItemsInCartContainer">
 	<div id="currentItemsInCart">
 		
 		<div id="itemInCartLeft">
 			<div class="content">
 				<div class="currentItem">
-						<span class="itemLink">
-							<img src="../res/icons/education_icon.png" class="itemPicture" alt="Student">
+						<span class="itemIcon">
+							<img src="../res/images/logoWhite.png" alt="Basket Logo">
 						</span>
 					<div class="itemInfo">
+					
+<!--						--><?php //include("../includes/handlers/cart_handler.php") ?>
 						
-						<div class="itemName">
-							<?php
-							$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1;");
-							while ($row = mysqli_fetch_array($product_query))
-								echo $row['prod_name'];
-							?>
-						</div>
+						<div id="itemName"></div>
 						
-						<div class="itemAmount">
-							<?php
-							$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1 ;");
-							while ($row = mysqli_fetch_array($product_query))
-								echo "Quantity: " . $row['quantity'];
-							?>
-						</div>
-						<div class="description">
-							<?php
-							$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1 ;");
-							while ($row = mysqli_fetch_array($product_query))
-								echo "CHF " . $row['price'] * $row['quantity'] .".00";
-							?>
-						</div>
+						<div id="itemAmount"></div>
+						<div id="itemTotal"></div>
+					
 					
 					</div>
 				
@@ -42,12 +66,8 @@
 		</div>
 		
 		<div id="itemInCartCenter">
-			<div class="content">
-				<?php
-				$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=2 ;");
-				while ($row = mysqli_fetch_array($product_query))
-					echo $row['description'];
-				?>
+			<div id="itemDescription">
+			
 			</div>
 			
 		</div>
@@ -56,7 +76,9 @@
 		<div id="itemInCartRight">
 			<a href="index.php?id=cart&lang=en"><img src="../res/icons/png/030-money-2.png" alt="Pay Now">
 				<span>
-					<?php echo t('pay_now') ?>
+					<?php
+					echo t('pay_now');
+					?>
 				</span>
 			</a>
 		</div>

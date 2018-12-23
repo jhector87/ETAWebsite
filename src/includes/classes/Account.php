@@ -122,10 +122,10 @@ VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', 
 		}
 
 
-//		if(preg_match('/^[\w\.]+@[\w\.]+$/', $em)) {
-//			array_push($this->errorArray, ErrorMessages::$invalidEmail);
-//			return;
-//		}
+		if(preg_match('/^[\w\.]+@[\w\.]+$/', $em)) {
+			array_push($this->errorArray, ErrorMessages::$invalidEmail);
+			return;
+		}
 		
 		$checkEmailQuery = mysqli_query($this->con, "SELECT email FROM Users WHERE email='$em'");
 		if (mysqli_num_rows($checkEmailQuery) != 0) {

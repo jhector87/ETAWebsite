@@ -4,7 +4,7 @@ include("../includes/classes/Account.php");
 include("../includes/classes/ErrorMessages.php");
 $account = new Account($con);
 
-include("../includes/handlers/register_handler.php");
+include("../includes/handlers/signup_handler.php");
 include("../includes/handlers/login_handler.php");
 
 // This function remembers the input so that the user can just correct it and having not re-type everything
@@ -17,15 +17,6 @@ $t = time() + 60 * 60 * 24 * 30; // expires in 30 days
 setcookie("firstName", $_POST["firstname"], $t);
 setcookie("lastName", $_POST["lastname"], $t);
 setcookie("loginUsername", $_POST["loginUsername"], $t);
-
-// Let's the user know about how to access the cart
-// FIXME: There's no redirect on the website
-if(isset($_SESSION['userLoggedIn'])) echo "Logged in";
-//if (!isset($_SESSION['userLoggedIn'])) {
-//	echo "<div
-//style='text-align:center; padding-top: 50px; padding-bottom:  0px; color: red; background-color: black;'>".
-//ErrorMessages::$loginRequiredToAccessCart . "</div>";
-//} else echo "";
 
 // PHP USED TO DISPLAY WHICH PART OF THE FORM
 if (isset($_POST['registerForm'])) {
@@ -52,6 +43,7 @@ if (isset($_POST['registerForm'])) {
 			<!-- Creates a request access -->
 			<div id="loginForm">
 				<!-- TODO: PARSE THE LANGUAGE -->
+				<!-- TODO: INCLUDE SESSION -->
 				<form action="../pages/index.php?id=cart&lang=en" method="post">
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
@@ -73,9 +65,9 @@ if (isset($_POST['registerForm'])) {
 				</form>
 			</div>
 			
-			
 			<div id="registerForm">
-				<form action="../pages/index.php?id=cart&lang=' . $language . '" method="post">
+				<!-- Using mail to send a confirmation email -->
+				<form action="../pages/index.php?id=cart&lang=en" method="post">
 					<!-- <form method="post"> -->
 					<h2><?php echo t('sign_up') ?></h2>
 					<p>

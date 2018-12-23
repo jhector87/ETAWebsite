@@ -1,4 +1,64 @@
-#cart_form {
-	margin: 5%;
+.details {
+	height: 100%;
+	padding-bottom: 12.5%;
+	padding-top: 5%;
+	text-decoration: none;
+	position: relative;
+	left: 30%;
+	top: 15%;
 }
-#cart_form input { margin: 10px 15px;}
+
+#userDetailsContainer * {
+	box-sizing: border-box;
+
+	color: white;
+	line-height: 1em;
+	box-sizing: border-box;
+}
+
+#userDetailsContainerContainer {
+	width: 80%;
+	margin: 0 auto; /* auto centers by default */
+	position: relative;
+	max-width: 1024px;
+}
+
+#userDetails {
+	width: 400px;
+	padding: 45px;
+	float: left;
+	border-right: 1px solid #999;
+}
+
+#cart_items {
+	padding-left: 45px;
+	padding-top: 55px;
+	line-height: 30px;
+	display: table-cell;
+}
+
+#payment_method button {
+	text-align: center;
+	color: white;
+	width: 20%;
+	height: 55px;
+	text-decoration: none;
+	border-radius: 30px;
+	border: 2px solid white;
+	background: transparent;
+	margin: 20px auto;
+	display: block;
+	font-size: 16px;
+}
+
+#payment_method button:hover {
+	cursor: pointer; /* transforms the cursor into a pointer */
+	background-image: -webkit-linear-gradient(180deg, #00edd2, #00b9e5);
+	border: none;}
+
+@media only screen and (max-width: 900px) {
+	.form {
+		width: 100%;
+		margin: fill;
+	}
+}

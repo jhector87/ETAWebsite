@@ -45,3 +45,4 @@ login_title_h2=Un gain de temps au bout des doigts
 login_stay_connected=Restez en contact avec vos équipes où que vous soyez.
 login_real_time_file_access=Obtenez des fichiers mis à jour en temps réel.
 login_security=Ne vous inquiétez pas de la sécurité, car nous le faisons pour vous.
+shipping_details=Addresse d'envoi

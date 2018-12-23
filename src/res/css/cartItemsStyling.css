@@ -28,7 +28,7 @@
 #itemInCartLeft .description { float: left;}
 #itemInCartLeft .itemName { display: table; padding-bottom: 8px;}
 
-#itemInCartLeft .itemPicture {
+#itemInCartLeft .itemIcon {
 	max-width: 57px;
 	margin-right: 15px;
 	width: 57px;

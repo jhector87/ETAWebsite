@@ -45,3 +45,4 @@ login_title_h2=Zeitersparnis bringt Ihre Fingerspitzen in Schwung
 login_stay_connected=Bleiben Sie mit Ihren Teams in Verbindung, wo immer Sie sind.
 login_real_time_file_access=Lassen Sie Dateien in Echtzeit aktualisieren.
 login_security=Machen Sie sich keine Sorgen um die Sicherheit, denn wir tun es für Sie.
+shipping_details=Versanddetails

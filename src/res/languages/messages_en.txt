@@ -45,3 +45,4 @@ login_title_h2=Time saving brings around to your finger tips
 login_stay_connected=Stay connected with your teams wherever you are.
 login_real_time_file_access=Get files updated in real-time.
 login_security=Don't worry about security because we do for you.
+shipping_details=Shipping Details

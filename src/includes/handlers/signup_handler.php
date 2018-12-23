@@ -21,6 +21,7 @@ function sanitizeFormString($inputText) {
 
 if(isset($_POST['signUpBtn'])) {
 	// Register button was pressed
+	echo "Register button was pressed";
 	$username = sanitizeFormUsername($_POST['username']);
 	$firstName = sanitizeFormString($_POST['firstName']);
 	$lastName = sanitizeFormString($_POST['lastName']);

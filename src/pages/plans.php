@@ -1,18 +1,11 @@
 <?php
-session_start();
 
-include("../config/configs.php");
+require_once("../config/configs.php");
 include("../includes/classes/Account.php");
-//include("../includes/handlers/cart_handler.php");
 
 ?>
 
-
-
 <span class="plans">
-	<?php
-	if (isset($_SESSION['userLoggedIn'])) echo "Session Started";
-	?>
 <h1><?php echo t('choose_plan') ?></h1>
 <div class="row">
 
@@ -58,7 +51,7 @@ include("../includes/classes/Account.php");
             <li>Add a description of the image here</li>
         </ul>
     </div>
-            <button onclick='moreThanLim(this.id); addToCart(this.id);' id='business'><?php echo t('buy_now') ?></button>
+            <button onclick='moreThanLim(this.id); addToCart(this.id); ' id='business'><?php echo t('buy_now') ?></button>
   </div>
 </div>
 
@@ -80,7 +73,7 @@ include("../includes/classes/Account.php");
             <li>Add a description of the image here</li>
         </ul>
     </div>
-            <button><a href='../includes/handlers/requestForm.php'><?php echo t('contact_us') ?></a></button>
+            <button onclick='addToCart(this.id)' id='enterprise'><?php echo t('buy_now'); ?></button>
   </div>
 </div>
 

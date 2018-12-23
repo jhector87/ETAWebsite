@@ -1,20 +1,22 @@
-<?php
+<div class="itemName">
+	<?php
+	$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1");
+	while ($row = mysqli_fetch_array($product_query))
+		echo $row['prod_name'];
+	?>
+</div>
 
-$itemCount = 0;
-public function addItemToCart()
-{
-	if (isset($_GET['id']))
-	{
-		$result = $this->insertIntoCart($_GET['id'], $this->itemCount += 1);
-		return $result;
-	} else return false;
-}
-
-private function insertIntoCart($pd, $q)
-{
-	global $con;
-	$result = mysqli_query($con, "INSERT INTO Products (prod_name, quantity)
-							VALUES ('$pd','$q');");
-	
-	return $result;
-}
+<div class="itemAmount">
+	<?php
+	$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1 ;");
+	while ($row = mysqli_fetch_array($product_query))
+		echo "Quantity: " . $row['quantity'];
+	?>
+</div>
+<div class="description">
+	<?php
+	$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1 ;");
+	while ($row = mysqli_fetch_array($product_query))
+		echo "CHF " . $row['price'] * $row['quantity'] .".00";
+	?>
+</div>
