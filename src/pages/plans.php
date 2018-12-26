@@ -4,6 +4,7 @@ require_once("../config/configs.php");
 include("../includes/classes/Account.php");
 
 ?>
+<script src="../res/js/Cart.js"></script>
 
 <span class="plans">
 <h1><?php echo t('choose_plan') ?></h1>
@@ -15,6 +16,7 @@ include("../includes/classes/Account.php");
       <!-- <img src="../res/images/png/005-cloud-server.png" alt="CLOUD SERVER"  width="600" height="400"> -->
       <h2><span id='student'><?php echo t('education') ?></span></h2>
       <h4><?php echo t('education_plan') ?></h4>
+      <h4>CHF 20 / User</h4>
     <div class="desc">
         <ul>
             <li>Add a description of the image here</li>
@@ -30,7 +32,7 @@ include("../includes/classes/Account.php");
         </ul>
 
     </div>
-            <button onclick='moreThanLim(this.id); addToCart(this.id);' id='student'><?php echo t('buy_now') ?></button>
+            <button onclick='moreThanLim(this.id);  addToCart(this.id);' id='student'><?php echo t('buy_now') ?></button>
   </div>
 </div>
 
@@ -38,6 +40,7 @@ include("../includes/classes/Account.php");
   <div class="gallery">
       <h2 id='business'><?php echo t('business') ?></h2>
       <h4><?php echo t('business_plan') ?></h4>
+      <h4>CHF 30 / User</h4>
     <div class="desc">
         <ul>
             <li>Add a description of the image here</li>
@@ -60,6 +63,7 @@ include("../includes/classes/Account.php");
       <!-- <img src="../res/images/png/005-cloud-server.png" alt="CLOUD SERVER"  width="600" height="400"> -->
       <h2><?php echo t('enterprise') ?></h2>
       <h4><?php echo t('enterprise_plan') ?></h4>
+      <h4>CHF 15 / User</h4>
     <div class="desc">
         <ul>
             <li>Add a description of the image here</li>

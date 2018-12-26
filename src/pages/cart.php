@@ -19,7 +19,8 @@ else header("Location: index.php?id=login&lang=en");
 		<!-- Creates a request access -->
 		<div id="userDetails">
 			<?php
-			$user_query = mysqli_query($con, "SELECT * FROM Users WHERE user_id=1;");
+			// TODO: Parse-in the logged-in user
+			$user_query = mysqli_query($con, "SELECT * FROM Users WHERE user_id=2;");
 			while ($row = mysqli_fetch_array($user_query)) {
 				echo "<h2>" . ucfirst(strtolower($row['first_name'])) . " " . ucfirst(strtolower($row['last_name'])) . "</h2>";
 				echo "<h5>" . $row['street_add'] . "</h5>";
@@ -33,7 +34,7 @@ else header("Location: index.php?id=login&lang=en");
 	<!-- SIDE INFORMATION -->
 	<div id="cart_items">
 		<div class="itemInfo">
-<!--			--><?php //include("../includes/handlers/cart_handler.php") ?>
+			<?php include("../includes/handlers/cart_handler.php") ?>
 		
 		</div>
 	</div>
