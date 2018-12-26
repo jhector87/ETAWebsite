@@ -90,5 +90,5 @@ include("../includes/classes/Account.php");
 	<?php include_once("cartItems.php"); ?>
 </div>
 
-<script src="../res/js/cartScript.js" type="text/javascript"></script>
+<!--<script src="../res/js/cartScript.js" type="text/javascript"></script>-->
 

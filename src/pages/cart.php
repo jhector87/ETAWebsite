@@ -8,7 +8,10 @@ include("../includes/handlers/signup_handler.php");
 include("../includes/handlers/login_handler.php");
 
 // Let's the user know about how to access the cart
-if (isset($_SESSION['userLoggedIn'])) $userLoggedIn = $_SESSION['userLoggedIn'];
+if (isset($_SESSION['userLoggedIn'])) {
+	$userLoggedIn = $_SESSION['userLoggedIn'];
+	if ($userLoggedIn == 'administrator') header("Location: ../includes/handlers/admin/order_confirmation_handler.php");
+}
 else header("Location: index.php?id=login&lang=en");
 ?>
 
@@ -35,7 +38,6 @@ else header("Location: index.php?id=login&lang=en");
 	<div id="cart_items">
 		<div class="itemInfo">
 			<?php include("../includes/handlers/cart_handler.php") ?>
-		
 		</div>
 	</div>
 

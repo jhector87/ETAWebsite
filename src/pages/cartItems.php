@@ -1,6 +1,7 @@
 <!--//if ($_POST['student'] && $_POST['id'] == 'cart') echo '<script> alert("Button clicked in cartItems!"); </script>';-->
 <!--//else echo "<h1 style='padding: 80px; align-content: center; text-align: center; '>CART EMPTY</h1>";-->
 
+<!-- TODO: remove up to </script> -->
 <?php
 $product_query = mysqli_query($con, "SELECT * FROM Products");
 
@@ -51,7 +52,7 @@ $jsonArray = json_encode($resultArray);
 			<div class="content">
 				<div class="currentItem">
 						<span class="itemIcon">
-							<img src="../res/images/logoWhite.png" alt="Basket Logo">
+							<img src="">
 						</span>
 					<div class="itemInfo">
 						<div id="itemName"></div>
@@ -66,7 +67,7 @@ $jsonArray = json_encode($resultArray);
 		</div>
 		
 		<div id="itemInCartCenter">
-			<div id="itemDescription"></div>
+			<div id="itemDescription"><?php echo t("title")?></div>
 		
 		</div>
 		

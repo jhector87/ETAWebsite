@@ -1,23 +1,16 @@
 var itemCount = 0;
 // Provides a suggestion if the amount of clicks is over the limit.
-function moreThanLim(clicked_id) {
-    itemCount++;
-    if (itemCount > 5 && clicked_id === "student")
-        alert("You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!");
-    else if (itemCount > 10 && clicked_id === "business")
-        alert("You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition");
-}
 
+// AJAX CALL TO DATABASE
 function addToCart(item_id) {
     // const image = document.getElementById('itemIcon');
-
     $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function (data) {
         var item = JSON.parse(data);
         $('#itemName').text(item.prod_name);
 
         $.post("../includes/handlers/ajax/getProdQuantityJson.php", {prodId: item_id}, function () {
+            this.itemCount = item.quantity;
             $('#itemAmount').text('Quantity: ' + item.quantity);
-
         });
 
         $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function () {
@@ -28,11 +21,15 @@ function addToCart(item_id) {
             $('#itemDescription').text(item.description);
         });
 
+        $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function () {
+            $('.itemIcon img').attr("src", item.icon_link);
+        });
+
         productElement.setItem(item.prod_name);
     });
     // switch (item_id) {
     //     case 'student':
-    //         // image.getAttribute('src').src = '../../res/education_icon.png';
+    //         // image.getAttribute('src').src = '../../res/student_icon.png';
     //         // document.getElementById('itemName').innerText = 'Student-Teacher Edition';
     //         // document.getElementById('itemAmount').innerText = 'Quantity: ' + (this.itemCount);
     //         // currentTotal = (this.itemCount * 20.00).toFixed(2);
@@ -41,7 +38,7 @@ function addToCart(item_id) {
     //         break;
     //
     //     case 'business':
-    //         // image.getAttribute('src').src = '../res/icons/education_icon.png';
+    //         // image.getAttribute('src').src = '../res/icons/student_icon.png';
     //         document.getElementById('itemName').innerText = 'Business Edition';
     //         document.getElementById('itemAmount').innerText = 'Quantity: ' + this.itemCount;
     //         currentTotal = (this.itemCount * 30.00).toFixed(2);
@@ -50,7 +47,7 @@ function addToCart(item_id) {
     //         break;
     //
     //     case 'enterprise':
-    //         // image.getAttribute('src').src = '../res/icons/education_icon.png';
+    //         // image.getAttribute('src').src = '../res/icons/student_icon.png';
     //         // document.getElementById('itemName').innerText = 'Enterprise Edition';
     //         document.getElementById('itemAmount').innerText = 'Quantity: ' + this.itemCount;
     //         currentTotal = (this.itemCount * 15.00).toFixed(2);
@@ -64,3 +61,12 @@ function addToCart(item_id) {
     // }
 
 }
+
+function moreThanLim(clicked_id) {
+
+    if (itemCount > 5 && clicked_id === "student")
+        alert("You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!");
+    else if (itemCount > 10 && clicked_id === "business")
+        alert("You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition");
+}
+

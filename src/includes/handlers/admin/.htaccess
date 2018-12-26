@@ -1,0 +1,5 @@
+
+AuthType Basic
+AuthName "Authentication required"
+AuthUserFile /Desktop/web/.htpasswd
+Require valid-user
