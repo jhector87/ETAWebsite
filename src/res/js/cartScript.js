@@ -27,6 +27,8 @@ function addToCart(item_id) {
 
         productElement.setItem(item.prod_name);
     });
+
+    // DEALING LOCALLY WITH SETTING THE TEXT AND ABOVE DEALING VIRTUALLY
     // switch (item_id) {
     //     case 'student':
     //         // image.getAttribute('src').src = '../../res/student_icon.png';
@@ -62,11 +64,39 @@ function addToCart(item_id) {
 
 }
 
-function moreThanLim(clicked_id) {
+function removeFromCart(item_id) {
+    $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function (data) {
+        var item = JSON.parse(data);
 
-    if (itemCount > 5 && clicked_id === "student")
+        if (item.quantity == 0) { alert("Cart is already empty!"); return; }
+        else {
+            $('#itemName').text(item.prod_name);
+
+            $.post("../includes/handlers/ajax/removeProdQuantityJson.php", {prodId: item_id}, function () {
+                this.itemCount = item.quantity;
+                $('#itemAmount').text('Quantity: ' + item.quantity);
+            });
+
+            $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function () {
+                $('#itemTotal').text('Total amount: CHF ' + (item.quantity * item.price).toFixed(2));
+            });
+
+            $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function () {
+                $('#itemDescription').text(item.description);
+            });
+
+            $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function () {
+                $('.itemIcon img').attr("src", item.icon_link);
+            });
+        }
+    });
+}
+
+function moreThanLim(item_id) {
+
+    if (itemCount > 5 && item_id === "student")
         alert("You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!");
-    else if (itemCount > 10 && clicked_id === "business")
+    else if (itemCount > 10 && item_id === "business")
         alert("You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition");
 }
 

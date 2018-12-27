@@ -20,6 +20,7 @@ $pageId = get_param('id', 0);
 	?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../res/js/cartScript.js"></script>
 	<?php
 	if (is_file("../res/js/{$pageId}Script.js")) echo '<script src="../res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
 	?>
@@ -32,7 +33,10 @@ $pageId = get_param('id', 0);
 		
 		if (trim($pageId) == 'home') $pageId = "home"; elseif (trim($pageId) == "why eta?") $pageId = "about";
 		elseif (trim($pageId) == 'cart') $pageId = "cart";
-		elseif (trim($pageId) == 'login') $pageId = "login";
+//		elseif (trim($pageId) == 'login') $pageId = "login";
+		elseif (trim($pageId) == 'login') {
+			$pageId = $_COOKIE['firstName'] ? $_COOKIE['firstName'] : 'login';
+		}
 		
 		render_navigation($language, $pageId);
 		?>

@@ -1,5 +1,4 @@
 <?php
-
 require_once("../config/configs.php");
 include("../includes/classes/Account.php");
 
@@ -33,6 +32,7 @@ include("../includes/classes/Account.php");
 
     </div>
             <button onclick='moreThanLim(this.id);  addToCart(this.id);' id='student'><?php echo t('buy_now') ?></button>
+            <button onclick='removeFromCart(this.id);' id='student'><?php echo t('remove_now') ?></button>
   </div>
 </div>
 
@@ -54,7 +54,9 @@ include("../includes/classes/Account.php");
             <li>Add a description of the image here</li>
         </ul>
     </div>
-            <button onclick='moreThanLim(this.id); addToCart(this.id); ' id='business'><?php echo t('buy_now') ?></button>
+    
+	  <button onclick='moreThanLim(this.id); addToCart(this.id); ' id='business'><?php echo t('buy_now') ?></button>
+	  <button onclick='removeFromCart(this.id);' id='business'><?php echo t('remove_now') ?></button>
   </div>
 </div>
 
@@ -78,6 +80,7 @@ include("../includes/classes/Account.php");
         </ul>
     </div>
             <button onclick='addToCart(this.id)' id='enterprise'><?php echo t('buy_now'); ?></button>
+	  <button onclick='removeFromCart(this.id);' id='enterprise'><?php echo t('remove_now') ?></button>
   </div>
 </div>
 

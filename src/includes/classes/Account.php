@@ -26,6 +26,8 @@ class Account
 	
 	public function register($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $em2, $pw, $pw2)
 	{
+		echo "Register button was pressed";
+//		echo $un. $fn. $ln.$add. $zip. $ct. $cn. $em. $em2.$pw. $pw2;
 		$this->validateUsername($un);
 		$this->validateFirstName($fn);
 		$this->validateLastName($ln);
@@ -33,7 +35,7 @@ class Account
 		$this->validateEmails($em, $em2);
 		$this->validatePasswords($pw, $pw2);
 		
-		if (empty($this->errorArray) == true) {
+		if (empty($this->errorArray)) {
 			// Insert into db
 			return $this->insertUserDetails($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $pw);
 		} else {
@@ -57,9 +59,9 @@ class Account
 		$profilePic = "../res/icons/png/230-user-1.png";
 		$date = date("Y-m-d");
 		
-		$result = mysqli_query($this->con, "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signup_date, profile_pic)
-VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', '$encryptedPw', '$date', '$profilePic')");
-		
+		$result = mysqli_query($this->con,
+							   "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic)
+									  VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', '$encryptedPw', '$date', '$profilePic')");
 		return $result;
 	}
 	

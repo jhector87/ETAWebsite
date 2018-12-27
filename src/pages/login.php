@@ -14,9 +14,9 @@ function getValueInput($name)
 }
 
 $t = time() + 60 * 60 * 24 * 30; // expires in 30 days
-setcookie("firstName", $_POST["firstname"], $t);
-setcookie("lastName", $_POST["lastname"], $t);
+setcookie('firstName', $_POST["firstName"], $t);
 setcookie("loginUsername", $_POST["loginUsername"], $t);
+setcookie("loginPwd", $_POST["loginPassword"], $t);
 
 // PHP USED TO DISPLAY WHICH PART OF THE FORM
 if (isset($_POST['registerForm'])) {
@@ -50,11 +50,11 @@ if (isset($_POST['registerForm'])) {
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
 						<label for='loginUsername'><?php echo t('username') ?> </label>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
-						       value="<?php getValueInput('loginUsername'); ?>" required>
+						       value="<?php echo $_COOKIE['loginUsername'] ?>" required>
 					</p>
 					<p>
 						<label for="loginPassword"><?php echo t('pwd') ?> </label>
-						<input id="loginPassword" name="loginPassword" type="password" placeholder="e.g 123hun73" required>
+						<input id="loginPassword" name="loginPassword" type="password" placeholder="e.g 123hun73" value="<?php echo $_COOKIE['loginPwd'] ?>" required>
 					</p>
 					<button type="submit" name="loginBtn"><?php echo t('sign_in') ?></button>
 					

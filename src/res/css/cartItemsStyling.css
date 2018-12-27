@@ -17,7 +17,6 @@
 #itemInCartLeft,
 #itemInCartRight {
 	width: 30%;
-	/*min-width: 280px;*/
 }
 
 #itemInCartRight span { color: white; }
@@ -38,7 +37,6 @@
 }
 
 #itemInCartLeft .itemInfo .itemName span { font-size: 16px; color: #a0a0a0; }
-/*#itemInCartLeft .itemName { padding-bottom: 1%;}*/
 
 #itemInCartLeft .itemName .itemInfo {
 	margin: 6px 0;
@@ -49,13 +47,11 @@
 #itemInCartCenter {
 	width: 40%;
 	max-width: 700px;
-	/*display: flex;*/
 	flex-direction: column;
-	/*align-items: center;*/
 	color: #a0a0a0;
 }
 
 #itemInCartCenter .content { width: 100%; margin: 0 auto; display: table;}
 
 #itemInCartRight { vertical-align: middle; float: right; cursor: pointer; }
-#itemInCartRight span { font-size: 30px; padding-left: 10px; padding-bottom: 10px; position: absolute;}
+#itemInCartRight span { font-size: 30px; padding: 10px; position: absolute;}

@@ -21,28 +21,6 @@ $jsonArray = json_encode($resultArray);
         productElement = new Cart();
         // setProduct(currentCart[0], currentCart, false);
     });
-
-    function setProduct(prodName, prodQuant, itemChosen) {
-        // // AJAX CALL TO DATABASE
-        // $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: prodName}, function (data) {
-        //     var item = JSON.parse(data);
-        //     $('#itemName').text(item.prod_name);
-		//
-        //     $.post("../includes/handlers/ajax/getProdQuantityJson.php", {prodId: prodName}, function () {
-        //         $('#itemAmount').text('Quantity: ' + item.quantity);
-		//
-        //     });
-		//
-        //     $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: prodName}, function () {
-        //         $('#itemTotal').text('Total amount: CHF ' + (item.quantity * item.price).toFixed(2));
-        //     });
-        //
-		//
-        //     productElement.setItem(item.prod_name);
-        //     updateQuantity();
-        // });
-    }
-
 </script>
 
 <div id="currentItemsInCartContainer">
@@ -52,14 +30,13 @@ $jsonArray = json_encode($resultArray);
 			<div class="content">
 				<div class="currentItem">
 						<span class="itemIcon">
-							<img src="">
+							<img src="../res/images/logoWhite.png" style="min-width:57px; min-height: 57px;">
 						</span>
 					<div class="itemInfo">
 						<div id="itemName"></div>
 						<div id="itemAmount"></div>
-						<div id="itemTotal"></div>
-					
-					
+						<div id="itemTotal" ></div>
+						
 					</div>
 				
 				</div>
@@ -73,8 +50,8 @@ $jsonArray = json_encode($resultArray);
 		
 		<script src="../res/js/cartScript.js"></script>
 		<div id="itemInCartRight">
-			<a href="index.php?id=cart&lang=en"><img src="../res/icons/png/030-money-2.png" alt="Pay
-			Now">
+			<a href="index.php?id=cart&lang=en" style="vertical-align: middle;"><img src="../res/icons/png/030-money-2.png" alt="Pay Now">
+		
 				<span>
 					<?php
 					echo t('pay_now');

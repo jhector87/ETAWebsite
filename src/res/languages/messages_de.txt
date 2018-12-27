@@ -22,6 +22,7 @@ enterprise_abo=Enterprise Edition
 enterprise_plan=> 100 Mitarbeiter/in
 buy_now=Zu Warenkorber
 pay_now=Zahlen
+remove_now=Artikel entfernen
 contact_us=Kontakt
 basket_alert_student=Sie haben mehr als 5 Abonnements in Ihren Warenkorb gelegt, vielleicht möchten Sie eine Enterprise-Version in Betracht ziehen!
 basket_alert_business=Sie haben mehr als 10 Abonnements in Ihren Warenkorb gelegt, vielleicht möchten Sie eine Enterprise Edition in Betracht ziehen!
