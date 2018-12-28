@@ -43,7 +43,6 @@ if (isset($_POST['registerForm'])) {
 			<!-- Creates a request access -->
 			<div id="loginForm">
 				<!-- TODO: PARSE THE LANGUAGE -->
-				<!-- TODO: INCLUDE SESSION -->
 				<form action="../pages/index.php?id=cart&lang=en" method="post">
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
@@ -67,7 +66,8 @@ if (isset($_POST['registerForm'])) {
 			
 			<div id="registerForm">
 				<!-- Using mail to send a confirmation email -->
-				<form action="../pages/index.php?id=cart&lang=en" method="post">
+				<form action="../pages/index.php?id=login&lang=en" method="post">
+					
 					<!-- <form method="post"> -->
 					<h2><?php echo t('sign_up') ?></h2>
 					<p>

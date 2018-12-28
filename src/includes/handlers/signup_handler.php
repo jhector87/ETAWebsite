@@ -1,5 +1,7 @@
 <?php
 
+include_once("../../SendGrid-API/send-email.php");
+
 function sanitizeFormPassword($inputText)
 {
 	$inputText = strip_tags($inputText);
@@ -42,7 +44,9 @@ if (isset($_POST['submit'])) {
 	// FIXME: Cannot find the proper page to go back to when everything is successful
 	if ($wasSuccessful) {
 		$_SESSION['userLoggedIn'] = $username;
-		header("Location: index.php?id=cart&lang=en");
+//		header("Location: index.php?id=cart&lang=en");
+	} else {
+		echo "<srcipt>alert('Something went wrong. Please try again!')</script>";
 	}
 	
 }
