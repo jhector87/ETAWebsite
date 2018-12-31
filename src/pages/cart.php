@@ -9,7 +9,7 @@ include("../includes/handlers/login_handler.php");
 
 // Let's the user know about how to access the cart
 if (isset($_SESSION['userLoggedIn'])) {
-	$userLoggedIn = $_SESSION['userLoggedIn'];
+	$userLoggedIn = trim($_SESSION['userLoggedIn']);
 	if ($userLoggedIn == 'administrator') header("Location: ../includes/handlers/admin/order_confirmation_handler.php");
 }
 else header("Location: index.php?id=login&lang=en");
@@ -43,8 +43,7 @@ else header("Location: index.php?id=login&lang=en");
 
 </div>
 <div id="payment_method">
-	<button type="submit" name="signUpBtn"
-	 href="https://paypal.com"
+	<button type="submit" name="signUpBtn" href="https://paypal.com"
 	   onclick="void window.open('https://paypal.com','1543955792662','width=500,height=700,toolbar=0,menubar=0,location=0,' +
 	    'status=1,scrollbars=1,resizable=1,left=0,top=0');return false;">
 		

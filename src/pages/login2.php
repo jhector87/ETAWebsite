@@ -8,31 +8,31 @@ include("../includes/handlers/signup_handler.php");
 include("../includes/handlers/login_handler.php");
 
 // This function remembers the input so that the user can just correct it and having not re-type everything
-function getValueInput($name)
-{
-	if (isset($_POST[$name])) echo $_POST[$name];
-}
-
-$t = time() + 60 * 60 * 24 * 30; // expires in 30 days
-setcookie('firstName', $_POST["firstName"], $t);
-setcookie("loginUsername", $_POST["loginUsername"], $t);
-
-// PHP USED TO DISPLAY WHICH PART OF THE FORM
-if (isset($_POST['signUpForm'])) {
-	echo '<script>
-            $(document).ready(function() {
-                $("#loginForm").hide();
-                $("#registerForm").show();
-             });
-		</script>';
-} else {
-	echo '<script>
-                $(document).ready(function() {
-                    $("#loginForm").show();
-                    $("#registerForm").hide();
-                });
-			</script>';
-}
+//function getValueInput($name)
+//{
+//	if (isset($_POST[$name])) echo $_POST[$name];
+//}
+//
+////$t = time() + 60 * 60 * 24 * 30; // expires in 30 days
+////setcookie('firstName', $_POST["firstName"], $t);
+////setcookie("loginUsername", $_POST["loginUsername"], $t);
+//
+//// PHP USED TO DISPLAY WHICH PART OF THE FORM
+//if (isset($_POST['registerForm'])) {
+//	echo '<script>
+//            $(document).ready(function() {
+//                $("#loginForm").hide();
+//                $("#registerForm").show();
+//             });
+//		</script>';
+//} else {
+//	echo '<script>
+//                $(document).ready(function() {
+//                    $("#loginForm").show();
+//                    $("#registerForm").hide();
+//                });
+//			</script>';
+//}
 ?>
 
 <div class='form'>
@@ -46,15 +46,19 @@ if (isset($_POST['signUpForm'])) {
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
-						<label for='loginUsername'><?php echo t('username') ?> </label>
+						<label for='loginUsername'><?php echo t('username') ?>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
 						       value="<?php echo $_COOKIE['loginUsername'] ?>" required>
 					</p>
 					<p>
-						<label for="loginPassword"><?php echo t('pwd') ?> </label>
-						<input id="loginPassword" name="loginPassword" type="password" placeholder="e.g 123hun73"
-						       value="<?php getValueInput('loginPassword') ?>" required>
+						<label for="loginPassword"><?php echo t('pwd') ?></label>
+						<input required>
 					</p>
+<!--					<p>-->
+<!--						<label for="loginPassword">--><?php //echo t('pwd') ?><!--</label>-->
+<!--						<input id="loginPassword" name="loginPassword" type="password" placeholder="e.g 123hun73"-->
+<!--						       value="--><?php //getValueInput('loginPassword') ?><!--" required>-->
+<!--					</p>-->
 					<button type="submit" name="loginBtn"><?php echo t('sign_in') ?></button>
 					
 					<div class="hasAccountText">
@@ -64,16 +68,13 @@ if (isset($_POST['signUpForm'])) {
 				</form>
 			</div>
 			
-			<div id="signupForm">
+			<div id="registerForm">
 				<!-- Using mail to send a confirmation email -->
 				<form action="../pages/index.php?id=login&lang=en" method="post">
 					
 					<!-- <form method="post"> -->
 					<h2><?php echo t('sign_up') ?></h2>
 					<p>
-						<?php echo $account->getError(ErrorMessages::$invalidUsername) ?>
-						<?php echo $account->getError(ErrorMessages::$usernameNotLongEnough) ?>
-						<?php echo $account->getError(ErrorMessages::$usernameTaken) ?>
 						<label for='username'><?php echo t('username'); ?> </label>
 						<input id='username' name='username' type="text" placeholder="eg. jessie873"
 						       value="<?php getValueInput('username'); ?>" required>

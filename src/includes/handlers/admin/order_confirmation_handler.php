@@ -1,9 +1,15 @@
 <?php
+
 include"../../../config/configs.php";
+include("/logout_handler.php");
+
 ?>
+
 
 <title>ETA - Admin - Order Processing Page</title>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../../../res/js/cartAdmin.js"></script>
 
 <div id='userDetailsContainer'>
 	<!-- Creates a request access -->
@@ -45,4 +51,6 @@ include"../../../config/configs.php";
 </div>
 
 
-<button> Process Order </button>
+<button id="processOrderBtn" onclick="processOrder()"> Process Order </button>
+
+<button id="logoutBtn" onclick="logout()">Logout</button>

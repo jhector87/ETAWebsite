@@ -31,8 +31,8 @@ include("../includes/classes/Account.php");
         </ul>
 
     </div>
-            <button onclick='moreThanLim(this.id);  addToCart(this.id);' id='student'><?php echo t('buy_now') ?></button>
-            <button onclick='removeFromCart(this.id);' id='student'><?php echo t('remove_now') ?></button>
+            <button onclick='addToCart(this.id);' id='student'><?php echo t('buy_now') ?></button>
+            <button onclick='removeFromCart(this.id);' id='student' class="disableBtn"><?php echo t('remove_now') ?></button>
   </div>
 </div>
 
@@ -55,8 +55,8 @@ include("../includes/classes/Account.php");
         </ul>
     </div>
     
-	  <button onclick='moreThanLim(this.id); addToCart(this.id); ' id='business'><?php echo t('buy_now') ?></button>
-	  <button onclick='removeFromCart(this.id);' id='business'><?php echo t('remove_now') ?></button>
+	  <button onclick='addToCart(this.id); ' id='business'><?php echo t('buy_now') ?></button>
+	  <button onclick='removeFromCart(this.id);' id='business' class="disableBtn"><?php echo t('remove_now') ?></button>
   </div>
 </div>
 
@@ -80,11 +80,10 @@ include("../includes/classes/Account.php");
         </ul>
     </div>
             <button onclick='addToCart(this.id)' id='enterprise'><?php echo t('buy_now'); ?></button>
-	  <button onclick='removeFromCart(this.id);' id='enterprise'><?php echo t('remove_now') ?></button>
+	  <button onclick='removeFromCart(this.id);' id='enterprise' class="disableBtn"><?php echo t('remove_now') ?></button>
   </div>
 </div>
 
-<!--<div class="clearfix"></div>-->
 </span>
 </div>
 </div>
@@ -92,6 +91,4 @@ include("../includes/classes/Account.php");
 <div id="cart_items">
 	<?php include_once("cartItems.php"); ?>
 </div>
-
-<!--<script src="../res/js/cartScript.js" type="text/javascript"></script>-->
 

@@ -3,11 +3,11 @@ var itemCount = 0;
 
 // AJAX CALL TO DATABASE
 function addToCart(item_id) {
-    // const image = document.getElementById('itemIcon');
     $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function (data) {
         var item = JSON.parse(data);
         $('#itemName').text(item.prod_name);
 
+        //
         $.post("../includes/handlers/ajax/getProdQuantityJson.php", {prodId: item_id}, function () {
             this.itemCount = item.quantity;
             $('#itemAmount').text('Quantity: ' + item.quantity);
@@ -25,8 +25,10 @@ function addToCart(item_id) {
             $('.itemIcon img').attr("src", item.icon_link);
         });
 
-        productElement.setItem(item.prod_name);
+        // productElement.setItem(item.prod_name);
+        async: false;
     });
+    $('.disableBtn').prop('disabled', false).css('opacity', 1);
 
     // DEALING LOCALLY WITH SETTING THE TEXT AND ABOVE DEALING VIRTUALLY
     // switch (item_id) {
@@ -67,13 +69,22 @@ function addToCart(item_id) {
 function removeFromCart(item_id) {
     $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function (data) {
         var item = JSON.parse(data);
+        $('#itemName').text(item.prod_name);
 
-        if (item.quantity == 0) { alert("Cart is already empty!"); return; }
-        else {
-            $('#itemName').text(item.prod_name);
+        if (item.quantity == 0) {
+            $.get("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function (data) {
+                var item = JSON.parse(data);
+                $('#itemName').text(item.prod_name);
+                $('#itemAmount').text(item.quantity);
+                $('#itemName').text(item.prod_name);
+            });
 
+            $('.disableBtn').prop('disabled', true).css('opacity', 0.5);
+            alert("Cart is already empty!");
+        } else {
             $.post("../includes/handlers/ajax/removeProdQuantityJson.php", {prodId: item_id}, function () {
                 this.itemCount = item.quantity;
+                moreThanLim(itemCount, item_id);
                 $('#itemAmount').text('Quantity: ' + item.quantity);
             });
 
@@ -88,15 +99,28 @@ function removeFromCart(item_id) {
             $.post("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function () {
                 $('.itemIcon img').attr("src", item.icon_link);
             });
+
+            $('.disableBtn').prop('disabled', false).css('opacity', 1);
         }
+        async: false;
     });
 }
 
-function moreThanLim(item_id) {
+function moreThanLim(q, item_id) {
 
-    if (itemCount > 5 && item_id === "student")
+    if (q > 5 && item_id === "student")
         alert("You added more than 5 subscriptions in your basket, you might want to consider an Enterprise version!");
-    else if (itemCount > 10 && item_id === "business")
+    else if (q > 10 && item_id === "business")
         alert("You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition");
+}
+
+function checkItem() {
+    $.get("../includes/handlers/ajax/getProdNameJson.php", function(data) {
+        var item = JSON.parse(data);
+        var q =item.quantity;
+        if (q == 0) {
+            alert
+        }
+    })
 }
 

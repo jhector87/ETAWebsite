@@ -1,8 +1,7 @@
 <?php
 include_once("navigation.php");
 
-// Returns a certain GET parameter or $default if the parameter
-// does not exist.
+// Returns a certain GET parameter or $default if the parameter does not exist.
 function get_param($name, $default)
 {
 	if (isset($_GET[$name]))
@@ -22,7 +21,6 @@ function add_param(&$url, $name, $value)
 // Renders the page content for a certain page ID.
 function render_content($pageId)
 {
-	// echo t('content') . " $pageId";
 	include(t($pageId));
 }
 
@@ -31,9 +29,7 @@ function render_navigation($language, $pageId)
 {
 	global $navs;
 	$urlBase = $_SERVER['PHP_SELF'];
-	add_param($urlBase, "lang", $language);	
-	// for ($i = 0; $i <= count($navs); $i++) {
-		// foreach ($navs as $nav) {
+	add_param($urlBase, "lang", $language);
 	foreach ($navs as $key => $nav) {
 		$url = $urlBase;
 		add_param($url, "id", $key);

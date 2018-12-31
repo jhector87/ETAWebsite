@@ -12,8 +12,13 @@ $from = new SendGrid\Email("ETA Services", "appdevelopment87@gmail.com");
 $subject = "ETA Services enquiry";
 $to = new SendGrid\Email("Jonathan Hector", "louis.jonathan.hector@gmail.com");
 $content = new SendGrid\Content("text/html", "
+* &nbsp; * &nbsp; *  &nbsp; &nbsp;&nbsp;W  &nbsp;E &nbsp; L &nbsp; C  &nbsp;O &nbsp; M &nbsp; E &nbsp; &nbsp;  T  &nbsp;O  &nbsp; &nbsp; T  &nbsp;H  &nbsp;E  &nbsp; &nbsp;  E &nbsp;T &nbsp; A  &nbsp; &nbsp;  F  &nbsp;A  &nbsp;M  &nbsp;I  &nbsp;L &nbsp; Y  &nbsp; &nbsp;  * &nbsp; * &nbsp; * <br><br>
+		
 Email: {$email}<br>
-Purpose: {$message}<br>
+Purpose: {$message}<br><br>
+
+You successfully signed-up!!!
+
 ");
 
 /*Send the mail*/
@@ -23,12 +28,4 @@ $sg = new \SendGrid($apiKey);
 
 /*Response*/
 $response = $sg->client->mail()->send()->post($mail);
-//header("Location: index.php?id=cart&lang=en");
 ?>
-
-<!--Print the response-->
-<!--<pre>-->
-<!--    --><?php
-//    var_dump($response);
-//    ?>
-<!--</pre>-->

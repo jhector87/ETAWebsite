@@ -83,7 +83,7 @@ span.errorMessage { color: #00edd2; display: table; cursor: none; }
 		text-align: left;
 }
 
-#loginForm, #registerForm { display: none; }
+#loginForm, #signupForm { display: none; }
 
 .hasAccountText span { font-weight: bold; font-size: 12px; }
 

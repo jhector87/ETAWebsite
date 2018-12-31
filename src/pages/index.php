@@ -33,11 +33,11 @@ $pageId = get_param('id', 0);
 		
 		if (trim($pageId) == 'home') $pageId = "home"; elseif (trim($pageId) == "why eta?") $pageId = "about";
 		elseif (trim($pageId) == 'cart') $pageId = "cart";
-//		elseif (trim($pageId) == 'login') $pageId = "login";
 		elseif (trim($pageId) == 'login') {
-			$pageId = $_COOKIE['firstName'] ? $_COOKIE['firstName'] : 'login';
+			if(session_status() == PHP_SESSION_ACTIVE) $pageId = $_SESSION['userLoggedIn'];
+			else $pageId = "login";
 		}
-		
+
 		render_navigation($language, $pageId);
 		?>
 	</div>

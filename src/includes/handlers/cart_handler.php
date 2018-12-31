@@ -1,4 +1,3 @@
-
 <div class="itemName">
 	<?php
 	$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1 ;");

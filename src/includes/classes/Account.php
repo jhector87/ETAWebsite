@@ -26,14 +26,14 @@ class Account
 	
 	public function register($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $em2, $pw, $pw2)
 	{
-		echo "Register button was pressed";
-//		echo $un. $fn. $ln.$add. $zip. $ct. $cn. $em. $em2.$pw. $pw2;
+		echo "<script>console.log('Account class Accessed')</script>";
 		$this->validateUsername($un);
 		$this->validateFirstName($fn);
 		$this->validateLastName($ln);
 		$this->validateAddress($add, $zip);
 		$this->validateEmails($em, $em2);
 		$this->validatePasswords($pw, $pw2);
+		
 		
 		if (empty($this->errorArray)) {
 			// Insert into db
@@ -53,15 +53,24 @@ class Account
 		return "<span class='errorMessage'>$error</span>";
 	}
 	
-	private function insertUserDetails($un, $fn, $ln, $street_add, $zip, $city, $country, $em, $pw)
+	private function insertUserDetails($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $pw)
 	{
-		$encryptedPw = md5($pw);
+		$enPw = md5($pw);
 		$profilePic = "../res/icons/png/230-user-1.png";
 		$date = date("Y-m-d");
 		
-		$result = mysqli_query($this->con,
-							   "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic)
-									  VALUES ('$un', '$fn', '$ln', '$street_add', '$zip', '$city', '$country', '$em', '$encryptedPw', '$date', '$profilePic')");
+		echo "InsertDetails accessed";
+		
+	
+		$query = "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic) VALUES ( '$un', '$fn', '$ln', '$add', '$zip', '$ct', '$cn', '$em', '$enPw', '$date', '$profilePic')";
+		echo "<pre>Debug: $query</pre>\m";
+		$result = mysqli_query($this->con, $query);
+		if ( false===$result ) {
+			printf("error: %s\n", mysqli_error($this->con));
+		}
+		else {
+			echo 'done.';
+		}
 		return $result;
 	}
 	
@@ -73,7 +82,7 @@ class Account
 			return;
 		}
 		
-		if (preg_match('/^[a-z0-9_]+$/', $un)) {
+		if (preg_match('/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/', $un)) {
 			array_push($this->errorArray, ErrorMessages::$invalidUsername);
 			return;
 		}
@@ -124,7 +133,7 @@ class Account
 		}
 
 
-		if(preg_match('/^[\w\.]+@[\w\.]+$/', $em)) {
+		if (!filter_var($em, FILTER_VALIDATE_EMAIL)) {
 			array_push($this->errorArray, ErrorMessages::$invalidEmail);
 			return;
 		}
@@ -149,11 +158,11 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$passwordNotAlphanumeric);
 			return;
 		}
-//
-//			if(strlen($pw) > 30 || strlen($pw) < 5) {
-//				array_push($this->errorArray, ErrorMessages::$passwordCharacters);
-//				return;
-//			}
+
+			if(strlen($pw) > 30 || strlen($pw) < 5) {
+				array_push($this->errorArray, ErrorMessages::$passwordCharacters);
+				return;
+			}
 	
 	}
 	
