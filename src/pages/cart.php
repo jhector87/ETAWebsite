@@ -23,7 +23,7 @@ else header("Location: index.php?id=login&lang=en");
 		<div id="userDetails">
 			<?php
 			// TODO: Parse-in the logged-in user
-			$user_query = mysqli_query($con, "SELECT * FROM Users WHERE user_id=2;");
+			$user_query = mysqli_query($con, "SELECT * FROM Users WHERE user_name='$userLoggedIn';");
 			while ($row = mysqli_fetch_array($user_query)) {
 				echo "<h2>" . ucfirst(strtolower($row['first_name'])) . " " . ucfirst(strtolower($row['last_name'])) . "</h2>";
 				echo "<h5>" . $row['street_add'] . "</h5>";

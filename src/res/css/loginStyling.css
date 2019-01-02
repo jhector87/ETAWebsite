@@ -1,4 +1,4 @@
-span.errorMessage { color: #00edd2; display: table; cursor: none; }
+#inputContainer span.errorMsg { color: #00edd2; display: table; cursor: none;}
 
 #inputContainer button {
 	width: 100%;

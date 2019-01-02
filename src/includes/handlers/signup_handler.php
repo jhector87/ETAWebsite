@@ -24,7 +24,6 @@ function sanitizeFormString($inputText)
 
 if (isset($_POST['signUpBtn'])) {
 	// Register button was pressed
-	echo "<script>console.log('SingUp_Handler')</script>";
 	$username = sanitizeFormUsername($_POST['username']);
 	$firstName = sanitizeFormString($_POST['firstName']);
 	$lastName = sanitizeFormString($_POST['lastName']);
@@ -44,7 +43,7 @@ if (isset($_POST['signUpBtn'])) {
 		include_once("../../SendGrid-API/send-email.php");
 		header("Location: index.php?id=cart&lang=en");
 	} else {
-		echo "<script>alert('Something went wrong. Please try again!')</script>";
+		echo "<script>alert('Something went wrong. Please try again later!')</script>";
 	}
 	
 }

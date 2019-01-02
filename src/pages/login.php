@@ -3,6 +3,7 @@ include("../config/configs.php");
 include("../includes/classes/Account.php");
 include("../includes/classes/ErrorMessages.php");
 $account = new Account($con);
+$user = new User($_SESSION['userLoggedIn']);
 
 include("../includes/handlers/signup_handler.php");
 include("../includes/handlers/login_handler.php");
@@ -15,21 +16,21 @@ function getValueInput($name)
 
 $t = time() + 60 * 60 * 24 * 30; // expires in 30 days
 setcookie('firstName', $_POST["firstName"], $t);
-setcookie("loginUsername", $_POST["loginUsername"], $t);
+setcookie("username", $_POST["loginUsername"], $t);
 
 // PHP USED TO DISPLAY WHICH PART OF THE FORM
-if (isset($_POST['signUpForm'])) {
+if (isset($_POST['signUpBtn'])) {
 	echo '<script>
             $(document).ready(function() {
                 $("#loginForm").hide();
-                $("#registerForm").show();
+                $("#signupForm").show();
              });
 		</script>';
 } else {
 	echo '<script>
                 $(document).ready(function() {
                     $("#loginForm").show();
-                    $("#registerForm").hide();
+                    $("#signupForm").hide();
                 });
 			</script>';
 }
@@ -48,7 +49,7 @@ if (isset($_POST['signUpForm'])) {
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
 						<label for='loginUsername'><?php echo t('username') ?> </label>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
-						       value="<?php echo $_COOKIE['loginUsername'] ?>" required>
+						       value="<?php echo $_COOKIE['username'] ?>" required>
 					</p>
 					<p>
 						<label for="loginPassword"><?php echo t('pwd') ?> </label>

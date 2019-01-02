@@ -34,7 +34,8 @@ function render_navigation($language, $pageId)
 		$url = $urlBase;
 		add_param($url, "id", $key);
 		$class = $pageId == $key ? 'active' : 'inactive';
-		echo "<a class=\"$class\" href=\"$url\">" . t($key) . "</a>"; // Parse in the nav values
+		
+		echo "<a class=\"$class\" href=\"$url\">" . strtoupper(t($nav)) . "</a>"; // Parse in the nav values
 	}
 }
 

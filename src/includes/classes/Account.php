@@ -50,7 +50,7 @@ class Account
 		if (!in_array($error, $this->errorArray)) {
 			$error = "";
 		}
-		return "<span class='errorMessage'>$error</span>";
+		return "<span class='errorMsg'>$error</span>";
 	}
 	
 	private function insertUserDetails($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $pw)
@@ -59,18 +59,14 @@ class Account
 		$profilePic = "../res/icons/png/230-user-1.png";
 		$date = date("Y-m-d");
 		
-		echo "InsertDetails accessed";
-		
-	
 		$query = "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic) VALUES ( '$un', '$fn', '$ln', '$add', '$zip', '$ct', '$cn', '$em', '$enPw', '$date', '$profilePic')";
-		echo "<pre>Debug: $query</pre>\m";
+//		echo "<pre>Debug: $query</pre>\m";
 		$result = mysqli_query($this->con, $query);
-		if ( false===$result ) {
-			printf("error: %s\n", mysqli_error($this->con));
-		}
-		else {
-			echo 'done.';
-		}
+//		if (false === $result) {
+//			printf("error: %s\n", mysqli_error($this->con));
+//		} else {
+//			echo 'done.';
+//		}
 		return $result;
 	}
 	
@@ -81,11 +77,11 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$usernameNotLongEnough);
 			return;
 		}
-		
-		if (preg_match('/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/', $un)) {
-			array_push($this->errorArray, ErrorMessages::$invalidUsername);
-			return;
-		}
+//
+//		if (preg_match('/^[\w]+$/', $un)) {
+//			array_push($this->errorArray, ErrorMessages::$invalidUsername);
+//			return;
+//		}
 		
 		$checkUsernameQuery = mysqli_query($this->con, "SELECT user_name FROM Users WHERE user_name='$un'");
 		if (mysqli_num_rows($checkUsernameQuery) != 0) {
@@ -131,8 +127,8 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$emailsDoNotMatch);
 			return;
 		}
-
-
+		
+		
 		if (!filter_var($em, FILTER_VALIDATE_EMAIL)) {
 			array_push($this->errorArray, ErrorMessages::$invalidEmail);
 			return;
@@ -158,12 +154,12 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$passwordNotAlphanumeric);
 			return;
 		}
-
-			if(strlen($pw) > 30 || strlen($pw) < 5) {
-				array_push($this->errorArray, ErrorMessages::$passwordCharacters);
-				return;
-			}
-	
+		
+		if (strlen($pw) > 30 || strlen($pw) < 5) {
+			array_push($this->errorArray, ErrorMessages::$passwordCharacters);
+			return;
+		}
+		
 	}
 	
 	

@@ -1,5 +1,9 @@
 <?php
 require_once("../includes/handlers/helper.php");
+include "../config/configs.php";
+include"../includes/classes/User.php";
+
+$user = new User($_SESSION['userLoggedIn']);
 
 $language = get_param('lang', 'en');
 $pageId = get_param('id', 0);
@@ -34,8 +38,8 @@ $pageId = get_param('id', 0);
 		if (trim($pageId) == 'home') $pageId = "home"; elseif (trim($pageId) == "why eta?") $pageId = "about";
 		elseif (trim($pageId) == 'cart') $pageId = "cart";
 		elseif (trim($pageId) == 'login') {
-			if(session_status() == PHP_SESSION_ACTIVE) $pageId = $_SESSION['userLoggedIn'];
-			else $pageId = "login";
+		
+			$pageId = empty($user) ? $user : 'login';
 		}
 
 		render_navigation($language, $pageId);
