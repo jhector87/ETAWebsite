@@ -37,10 +37,9 @@ if (isset($_POST['signUpBtn'])) {
 	$passwordcnf = sanitizeFormPassword($_POST['passwordConfirm']);
 	
 	$wasSuccessful = $account->register($username, $firstName, $lastName, $address, $zipcode, $city, $country, $email, $emailcnf, $password, $passwordcnf);
-	// FIXME: Cannot find the proper page to go back to when everything is successful
 	if ($wasSuccessful) {
 		$_SESSION['userLoggedIn'] = $username;
-		include_once("../../SendGrid-API/send-email.php");
+		include_once("mail/mail_handler.php");
 		header("Location: index.php?id=cart&lang=en");
 	} else {
 		echo "<script>alert('Something went wrong. Please try again later!')</script>";

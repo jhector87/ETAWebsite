@@ -1,4 +1,4 @@
-<link href="../../res/css/mainStyling.css">
+<link rel="stylesheet" href="../../res/css/mainStyling.css">
 
 <form action="../../pages/index.php?lang=en&id=home" method="post">
 	<p><span> Quick request </span></p>

@@ -76,7 +76,7 @@ function removeFromCart(item_id) {
                 var item = JSON.parse(data);
                 $('#itemName').text(item.prod_name);
                 $('#itemAmount').text(item.quantity);
-                $('#itemName').text(item.prod_name);
+                $('#itemTotal').text('Total amount: CHF ' + (item.quantity * item.price).toFixed(2));
             });
 
             $('.disableBtn').prop('disabled', true).css('opacity', 0.5);
@@ -102,7 +102,6 @@ function removeFromCart(item_id) {
 
             $('.disableBtn').prop('disabled', false).css('opacity', 1);
         }
-        async: false;
     });
 }
 
@@ -119,7 +118,7 @@ function checkItem() {
         var item = JSON.parse(data);
         var q =item.quantity;
         if (q == 0) {
-            alert
+            alert('Basket is empty');
         }
     })
 }

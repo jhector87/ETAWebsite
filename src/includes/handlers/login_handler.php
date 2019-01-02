@@ -7,6 +7,7 @@ if(isset($_POST['loginBtn'])) {
 	$result = $account->login($username, $password);
 	if($result == true) {
 		$_SESSION['userLoggedIn'] = $username;
+		new User($username);
 		header("Location: index.php?id=cart&lang=en");
 	}
 	

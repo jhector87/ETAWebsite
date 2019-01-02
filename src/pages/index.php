@@ -18,6 +18,7 @@ $pageId = get_param('id', 0);
 	<title>ETA</title>
 	<link rel="stylesheet" href="../res/css/mainStyling.css" type='text/css'/>
 	<link rel="stylesheet" href="../res/css/cartItemsStyling.css" type='text/css'/>
+	
 	<?php
 	if (is_file("../res/css/{$pageId}Styling.css")) echo '<link rel="stylesheet" href="../res/css/' . $pageId . 'Styling.css"
 	type="text/css"/>';
@@ -37,10 +38,7 @@ $pageId = get_param('id', 0);
 		
 		if (trim($pageId) == 'home') $pageId = "home"; elseif (trim($pageId) == "why eta?") $pageId = "about";
 		elseif (trim($pageId) == 'cart') $pageId = "cart";
-		elseif (trim($pageId) == 'login') {
-		
-			$pageId = empty($user) ? $user : 'login';
-		}
+		elseif (trim($pageId) == 'login') $pageId = 'login';
 
 		render_navigation($language, $pageId);
 		?>

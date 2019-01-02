@@ -8,7 +8,6 @@ class User
 	
 	function __construct($user)
 	{
-		$user = $_SESSION['userloggedIn'];
 		setcookie('currentUser', $user, time()+10000);
 		$this->user = $user;
 	}

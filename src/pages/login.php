@@ -42,7 +42,6 @@ if (isset($_POST['signUpBtn'])) {
 		<div id="inputContainer">
 			<!-- Creates a request access -->
 			<div id="loginForm">
-				<!-- TODO: PARSE THE LANGUAGE -->
 				<form action="../pages/index.php?id=cart&lang=en" method="post">
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
