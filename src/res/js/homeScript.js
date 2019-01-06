@@ -14,7 +14,7 @@ $(document).ready(function () {
         scroll_pos = $(this).scrollTop();
         if (scroll_pos > 210) {
             $("nav").css('background-color', '#0E0829');
-            $("nav").css('padding', '20px 0px 30px 10px');
+            $("nav").css('padding', '10px 0px 50px 10px');
         } else {
             $("nav").css('margin', '0px;');
             $("nav").css('background-color', 'transparent');
@@ -27,3 +27,9 @@ $(document).ready(function() {
         $('.nav').fadeOut(1000);
     }
 })
+
+function requestSubmission() {
+    alert('Your request was successfully received. One of our agents will be in contact with you within the next 24 hours.');
+    $.post("../includes/handlers/mail/mail_handler.php");
+    window.location.replace('index.php?id=home&lang=en');
+}

@@ -3,9 +3,23 @@ require_once "vendor/autoload.php";
 
 //PHPMailer Object
 $mail = new \PHPMailer\PHPMailer\PHPMailer();
-
+//Enable SMTP debugging.
+$mail->SMTPDebug = 3;
+//Set PHPMailer to use SMTP.
+$mail->isSMTP();
+//Set SMTP host name
+$mail->Host = "smtp.stackmail.com";
+//Set this to true if SMTP host requires authentication to send email
+$mail->SMTPAuth = true;
+//Provide username and password
+$mail->Username = "admin@hectorgraphics.tech";
+$mail->Password = "admin123";
+//If SMTP requires TLS encryption then set it
+$mail->SMTPSecure = "tls";
+//Set TCP port to connect to
+$mail->Port = 465;
 //From email address and name
-$mail->From = "appdevelopment87@gmail.com";
+$mail->From = "admin@hectorgraphics.tech";
 $mail->FromName = "Jonathan Hector";
 
 $email = $_POST['email'];
@@ -14,7 +28,7 @@ $message = $_POST['message'];
 
 //To address and name
 $mail->addAddress($email, $currentUser );
-$mail->addAddress("recepient1@example.com"); //Recipient name is optional
+$mail->addAddress("recepient1@eta.com"); //Recipient name is optional
 
 //Address to which recipient will reply
 $mail->addReplyTo("no-reply@eta.com", "Reply");
@@ -43,5 +57,5 @@ if(!$mail->send())
 }
 else
 {
-	echo "Message has been sent successfully";
+	echo "<script>console.log('Message successfully sent');</script>";
 }

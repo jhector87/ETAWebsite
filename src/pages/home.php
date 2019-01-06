@@ -4,7 +4,7 @@
 
 <div>
 </div>
-<div class='home'>
+<div class='home' >
 <div class="fixed-bckg">
     <div class="title hidden" id="animate"><img src="../res/icons/png/002-antenna.png"><br>
         <h2 id="animate hidden"><?php echo t('title') ?></h2>
@@ -113,10 +113,18 @@
 
 <!-- Creates a request access -->
   <div class="quickrequest">
-   <?php
-   include ('../includes/handlers/requestForm.php')
-   ?>
 
+	
+	  <form action="#" method="post">
+		  <p><span> Quick request </span></p>
+		  <p><input type="email" placeholder="Please enter your email..." name="email"></p>
+		  <p> <textarea name="message" placeholder="Please enter a short message here describing your request..."
+		                rows="8" cols="80"> </textarea></p>
+		  <br>
+		  <button type="submit" value="Submit request" onclick="requestSubmission()">
+			  <?php echo t('submit_request') ?></button>
+		  <br>
+	  </form>
 </div>
 </div>
 

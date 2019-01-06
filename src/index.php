@@ -16,8 +16,8 @@ $pageId = get_param('id', 0);
 <head>
 	<meta charset="UTF-8">
 	<title>ETA</title>
-	<link rel="stylesheet" href="../res/css/mainStyling.css" type='text/css'/>
-	<link rel="stylesheet" href="../res/css/cartItemsStyling.css" type='text/css'/>
+	<link rel="stylesheet" href="res/css/mainStyling.css" type='text/css'/>
+	<link rel="stylesheet" href="res/css/cartItemsStyling.css" type='text/css'/>
 	
 	<?php
 	if (is_file("../res/css/{$pageId}Styling.css")) echo '<link rel="stylesheet" href="../res/css/' . $pageId . 'Styling.css"
@@ -25,7 +25,7 @@ $pageId = get_param('id', 0);
 	?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="../res/js/cartScript.js"></script>
+	<script src="res/js/cartScript.js"></script>
 	<?php
 	if (is_file("../res/js/{$pageId}Script.js")) echo '<script src="../res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
 	?>

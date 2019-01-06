@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../../res/css/mainStyling.css">
 
-<form action="../../pages/index.php?lang=en&id=home" method="post">
+<form action="#" method="post">
 	<p><span> Quick request </span></p>
 	<p><input type="email" placeholder="Please enter your email..." name="email"></p>
 	<p> <textarea name="comment" placeholder="Please enter a short message here describing your request..."

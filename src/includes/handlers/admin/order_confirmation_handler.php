@@ -12,32 +12,27 @@ include("/logout_handler.php");
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../../../res/js/cartAdmin.js"></script>
+<link rel="stylesheet" href="../../../res/css/mainStyling.css" type='text/css'/>
+<link rel="stylesheet" href="../../../res/css/adminPageStyling.css" type='text/css'/>
 
+<button id="logoutBtn" style="float: right; margin: 15px;" onclick="logout()">Logout</button>
 <div id='userDetailsContainer'>
 	<!-- Creates a request access -->
 	<div id="userDetails">
 		<?php
-		// TODO: Parse-in the logged-in user
-//		$user_query = mysqli_query($con, "SELECT * FROM Users;");
+		echo "<table id='customers'>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Category</th>
+				<th>Quantity</th>
+				<th>Total Price</th>
+				<th>Process Status</th>
+				<th>Process Order</th>
+			</tr>";
+			
 		$user_query = mysqli_query($con, "SELECT * FROM Products, Users WHERE Users.user_cat = Products.product_id");
-		$user_query = mysqli_query($con, "SELECT * FROM Products, Users WHERE Users.user_cat = Products.product_id");
-//		while ($row = mysqli_fetch_array($user_query)) {
-//			echo "<h2>" . ucfirst(strtolower($row['first_name'])) . " " . ucfirst(strtolower($row['last_name'])) . "</h2>";
-//			echo "<h5>" . $row['street_add'] . "</h5>";
-//			echo "<h5>" . $row['zip_code'] . " " . $row['city'] . "</h5>";
-//			echo "<h5>" . $row['country'] . "</h5>";
-//		}
-		echo "<table border='1'>
-<tr>
-<th>Id</th>
-<th>Name</th>
-<th>Email</th>
-<th>Category</th>
-<th>Quantity</th>
-<th>Total Price</th>
-<th>Process Status</th>
-<th>Process Order</th>
-</tr>";
 		
 		while($row = mysqli_fetch_array($user_query))
 		{
@@ -79,10 +74,6 @@ include("/logout_handler.php");
 	$product_query = mysqli_query($con, "SELECT * FROM Products WHERE product_id=1 ;");
 	while ($row = mysqli_fetch_array($product_query))
 		echo "CHF " . $row['price'] * $row['quantity'] .".00";
+	
 	?>
 </div>
-
-
-<button id="processOrderBtn" onclick="processOrder()"> Process Order </button>
-
-<button id="logoutBtn" onclick="logout()">Logout</button>

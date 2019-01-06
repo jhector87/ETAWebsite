@@ -1,0 +1,49 @@
+#userDetailsContainer {
+margin: 10%;
+}
+
+#customers td, #customers th {
+	border-top: 1px solid #1f292e;
+	border-bottom: 1px solid #1f292e;
+	border-left: 1px solid #0E0829;
+	padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #433f6c;}
+
+#customers tr:hover {background-color: #191933; }
+
+#customers th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-image: -webkit-linear-gradient(180deg, #00edd2, #00b9e5);
+	color: white;
+}
+
+
+button {
+	width: 100px;
+	height: 35px;
+	border-radius: 30px;
+	/*position: relative;*/
+	/*bottom: 2em;*/
+	cursor: pointer;
+	background-image: -webkit-linear-gradient(180deg, #00edd2, #00b9e5);
+	border: none;
+	color: white;
+	font-size: 14px;
+	/*margin-bottom: 12px;*/
+}
+
+button a {
+	color: white;
+	text-decoration: none;
+}
+
+button #logoutBtn {
+	width: 150px;
+	height: 55px;
+}
+
+button #logoutBtn:hover { color: #0E0829; }

@@ -33,7 +33,7 @@ body {
 
 nav li .right { float: right; }
 
-.lang { float: right; padding-top: 0px; padding-right: 10px; }
+.lang { float: right; padding: 10px; }
 
 .lang:last-child { padding-right: 10px;}
 
@@ -51,7 +51,6 @@ nav {
 	z-index: 1000;
 }
 
-/*nav:after { background-color: #212121;}*/
 
 nav a {
 	margin-top: 20px;
@@ -65,7 +64,6 @@ nav .lang .active { text-decoration: underline; color: #00b9e5; }
 
 ul {
 	display: block;
-	/* grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); */
 	grid-gap: 2px;
 }
 
@@ -81,26 +79,12 @@ nav .active { text-decoration: underline; color: #00b9e5; }
 
 body::after { content: ""; clear: both; display: block; }
 
-/* 
-@media screen and (max-width: 768px) {
-	nav li.right,
-	nav li {
-		float: none; width: 100%; position: none; display: block;
-	}
-} */
-
-/*@media only screen and (max-width: 768px) {*/
-	/*!* For mobile phones: *!*/
-	/*[class*="col-"] {*/
-		/*width: 100%;*/
-	/*}*/
-/*}*/
-
 nav {
 	-webkit-animation-duration: 1s; /* safari */
 	animation-duration: 1s;
 	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;}
+	animation-fill-mode: both;
+}
 
 .errorMessage { color: #00edd2; font-size: 12px; display: block; margin-top: 13px; }
 
@@ -118,7 +102,7 @@ form input[type="email"] {
 	text-align: center;
 }
 
-form input[type="email"] { border-bottom: #00edd2; }
+form input[type="email"] { border-bottom: #00edd2; color: white; }
 
 form button {
 	width: 250px;
@@ -140,10 +124,26 @@ form input {
 textarea {
 	background-color: transparent;
 	border-color: #00edd2;
+	color: white;
 }
 
+.topnav {
+	overflow: hidden;
+	/*background-color: #333;*/
+}
 
-@media screen and (max-width: 600px) {
+.topnav a {
+	color: #f2f2f2;
+	text-align: center;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.topnav .icon {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
 	.topnav a:not(:first-child) {display: none;}
 	.topnav a.icon {
 		float: right;
@@ -151,7 +151,7 @@ textarea {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 	.topnav.responsive {position: relative;}
 	.topnav.responsive .icon {
 		position: absolute;

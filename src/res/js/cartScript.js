@@ -26,7 +26,6 @@ function addToCart(item_id) {
         });
 
         // productElement.setItem(item.prod_name);
-        async: false;
     });
     $('.disableBtn').prop('disabled', false).css('opacity', 1);
 
@@ -71,16 +70,10 @@ function removeFromCart(item_id) {
         var item = JSON.parse(data);
         $('#itemName').text(item.prod_name);
 
-        if (item.quantity == 0) {
-            $.get("../includes/handlers/ajax/getProdNameJson.php", {prodId: item_id}, function (data) {
-                var item = JSON.parse(data);
-                $('#itemName').text(item.prod_name);
-                $('#itemAmount').text(item.quantity);
-                $('#itemTotal').text('Total amount: CHF ' + (item.quantity * item.price).toFixed(2));
-            });
-
+        if (parseInt(item.quantity) == 0) {
             $('.disableBtn').prop('disabled', true).css('opacity', 0.5);
             alert("Cart is already empty!");
+            window.location.reload();
         } else {
             $.post("../includes/handlers/ajax/removeProdQuantityJson.php", {prodId: item_id}, function () {
                 this.itemCount = item.quantity;
@@ -113,13 +106,27 @@ function moreThanLim(q, item_id) {
         alert("You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition");
 }
 
-function checkItem() {
-    $.get("../includes/handlers/ajax/getProdNameJson.php", function(data) {
+function checkItem(item_id) {
+    $.post("../includes/handlers/ajax/getProdNameJson.php", {processId: item_id}, function (data) {
         var item = JSON.parse(data);
-        var q =item.quantity;
-        if (q == 0) {
-            alert('Basket is empty');
+        console.log(item.quantity);
+        var amount = $('#itemAmount').text().split(" ")[1];
+        alert(amount);
+        // var q = item.quantity;
+        if (amount || parseInt(amount) == 0) {
+            var retVal = confirm("Basket is empty. Do you want to continue ?");
+            if (retVal == true) {
+                window.location.replace("index.php?id=cart&lang=en");
+                return true;
+            } else {
+                window.location.reload();
+                return false;
+            }
+        } else {
+            window.location.replace("index.php?id=cart&lang=en");
         }
-    })
+        // }
+    });
+
 }
 
