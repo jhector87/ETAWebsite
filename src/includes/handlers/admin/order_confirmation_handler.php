@@ -44,6 +44,7 @@ include("/logout_handler.php");
 			echo "<td>" . $row['quantity'] . "</td>";
 			echo "<td>" . $row['quantity'] * $row['price'] . "</td>";
 			echo "<td id='orderConf'>" . $row['process'] . "</td>";
+			
 			echo "<td><button id='processOrderBtn' onclick='processOrder({$row['user_id']})'> Process Order </button></td>";
 			echo "</tr>";
 		}

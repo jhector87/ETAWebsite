@@ -5,7 +5,7 @@ $loginIcon = "<img src='../res/icons/png/173-user.png' height='20' alt='Log in/S
 $login = "";
 
 if(session_status() == PHP_SESSION_NONE) {
-	$login = $loginIcon . "<span  class='currentUser' style='float: right;  margin-right:10px;  padding-top: 10px;' >"  . $_COOKIE['firstName'] . "</span>" ;
+	$login = $loginIcon . "<span  class='currentUser' style='float: right;  margin-right:10px;  padding-top: 10px;' >"  . $_COOKIE['currentUser'] . "</span>" ;
 } else {
 	$login = "";
 }

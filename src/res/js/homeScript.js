@@ -30,6 +30,7 @@ $(document).ready(function() {
 
 function requestSubmission() {
     alert('Your request was successfully received. One of our agents will be in contact with you within the next 24 hours.');
+    $()
     $.post("../includes/handlers/mail/mail_handler.php");
     window.location.replace('index.php?id=home&lang=en');
 }
