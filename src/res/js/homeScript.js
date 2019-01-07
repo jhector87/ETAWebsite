@@ -29,8 +29,11 @@ $(document).ready(function() {
 })
 
 function requestSubmission() {
+    var currentTime = new Date();
     alert('Your request was successfully received. One of our agents will be in contact with you within the next 24 hours.');
-    $()
+    document.cookie = 'email=' + $('input').val() + '; expires=' + (currentTime.getSeconds()+ 59);
+    document.cookie = 'message=' + document.getElementById('email').valueOf() + '; expires=' + (currentTime.getSeconds()+ 59);
+
     $.post("../includes/handlers/mail/mail_handler.php");
     window.location.replace('index.php?id=home&lang=en');
 }

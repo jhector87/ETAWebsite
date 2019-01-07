@@ -38,9 +38,9 @@ $mail->addCC("louis.jonathan.hector@gmail.com");
 //Send HTML or Plain Text email
 $mail->isHTML(true);
 
-$email = $_POST['email'];
+$email = $_COOKIE['email'];
 $currentUser = $_COOKIE['firstName'];
-$message = $_POST['message'];
+$message = $_COOKIE['message'];
 
 //To address and name
 $mail->addAddress("appdevelopment87@gmail.com"); //Recipient name is optional
@@ -56,7 +56,7 @@ $mail->Subject = "ETA Services";
 $mail->Body = "
 * &nbsp; * &nbsp; *  &nbsp; &nbsp;&nbsp;W  &nbsp;E &nbsp; L &nbsp; C  &nbsp;O &nbsp; M &nbsp; E &nbsp; &nbsp;  T  &nbsp;O  &nbsp; &nbsp; T  &nbsp;H  &nbsp;E  &nbsp; &nbsp;  E &nbsp;T &nbsp; A  &nbsp; &nbsp;  F  &nbsp;A  &nbsp;M  &nbsp;I  &nbsp;L &nbsp; Y  &nbsp; &nbsp;  * &nbsp; * &nbsp; * <br><br>
 
-Hi {$currentUser},
+Hi {$currentUser}, <br><br>
 
 Email: {$email}<br>
 Purpose: {$message}<br><br>
