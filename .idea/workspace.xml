@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cbbc537-bf97-436b-9afb-94663976d508" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/includes/handlers/admin/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/src/includes/handlers/admin/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/includes/handlers/admin/ErrorHTTP_handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/includes/handlers/errors/ErrorHTTP_handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cartItems.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cartItems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/css/mainStyling.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/css/mainStyling.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/js/cartAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/js/cartAdmin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/res/js/cartScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/js/cartScript.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,7 +72,7 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.58651805">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.32467532">
+        <splitter split-orientation="vertical" split-proportion="0.3315508">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
@@ -112,8 +105,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/pages/cartItems.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="25">
-                      <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+                    <state relative-caret-position="312">
+                      <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
                     </state>
                   </provider>
                 </entry>
@@ -216,15 +209,6 @@
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/pages/home.php">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="2460">
-                      <caret line="123" column="71" selection-start-line="123" selection-start-column="71" selection-end-line="123" selection-end-column="71" />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/res/js/homeScript.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="144">
@@ -236,8 +220,23 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/src/res/js/cartScript.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="564">
-                      <caret line="118" column="13" lean-forward="true" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+                    <state relative-caret-position="545">
+                      <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+                      <folding>
+                        <element signature="e#1231#1299#0" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/config/configs.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="280">
+                      <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+                      <folding>
+                        <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -288,7 +287,7 @@
             <entry file="file://$PROJECT_DIR$/src/pages/navigation.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="240">
-                  <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
+                  <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
                   <folding>
                     <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -459,6 +458,12 @@
               <item name="ETAWebsite" type="b2602c69:ProjectViewProjectNode" />
               <item name="ETAWebsite" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ETAWebsite" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ETAWebsite" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ETAWebsite" type="b2602c69:ProjectViewProjectNode" />
@@ -655,12 +660,12 @@
       <workItem from="1546453993945" duration="37056000" />
       <workItem from="1546633441016" duration="1270000" />
       <workItem from="1546694666582" duration="1439000" />
-      <workItem from="1546858699187" duration="8686000" />
+      <workItem from="1546858699187" duration="10474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310748000" />
+    <option name="totallyTimeSpent" value="312536000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -675,7 +680,7 @@
     <frame x="0" y="23" width="2560" height="1417" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49485502" visible="true" weight="0.120730735" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49485502" visible="true" weight="0.120730735" />
       <window_info id="Favorites" order="1" side_tool="true" weight="0.32960597" />
       <window_info id="Structure" order="2" sideWeight="0.505145" side_tool="true" weight="0.23375931" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -696,7 +701,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.08617951" />
+      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.08617951" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49485502" visible="true" weight="0.0949166" />
@@ -727,7 +732,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/login2.php" />
     <entry file="file://$PROJECT_DIR$/SendGrid-API/error_log" />
     <entry file="file://$PROJECT_DIR$/src/includes/handlers/errors/ErrorHTTP_handler.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -919,19 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/navigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" column="67" selection-start-line="12" selection-start-column="67" selection-end-line="12" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/includes/handlers/mail/mail_handler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -1038,15 +1029,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/cartItems.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        <state relative-caret-position="312">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/configs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/navigation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="83" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/res/js/cartScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="118" column="13" lean-forward="true" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+        <state relative-caret-position="545">
+          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+          <folding>
+            <element signature="e#1231#1299#0" />
+          </folding>
         </state>
       </provider>
     </entry>

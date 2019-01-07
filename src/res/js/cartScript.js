@@ -26,9 +26,12 @@ function addToCart(item_id) {
         });
 
         // productElement.setItem(item.prod_name);
+        itemCount = item.quantity;
+        console.log(itemCount);
     });
-    $('.disableBtn').prop('disabled', false).css('opacity', 1);
 
+    $('.disableBtn').prop('disabled', false).css('opacity', 1);
+    moreThanLim(itemCount, item_id);
     // DEALING LOCALLY WITH SETTING THE TEXT AND ABOVE DEALING VIRTUALLY
     // switch (item_id) {
     //     case 'student':
@@ -73,11 +76,11 @@ function removeFromCart(item_id) {
         if (parseInt(item.quantity) == 0) {
             $('.disableBtn').prop('disabled', true).css('opacity', 0.5);
             alert("Cart is already empty!");
-            window.location.reload();
+            itemCount = 0;
+            $('#itemAmount').text('Quantity: ' + itemCount);
+            $('#itemTotal').text('Total amount: CHF 0.00');
         } else {
             $.post("../includes/handlers/ajax/removeProdQuantityJson.php", {prodId: item_id}, function () {
-                this.itemCount = item.quantity;
-                moreThanLim(itemCount, item_id);
                 $('#itemAmount').text('Quantity: ' + item.quantity);
             });
 
@@ -95,7 +98,11 @@ function removeFromCart(item_id) {
 
             $('.disableBtn').prop('disabled', false).css('opacity', 1);
         }
+        itemCount = item.quantity;
+        console.log(itemCount);
     });
+
+    moreThanLim(itemCount, item_id);
 }
 
 function moreThanLim(q, item_id) {
@@ -107,8 +114,9 @@ function moreThanLim(q, item_id) {
 }
 
 function checkItem() {
+    console.log(itemCount);
     try {
-        if (parseInt(itemCount) == 0) {
+        if (this.itemCount == 0) {
             var retVal = confirm("Basket is empty. Do you want to continue ?");
             if (retVal == true) {
                 window.location.replace("index.php?id=cart&lang=en");
@@ -117,7 +125,9 @@ function checkItem() {
                 window.location.reload();
                 return false;
             }
-        }
+        } else if (itemCount >= 1) {
+            window.location.replace("index.php?id=cart&lang=en");
+        } else { alert('Please choose an item before you going to the cart!'); }
     } catch (e) {
         console.log("Item Count couldn't be retrieved!");
         console.log(e);
