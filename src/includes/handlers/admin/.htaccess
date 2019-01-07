@@ -3,5 +3,3 @@ AuthName "Administrative Area"
 AuthUserFile /Applications/MAMP/htdocs/ETAWebsite/src/includes/handlers/admin/.htpasswd
 Require valid-user
 Require all granted
-ErrorDocument 404 /Applications/MAMP/htdocs/ETAWebsite/src/includes/handlers/admin/ErrorHTTP_handler.php
-ErrorDocument 500 /Applications/MAMP/htdocs/ETAWebsite/src/includes/handlers/admin/ErrorHTTP_handler.php

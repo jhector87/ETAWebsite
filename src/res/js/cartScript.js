@@ -106,14 +106,9 @@ function moreThanLim(q, item_id) {
         alert("You added more than 10 subscriptions in your basket, you might want to consider an Enterprise Edition");
 }
 
-function checkItem(item_id) {
-    $.post("../includes/handlers/ajax/getProdNameJson.php", {processId: item_id}, function (data) {
-        var item = JSON.parse(data);
-        console.log(item.quantity);
-        var amount = $('#itemAmount').text().split(" ")[1];
-        alert(amount);
-        // var q = item.quantity;
-        if (amount || parseInt(amount) == 0) {
+function checkItem() {
+    try {
+        if (parseInt(itemCount) == 0) {
             var retVal = confirm("Basket is empty. Do you want to continue ?");
             if (retVal == true) {
                 window.location.replace("index.php?id=cart&lang=en");
@@ -122,11 +117,10 @@ function checkItem(item_id) {
                 window.location.reload();
                 return false;
             }
-        } else {
-            window.location.replace("index.php?id=cart&lang=en");
         }
-        // }
-    });
-
+    } catch (e) {
+        console.log("Item Count couldn't be retrieved!");
+        console.log(e);
+    }
 }
 

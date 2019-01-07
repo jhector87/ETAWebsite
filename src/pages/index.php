@@ -16,6 +16,8 @@ $pageId = get_param('id', 0);
 <head>
 	<meta charset="UTF-8">
 	<title>ETA</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<link rel="stylesheet" href="../res/css/mainStyling.css" type='text/css'/>
 	<link rel="stylesheet" href="../res/css/cartItemsStyling.css" type='text/css'/>
 	
@@ -25,17 +27,16 @@ $pageId = get_param('id', 0);
 	?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="../res/js/cartScript.js"></script>
+<!--	<script src="../res/js/cartScript.js"></script>-->
 	<?php
 	if (is_file("../res/js/{$pageId}Script.js")) echo '<script src="../res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
 	?>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 </head>
 <body>
 <nav>
 	
 	<div class='lang'><?php render_languages($language, $pageId); ?> </div>
-	<div class="topnav" id="myTopnav">
 	<div class='menu'>
 		<?php
 		
@@ -47,12 +48,7 @@ $pageId = get_param('id', 0);
 		?>
 	</div>
 	
-	</div>
 	
-	
-	<a href="javascript:void(0);" class="icon" onclick="menuFunction()">
-		<i class="fa fa-bars"></i>
-	</a>
 </nav>
 <main>
 	<?php
@@ -62,14 +58,3 @@ $pageId = get_param('id', 0);
 </main>
 </body>
 </html>
-
-<script>
-    function menuFunction() {
-        var x = document.getElementsByClassName("myTopnav");
-        if (x.className === "topnav") {
-            x.className += "responsive";
-        } else {
-            x.className = "topnav";
-        }
-    }
-</script>

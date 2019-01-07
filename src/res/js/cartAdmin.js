@@ -2,7 +2,6 @@ function processOrder(item_id) {
     $.post('../mail/mail_handler.php', function () {
         alert("Order was processed! " + item_id);
 
-
         $.post("../ajax/processOrderJson.php", {prodSt: item_id}, function (data) {
             var process = JSON.parse(data);
             console.log(process);
