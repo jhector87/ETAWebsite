@@ -59,7 +59,7 @@ class Account
 		$profilePic = "../res/icons/png/230-user-1.png";
 		$date = date("Y-m-d");
 		
-		$query = "INSERT INTO Users (user_name, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic) VALUES ( '$un', '$fn', '$ln', '$add', '$zip', '$ct', '$cn', '$em', '$enPw', '$date', '$profilePic')";
+		$query = "INSERT INTO Users (user_name, user_cat, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic) VALUES ( '$un',1, '$fn', '$ln', '$add', '$zip', '$ct', '$cn', '$em', '$enPw', '$date', '$profilePic')";
 //		echo "<pre>Debug: $query</pre>\m";
 		$result = mysqli_query($this->con, $query);
 //		if (false === $result) {
