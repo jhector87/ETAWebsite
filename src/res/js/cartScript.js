@@ -25,47 +25,12 @@ function addToCart(item_id) {
             $('.itemIcon img').attr("src", item.icon_link);
         });
 
-        // productElement.setItem(item.prod_name);
         itemCount = item.quantity;
         console.log(itemCount);
     });
 
     $('.disableBtn').prop('disabled', false).css('opacity', 1);
     moreThanLim(itemCount, item_id);
-    // DEALING LOCALLY WITH SETTING THE TEXT AND ABOVE DEALING VIRTUALLY
-    // switch (item_id) {
-    //     case 'student':
-    //         // image.getAttribute('src').src = '../../res/student_icon.png';
-    //         // document.getElementById('itemName').innerText = 'Student-Teacher Edition';
-    //         // document.getElementById('itemAmount').innerText = 'Quantity: ' + (this.itemCount);
-    //         // currentTotal = (this.itemCount * 20.00).toFixed(2);
-    //         // document.getElementById('itemTotal').innerText = 'CHF ' + currentTotal;
-    //         // document.getElementById('itemDescription').innerText = 'The Student-Teacher Edition is mainly built for students working in groups, teachers doing class assignments and demonstrations. The file-sharing provides in-time production meaning that everything is sync in actual time.';
-    //         break;
-    //
-    //     case 'business':
-    //         // image.getAttribute('src').src = '../res/icons/student_icon.png';
-    //         document.getElementById('itemName').innerText = 'Business Edition';
-    //         document.getElementById('itemAmount').innerText = 'Quantity: ' + this.itemCount;
-    //         currentTotal = (this.itemCount * 30.00).toFixed(2);
-    //         document.getElementById('itemTotal').innerText = 'CHF ' + currentTotal;
-    //         document.getElementById('itemDescription').innerText = 'The Business Edition provides that extra help in bringing productivity into your business whether you are on the go or needs constant access to the different files.';
-    //         break;
-    //
-    //     case 'enterprise':
-    //         // image.getAttribute('src').src = '../res/icons/student_icon.png';
-    //         // document.getElementById('itemName').innerText = 'Enterprise Edition';
-    //         document.getElementById('itemAmount').innerText = 'Quantity: ' + this.itemCount;
-    //         currentTotal = (this.itemCount * 15.00).toFixed(2);
-    //         document.getElementById('itemTotal').innerText = 'CHF ' + currentTotal;
-    //         document.getElementById('itemDescription').innerText = 'The Enterprise Edition is what makes ETA renown. Providing the Optimum performance with unlimited file-sharing, file-storage and full team collaboration synchronisation.';
-    //         break;
-    //
-    //
-    //     default:
-    //         document.getElementById('itemName').innerText = 'Student-Teacher Edition'; break;
-    // }
-
 }
 
 function removeFromCart(item_id) {

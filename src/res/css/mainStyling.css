@@ -5,13 +5,7 @@
 
 body {
 	font-family: RaleWay-Regular, Menlo, Helvetica, sans-serif;
-	/*text-decoration: none;*/
-	/*margin: 0;*/
-	/*background-image: linear-gradient(180deg, #0E0829, #3F2033);*/
-	/*background: white url("../images/plan_light_wallpaper.png") no-repeat fixed center;*/
 	color: white;
-	/* display: flex; */
-	/*min-height: 100%;*/
 	background: white url("../images/plan_dark-wallpaper.png") no-repeat fixed center;
 	background-size: cover;
 	display: table;
@@ -98,7 +92,6 @@ nav {
 form { color: #ffffff; }
 form input[type="email"] {
 	border: none;
-	/*border-bottom: limegreen;*/
 	width: 80%; font-size: 14px;
 	margin: 20px auto;
 	text-align: center;

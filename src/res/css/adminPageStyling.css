@@ -26,14 +26,11 @@ button {
 	width: 100px;
 	height: 35px;
 	border-radius: 30px;
-	/*position: relative;*/
-	/*bottom: 2em;*/
 	cursor: pointer;
 	background-image: -webkit-linear-gradient(180deg, #00edd2, #00b9e5);
 	border: none;
 	color: white;
 	font-size: 14px;
-	/*margin-bottom: 12px;*/
 }
 
 button a {

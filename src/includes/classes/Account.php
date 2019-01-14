@@ -26,7 +26,6 @@ class Account
 	
 	public function register($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $em2, $pw, $pw2)
 	{
-		echo "<script>console.log('Account class Accessed')</script>";
 		$this->validateUsername($un);
 		$this->validateFirstName($fn);
 		$this->validateLastName($ln);
@@ -60,13 +59,7 @@ class Account
 		$date = date("Y-m-d");
 		
 		$query = "INSERT INTO Users (user_name, user_cat, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic) VALUES ( '$un',1, '$fn', '$ln', '$add', '$zip', '$ct', '$cn', '$em', '$enPw', '$date', '$profilePic')";
-//		echo "<pre>Debug: $query</pre>\m";
 		$result = mysqli_query($this->con, $query);
-//		if (false === $result) {
-//			printf("error: %s\n", mysqli_error($this->con));
-//		} else {
-//			echo 'done.';
-//		}
 		return $result;
 	}
 	
@@ -77,12 +70,7 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$usernameNotLongEnough);
 			return;
 		}
-//
-//		if (preg_match('/^[\w]+$/', $un)) {
-//			array_push($this->errorArray, ErrorMessages::$invalidUsername);
-//			return;
-//		}
-		
+
 		$checkUsernameQuery = mysqli_query($this->con, "SELECT user_name FROM Users WHERE user_name='$un'");
 		if (mysqli_num_rows($checkUsernameQuery) != 0) {
 			array_push($this->errorArray, ErrorMessages::$usernameTaken);

@@ -1,4 +1,3 @@
-/* body { text-align: center;	 } */
 #animate.hidden { display: none; }
 
 nav .lang .active { text-decoration: underline; }
@@ -9,7 +8,7 @@ a:hover { color: #62D9D7;}
 
 .title {
 	text-align: center;
-	margin: fill;
+	/*margin: fill;*/
 	height: 100%;
 	padding-bottom: 15%;
 	padding-top: 12.5%;
@@ -17,7 +16,6 @@ a:hover { color: #62D9D7;}
 .title h2 { color: 	white; padding-top: 20px; } 
 
 .responsive { display: inline-block; background-image:linear-gradient(180deg, #0E0829, #3F2033); }
-/*.responsive { display: inline-block; background-color: white; } !* only to see the menu in effect *!*/
 
 .gallery {
 	padding: 2.5% 12.5%;
@@ -28,7 +26,6 @@ a:hover { color: #62D9D7;}
 
 /* Clears all the things that constraints */
 .responsive::after { content: ""; clear: both; display: table; }
-/* .gallery { text-align: left; float: left;} */
 .icon { width: 40%; height: 312px; float: left; margin: 10px; vertical-align: center; top: 50%; }
 .desc { margin-left: 10%; width: 60%; height: auto; float: left; }
 
@@ -48,7 +45,6 @@ footer {
 footer a {
 	text-decoration: none;
 	color: #62D9D7;
-	/* padding: 10px; */
 }
 
 footer a:hover {
@@ -57,20 +53,6 @@ footer a:hover {
 
 footer h5 { opacity: 0.75; }
 
-.grid-container {
-	/* display: inline-grid;
-	grid-template-columns: repeat(5, 1fr); /* determines the amount of columns needed */
-	/* background-color: #191919;
-	grid-auto-rows: auto; */
-	padding: 10px;
-	/* width: 100%;
-	text-align: left; */
-}	
-
-.grid-item {
-	padding: 10px;
-	/* font-size: 12px;
-	text-align: center;	 */
-}
-
+.grid-container { padding: 10px; }
+.grid-item { padding: 10px; }
 .copyright { position: relative; width: 100%; margin-bottom: 10px; background-color: #212121; }

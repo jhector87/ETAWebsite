@@ -27,7 +27,6 @@ $pageId = get_param('id', 0);
 	?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!--	<script src="../res/js/cartScript.js"></script>-->
 	<?php
 	if (is_file("../res/js/{$pageId}Script.js")) echo '<script src="../res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
 	?>

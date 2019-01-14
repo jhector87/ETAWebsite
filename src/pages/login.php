@@ -94,15 +94,6 @@ if (isset($_POST['signUpBtn'])) {
 						       value="<?php getValueInput('lastName'); ?>" required>
 					
 					</p>
-<!--					<p>-->
-<!--						<label>Position</label>-->
-<!--						<input type="radio" name="radPos" id="posStudent" value="student" checked="checked"/>-->
-<!--						<label for="posStudent">Student</label>-->
-<!--						<input type="radio" name="radPos" id="posBusiness" value="business"/>-->
-<!--						<label for="posBusiness">Business</label>-->
-<!--						<input type="radio" name="radPos" id="posEnterprise" value="enterprise"/>-->
-<!--						<label for="posEnterprise">Enterprise</label>-->
-<!--					</p>-->
 					<p>
 						<?php echo $account->getError(ErrorMessages::$invalidAddress) ?>
 						<?php echo $account->getError(ErrorMessages::$invalidAddressNumber) ?>
