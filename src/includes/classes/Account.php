@@ -14,6 +14,7 @@ class Account
 	
 	public function login($un, $pw)
 	{
+		// Encrypts the password before verification so it
 		$encryptedPw = md5($pw);
 		$query = mysqli_query($this->con, "SELECT * FROM Users WHERE user_name='$un' AND password='$encryptedPw'");
 		if (mysqli_num_rows($query) == 1) {
@@ -29,7 +30,8 @@ class Account
 		$this->validateUsername($un);
 		$this->validateFirstName($fn);
 		$this->validateLastName($ln);
-		$this->validateAddress($add, $zip);
+		$this->validateAddress($add);
+		$this->validateZipCode($zip);
 		$this->validateEmails($em, $em2);
 		$this->validatePasswords($pw, $pw2);
 		
@@ -38,7 +40,6 @@ class Account
 			// Insert into db
 			return $this->insertUserDetails($un, $fn, $ln, $add, $zip, $ct, $cn, $em, $pw);
 		} else {
-			array_push($this->errorArray, ErrorMessages::$loginRequiredToAccessCart);
 			return false;
 		}
 		
@@ -63,14 +64,22 @@ class Account
 		return $result;
 	}
 	
+	
 	private function validateUsername($un)
 	{
-		
+		// Verifies for username length
 		if (strlen($un) > 25 || strlen($un) < 5) {
 			array_push($this->errorArray, ErrorMessages::$usernameNotLongEnough);
 			return;
 		}
-
+		
+		// Verifies if username contains anything other than chars, numbers and underscor
+		if (preg_match('/^[A-Za-z\d_-]+$/', $un)) {
+			array_push($this->errorArray, ErrorMessages::$invalidUsername);
+			return;
+		}
+		
+		
 		$checkUsernameQuery = mysqli_query($this->con, "SELECT user_name FROM Users WHERE user_name='$un'");
 		if (mysqli_num_rows($checkUsernameQuery) != 0) {
 			array_push($this->errorArray, ErrorMessages::$usernameTaken);
@@ -95,16 +104,18 @@ class Account
 		}
 	}
 	
-	private function validateAddress($add, $zip)
+	private function validateAddress($add)
 	{
-		
-		if (preg_match('^[0-9]{4}', $zip)) {
-			array_push($this->errorArray, ErrorMessages::$invalidZipCode);
+		if (preg_match('/^[A-z]+([\s[A-z]?)+\s+\d+/', $add)) {
+			array_push($this->errorArray, ErrorMessages::$invalidAddress);
 			return;
 		}
-		
-		if (preg_match('^[A-z]+([\s[A-z]?)+\s+\d+', $add)) {
-			array_push($this->errorArray, ErrorMessages::$invalidAddress);
+	}
+	
+	private function validateZipCode($zip)
+	{
+		if (preg_match('/^[0-9]{4}$/', $zip)) {
+			array_push($this->errorArray, ErrorMessages::$invalidZipCode);
 			return;
 		}
 	}
@@ -132,17 +143,19 @@ class Account
 	
 	private function validatePasswords($pw, $pw2)
 	{
-		
+		// Verifying for password matching
 		if ($pw != $pw2) {
 			array_push($this->errorArray, ErrorMessages::$passwordsDoNotMatch);
 			return;
 		}
 		
-		if (preg_match('/[^A-Za-z0-9]/', $pw)) {
+		// Allows chars, numbers, ?, #, $ and * but not any others
+		if (preg_match('/^[A-Za-z0-9?#$*]+$/', $pw)) {
 			array_push($this->errorArray, ErrorMessages::$passwordNotAlphanumeric);
 			return;
 		}
 		
+		// Verifying passwords length
 		if (strlen($pw) > 30 || strlen($pw) < 5) {
 			array_push($this->errorArray, ErrorMessages::$passwordCharacters);
 			return;

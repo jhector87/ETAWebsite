@@ -1,12 +1,13 @@
 <?php
 require_once("../config/configs.php");
-include("../includes/classes/Account.php");
 
 ?>
-<script src="../res/js/Cart.js"></script>
 
 <span class="plans">
-<h1><?php echo t('choose_plan') ?></h1>
+	<div class="title">
+		<h1><?php echo t('choose_plan') ?></h1>
+	</div>
+
 <div class="row">
 
 	<div class="center">
@@ -84,8 +85,6 @@ include("../includes/classes/Account.php");
 </div>
 
 </span>
-</div>
-</div>
 
 <div id="cart_items">
 	<?php include_once("cartItems.php"); ?>

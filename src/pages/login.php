@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUndefinedClassInspection */
 include("../config/configs.php");
 include("../includes/classes/Account.php");
 include("../includes/classes/ErrorMessages.php");
@@ -46,11 +46,13 @@ if (isset($_POST['signUpBtn'])) {
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
+						<mark class="errorMsg" id='usernameError'></mark> <!-- Used for JS error code display  -->
 						<label for='loginUsername'><?php echo t('username') ?> </label>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
 						       value="<?php echo $_COOKIE['username'] ?>" required>
 					</p>
 					<p>
+						<mark class="errorMsg" id="passwordError"></mark> <!-- Used for JS error code display  -->
 						<label for="loginPassword"><?php echo t('pwd') ?> </label>
 						<input id="loginPassword" name="loginPassword" type="password" placeholder="e.g 123hun73"
 						       value="<?php getValueInput('loginPassword') ?>" required>
@@ -64,16 +66,16 @@ if (isset($_POST['signUpBtn'])) {
 				</form>
 			</div>
 			
+			<!-- Using mail to send a confirmation email -->
 			<div id="signupForm">
-				<!-- Using mail to send a confirmation email -->
 				<form action="../pages/index.php?id=login&lang=en" method="post">
 					
-					<!-- <form method="post"> -->
 					<h2><?php echo t('sign_up') ?></h2>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$invalidUsername) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameNotLongEnough) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameTaken) ?>
+						<mark class="errorMsg" id='usernameError'></mark> <!-- Used for JS error code display  -->
 						<label for='username'><?php echo t('username'); ?> </label>
 						<input id='username' name='username' type="text" placeholder="eg. jessie873"
 						       value="<?php getValueInput('username'); ?>" required>
@@ -81,6 +83,7 @@ if (isset($_POST['signUpBtn'])) {
 					
 					<p>
 						<?php echo $account->getError(ErrorMessages::$firstNameNotLongEnough) ?>
+						<mark class="errorMsg" id='firstNameError'></mark> <!-- Used for JS error code display  -->
 						<label for='firstName'><?php echo t('first_name'); ?> </label>
 						<input id='firstName' name='firstName' type="text" placeholder="eg. John"
 						       value="<?php getValueInput('firstName'); ?>" required>
@@ -89,6 +92,7 @@ if (isset($_POST['signUpBtn'])) {
 					
 					<p>
 						<?php echo $account->getError(ErrorMessages::$lastNameNotLongEnough) ?>
+						<mark class="errorMsg" id='lastNameError'></mark> <!-- Used for JS error code display  -->
 						<label for='lastName'><?php echo t('last_name'); ?> </label>
 						<input id='lastName' name='lastName' type="text" placeholder="eg. Appleseed"
 						       value="<?php getValueInput('lastName'); ?>" required>
@@ -97,8 +101,9 @@ if (isset($_POST['signUpBtn'])) {
 					<p>
 						<?php echo $account->getError(ErrorMessages::$invalidAddress) ?>
 						<?php echo $account->getError(ErrorMessages::$invalidAddressNumber) ?>
+						<mark class="errorMsg" id='addressError'></mark> <!-- Used for JS error code display  -->
 						<label for='address'><?php echo t('address') ?> </label>
-						<input id='address' name='address' type="text" placeholder="eg. Stiglimattstrasse 23"
+						<input id='address' name='address' type="text" placeholder="eg. Bauernstrasse 84"
 						       value="<?php getValueInput('address'); ?>" required>
 					
 					</p>
@@ -113,7 +118,8 @@ if (isset($_POST['signUpBtn'])) {
 							<?php
 							$cities = array(0 => 'Aarau', 'Bern', 'Basel', 'Biel/Bienne', 'Geneva', 'Lyss', 'Lausanne', 'Solothurn', 'Zurich');
 							foreach ($cities as $city) {
-								if ($city == 'Biel/Bienne') echo "<option selected>$city"; else echo "<option>$city";
+								if ($city == 'Biel/Bienne') echo "<option selected>$city";
+								else echo "<option>$city";
 							}
 							?>
 						</select>
@@ -134,6 +140,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$emailsDoNotMatch); ?>
 						<?php echo $account->getError(ErrorMessages::$invalidEmail); ?>
 						<?php echo $account->getError(ErrorMessages::$emailTaken); ?>
+						<mark class="errorMsg" id="emailError"></mark> <!-- Used for JS error code display  -->
 						<label for='email'><?php echo t('email'); ?> </label>
 						<input id='email' name='email' type="email" placeholder="eg. jessie@eta.com" value="<?php getValueInput('email'); ?>"
 						       required>
@@ -149,6 +156,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$passwordsDoNotMatch); ?>
 						<?php echo $account->getError(ErrorMessages::$passwordNotAlphanumeric); ?>
 						<?php echo $account->getError(ErrorMessages::$passwordCharacters); ?>
+						<mark class="errorMsg" id="passwordError"></mark> <!-- Used for JS error code display  -->
 						<label for='password'><?php echo t('pwd'); ?> </label>
 						<input id='password' name='password' type="password" placeholder="eg. 123uh178" value="<?php getValueInput('password'); ?>"
 						       required>

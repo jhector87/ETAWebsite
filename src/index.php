@@ -1,7 +1,7 @@
 <?php
-require_once("../includes/handlers/helper.php");
-include "../config/configs.php";
-include"../includes/classes/User.php";
+require_once "includes/handlers/helper.php";
+include "config/configs.php";
+include"includes/classes/User.php";
 
 $user = new User($_SESSION['userLoggedIn']);
 
@@ -20,14 +20,14 @@ $pageId = get_param('id', 0);
 	<link rel="stylesheet" href="res/css/cartItemsStyling.css" type='text/css'/>
 	
 	<?php
-	if (is_file("../res/css/{$pageId}Styling.css")) echo '<link rel="stylesheet" href="../res/css/' . $pageId . 'Styling.css"
+	if (is_file("res/css/{$pageId}Styling.css")) echo '<link rel="stylesheet" href="res/css/' . $pageId . 'Styling.css"
 	type="text/css"/>';
 	?>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="res/js/cartScript.js"></script>
 	<?php
-	if (is_file("../res/js/{$pageId}Script.js")) echo '<script src="../res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
+	if (is_file("res/js/{$pageId}Script.js")) echo '<script src="res/js/' . $pageId . 'Script.js" type="text/javascript"></script>';
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
