@@ -21,6 +21,11 @@ function sanitizeFormString($inputText)
 	return $inputText;
 }
 
+function sanitizeFormEmail($em)
+{
+	$em = filter_var($em, FILTER_SANITIZE_EMAIL);
+	return $em;
+}
 
 if (isset($_POST['signUpBtn'])) {
 	// Register button was pressed
@@ -31,8 +36,8 @@ if (isset($_POST['signUpBtn'])) {
 	$zipcode = sanitizeFormString($_POST['zipcode']);
 	$city = $_POST['city']; // No need to sanitize the form since it's a pre-defined choice.
 	$country = $_POST['country'];
-	$email = sanitizeFormString($_POST['email']);
-	$emailcnf = sanitizeFormString($_POST['emailConfirm']);
+	$email = sanitizeFormEmail($_POST['email']);
+	$emailcnf = sanitizeFormEmail($_POST['emailConfirm']);
 	$password = sanitizeFormPassword($_POST['password']);
 	$passwordcnf = sanitizeFormPassword($_POST['passwordConfirm']);
 	

@@ -14,12 +14,14 @@ class Account
 	
 	public function login($un, $pw)
 	{
+		echo 'login';
 		$encryptedPw = md5($pw);
 		$query = mysqli_query($this->con, "SELECT * FROM Users WHERE user_name='$un' AND password='$encryptedPw'");
 		if (mysqli_num_rows($query) == 1) {
 			return true;
 		} else {
 			array_push($this->errorArray, ErrorMessages::$loginFailed);
+			echo "Failed";
 			return false;
 		}
 	}
@@ -29,7 +31,8 @@ class Account
 		$this->validateUsername($un);
 		$this->validateFirstName($fn);
 		$this->validateLastName($ln);
-		$this->validateAddress($add, $zip);
+		$this->validateAddress($add);
+		$this->validateZip($zip);
 		$this->validateEmails($em, $em2);
 		$this->validatePasswords($pw, $pw2);
 		
@@ -58,6 +61,7 @@ class Account
 		$profilePic = "../res/icons/png/230-user-1.png";
 		$date = date("Y-m-d");
 		
+		// At the moment user_cat is hard-coded to 1 => Student
 		$query = "INSERT INTO Users (user_name, user_cat, first_name, last_name, street_add, zip_code, city, country, email, password, signUp_date, profile_pic) VALUES ( '$un',1, '$fn', '$ln', '$add', '$zip', '$ct', '$cn', '$em', '$enPw', '$date', '$profilePic')";
 		$result = mysqli_query($this->con, $query);
 		return $result;
@@ -70,7 +74,12 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$usernameNotLongEnough);
 			return;
 		}
-
+		
+		if(preg_match('/^(?=.{8,20}$)(?![_.])[a-zA-Z0-9._]+(?<![_.])$/', $un)){
+			array_push($this->errorArray, ErrorMessages::$invalidUsername);
+			return;
+		}
+		
 		$checkUsernameQuery = mysqli_query($this->con, "SELECT user_name FROM Users WHERE user_name='$un'");
 		if (mysqli_num_rows($checkUsernameQuery) != 0) {
 			array_push($this->errorArray, ErrorMessages::$usernameTaken);
@@ -95,16 +104,19 @@ class Account
 		}
 	}
 	
-	private function validateAddress($add, $zip)
+	private function validateAddress($add)
 	{
 		
-		if (preg_match('^[0-9]{4}', $zip)) {
-			array_push($this->errorArray, ErrorMessages::$invalidZipCode);
+		if (preg_match('/^[A-z]+([\s[A-z]?)+\s+\d+/', $add)) {
+			array_push($this->errorArray, ErrorMessages::$invalidAddress);
 			return;
 		}
-		
-		if (preg_match('^[A-z]+([\s[A-z]?)+\s+\d+', $add)) {
-			array_push($this->errorArray, ErrorMessages::$invalidAddress);
+	}
+	
+	private function validateZip($zip)
+	{
+		if (preg_match('/^[0-9]{4}$/', $zip)) {
+			array_push($this->errorArray, ErrorMessages::$invalidZipCode);
 			return;
 		}
 	}

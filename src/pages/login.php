@@ -15,8 +15,7 @@ function getValueInput($name)
 }
 
 $t = time() + 60 * 60 * 24 * 30; // expires in 30 days
-setcookie('firstName', $_POST["firstName"], $t);
-setcookie("username", $_POST["loginUsername"], $t);
+setcookie("currentUser", $_POST["loginUsername"], $t);
 
 // PHP USED TO DISPLAY WHICH PART OF THE FORM
 if (isset($_POST['signUpBtn'])) {
@@ -46,6 +45,9 @@ if (isset($_POST['signUpBtn'])) {
 					<h2><?php echo t('sign_in') ?></h2>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
+						<?php echo $account->getError(ErrorMessages::$invalidUsername) ?>
+						<?php echo $account->getError(ErrorMessages::$usernameNotLongEnough) ?>
+						<mark class="errorMsg" id="usernameError"></mark>
 						<label for='loginUsername'><?php echo t('username') ?> </label>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
 						       value="<?php echo $_COOKIE['username'] ?>" required>
@@ -74,6 +76,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$invalidUsername) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameNotLongEnough) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameTaken) ?>
+						<mark class="errorMsg" id="usernameError"></mark>
 						<label for='username'><?php echo t('username'); ?> </label>
 						<input id='username' name='username' type="text" placeholder="eg. jessie873"
 						       value="<?php getValueInput('username'); ?>" required>
@@ -95,7 +98,13 @@ if (isset($_POST['signUpBtn'])) {
 					
 					</p>
 					<p>
+						<?php echo $account->getError(ErrorMessages::$invalidZipCode) ?>
+						<label for='zipcode'><?php echo t('zip_code'); ?> </label>
+						<input id='zipcode' name='zipcode' type="text" placeholder="eg. 3250" value="<?php getValueInput('zipcode'); ?>" required>
+					</p>
+					<p>
 						<?php echo $account->getError(ErrorMessages::$invalidAddress) ?>
+						<?php echo $account->getError(ErrorMessages::$invalidAddressNumber) ?>
 						<?php echo $account->getError(ErrorMessages::$invalidAddressNumber) ?>
 						<label for='address'><?php echo t('address') ?> </label>
 						<input id='address' name='address' type="text" placeholder="eg. Stiglimattstrasse 23"
@@ -103,11 +112,7 @@ if (isset($_POST['signUpBtn'])) {
 					
 					</p>
 					<p>
-						<label for='zipcode'><?php echo t('zip_code'); ?> </label>
-						<input id='zipcode' name='zipcode' type="text" placeholder="eg. 3250" value="<?php getValueInput('zipcode'); ?>" required>
-					</p>
-					<p>
-						<?php echo $account->getError(ErrorMessages::$invalidZipCode) ?>
+						
 						<label for='city'><?php echo t('city'); ?> </label>
 						<select id='city' name='city'>
 							<?php

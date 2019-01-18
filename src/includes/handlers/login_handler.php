@@ -1,8 +1,10 @@
 <?php
 if(isset($_POST['loginBtn'])) {
 	// Login button was pressed
-	$username = $_POST['loginUsername'];
-	$password = $_POST['loginPassword'];
+	// Since the file is below the sign_up handler file, inheritance can be used :)
+	echo 'login Pressed';
+	$username = sanitizeFormUsername($_POST['loginUsername']);
+	$password = sanitizeFormPassword($_POST['loginPassword']);
 	
 	$result = $account->login($username, $password);
 	if($result == true) {
