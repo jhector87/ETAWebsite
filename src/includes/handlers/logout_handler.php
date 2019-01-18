@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_regenerate_id();
 session_destroy();
 
 $t = time() - 86400; // sets the time to previous day thus removing it.

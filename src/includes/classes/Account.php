@@ -14,14 +14,14 @@ class Account
 	
 	public function login($un, $pw)
 	{
-		echo 'login';
+		$this->validateUsername($un);
+		
 		$encryptedPw = md5($pw);
 		$query = mysqli_query($this->con, "SELECT * FROM Users WHERE user_name='$un' AND password='$encryptedPw'");
 		if (mysqli_num_rows($query) == 1) {
 			return true;
 		} else {
 			array_push($this->errorArray, ErrorMessages::$loginFailed);
-			echo "Failed";
 			return false;
 		}
 	}
@@ -75,7 +75,7 @@ class Account
 			return;
 		}
 		
-		if(preg_match('/^(?=.{8,20}$)(?![_.])[a-zA-Z0-9._]+(?<![_.])$/', $un)){
+		if (preg_match('/^[a-z][a-z0-9_]{5,25}$/', $un)) {
 			array_push($this->errorArray, ErrorMessages::$invalidUsername);
 			return;
 		}
@@ -94,12 +94,22 @@ class Account
 			array_push($this->errorArray, ErrorMessages::$firstNameNotLongEnough);
 			return;
 		}
+		
+		if (preg_match('/^[a-zA-Z-]*$/', $fn)) {
+			array_push($this->errorArray, ErrorMessages::$invalidName);
+			return;
+		}
 	}
 	
 	private function validateLastName($ln)
 	{
 		if (strlen($ln) > 25 || strlen($ln) < 2) {
 			array_push($this->errorArray, ErrorMessages::$lastNameNotLongEnough);
+			return;
+		}
+		
+		if (preg_match('/^[a-zA-Z-]*$/', $ln)) {
+			array_push($this->errorArray, ErrorMessages::$invalidName);
 			return;
 		}
 	}

@@ -47,7 +47,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$loginFailed) ?>
 						<?php echo $account->getError(ErrorMessages::$invalidUsername) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameNotLongEnough) ?>
-						<mark class="errorMsg" id="usernameError"></mark>
+						<span class="errorMsg" id="usernameError"></span>
 						<label for='loginUsername'><?php echo t('username') ?> </label>
 						<input id='loginUsername' name='loginUsername' type="text" placeholder="eg. jessie873"
 						       value="<?php echo $_COOKIE['username'] ?>" required>
@@ -76,7 +76,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$invalidUsername) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameNotLongEnough) ?>
 						<?php echo $account->getError(ErrorMessages::$usernameTaken) ?>
-						<mark class="errorMsg" id="usernameError"></mark>
+						<span class="errorMsg" id="usernameError"></span>
 						<label for='username'><?php echo t('username'); ?> </label>
 						<input id='username' name='username' type="text" placeholder="eg. jessie873"
 						       value="<?php getValueInput('username'); ?>" required>
@@ -84,6 +84,8 @@ if (isset($_POST['signUpBtn'])) {
 					
 					<p>
 						<?php echo $account->getError(ErrorMessages::$firstNameNotLongEnough) ?>
+						<?php echo $account->getError(ErrorMessages::$invalidName) ?>
+						<span class="errorMsg" id="firstNameError"></span>
 						<label for='firstName'><?php echo t('first_name'); ?> </label>
 						<input id='firstName' name='firstName' type="text" placeholder="eg. John"
 						       value="<?php getValueInput('firstName'); ?>" required>
@@ -92,6 +94,8 @@ if (isset($_POST['signUpBtn'])) {
 					
 					<p>
 						<?php echo $account->getError(ErrorMessages::$lastNameNotLongEnough) ?>
+						<?php echo $account->getError(ErrorMessages::$invalidName) ?>
+						<span class="errorMsg" id="lastNameError"></span>
 						<label for='lastName'><?php echo t('last_name'); ?> </label>
 						<input id='lastName' name='lastName' type="text" placeholder="eg. Appleseed"
 						       value="<?php getValueInput('lastName'); ?>" required>
@@ -99,6 +103,7 @@ if (isset($_POST['signUpBtn'])) {
 					</p>
 					<p>
 						<?php echo $account->getError(ErrorMessages::$invalidZipCode) ?>
+						<span class="errorMsg" id="zipcodeError"></span>
 						<label for='zipcode'><?php echo t('zip_code'); ?> </label>
 						<input id='zipcode' name='zipcode' type="text" placeholder="eg. 3250" value="<?php getValueInput('zipcode'); ?>" required>
 					</p>
@@ -106,6 +111,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$invalidAddress) ?>
 						<?php echo $account->getError(ErrorMessages::$invalidAddressNumber) ?>
 						<?php echo $account->getError(ErrorMessages::$invalidAddressNumber) ?>
+						<span class="errorMsg" id="addressError"></span>
 						<label for='address'><?php echo t('address') ?> </label>
 						<input id='address' name='address' type="text" placeholder="eg. Stiglimattstrasse 23"
 						       value="<?php getValueInput('address'); ?>" required>
@@ -139,6 +145,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$emailsDoNotMatch); ?>
 						<?php echo $account->getError(ErrorMessages::$invalidEmail); ?>
 						<?php echo $account->getError(ErrorMessages::$emailTaken); ?>
+						<span class="errorMsg" id="emailError"></span>
 						<label for='email'><?php echo t('email'); ?> </label>
 						<input id='email' name='email' type="email" placeholder="eg. jessie@eta.com" value="<?php getValueInput('email'); ?>"
 						       required>
@@ -154,6 +161,7 @@ if (isset($_POST['signUpBtn'])) {
 						<?php echo $account->getError(ErrorMessages::$passwordsDoNotMatch); ?>
 						<?php echo $account->getError(ErrorMessages::$passwordNotAlphanumeric); ?>
 						<?php echo $account->getError(ErrorMessages::$passwordCharacters); ?>
+						<span class="errorMsg" id="passwordError"></span>
 						<label for='password'><?php echo t('pwd'); ?> </label>
 						<input id='password' name='password' type="password" placeholder="eg. 123uh178" value="<?php getValueInput('password'); ?>"
 						       required>

@@ -34,25 +34,3 @@ form { display: inline-block; text-align: center; width: 100%; background-color:
 
 form p span { padding-top: 20px; padding-bottom: 20px; opacity: 0.85; color: darkgray; font-size: 36px;  }
 .quickrequest { line-height: 27px; height: 100%; display: flex;}
-footer {  
-    color: #ffffff;
-    text-align: center;
-	font-size: 12px;
-	padding-top: 10em;
-	vertical-align: center;
-}
-
-footer a {
-	text-decoration: none;
-	color: #62D9D7;
-}
-
-footer a:hover {
-	/*color: #77CA00;*/
-}
-
-footer h5 { opacity: 0.75; }
-
-.grid-container { padding: 10px; }
-.grid-item { padding: 10px; }
-.copyright { position: relative; width: 100%; margin-bottom: 10px; background-color: #212121; }

@@ -5,6 +5,7 @@ class ErrorMessages
 	public static $invalidUsername = "Username can contain only underscore, characters and numbers!";
 	public static $usernameTaken = "The chosen username is already taken!";
 	public static $firstNameNotLongEnough = "Your first name must be between 2 and 25 characters!";
+	public static $invalidName = "Your name can contain characters and underscore!";
 	public static $lastNameNotLongEnough = "Your username must be between 5 and 25 characters!";
 	public static $invalidAddress = "Please enter a valid Address!";
 	public static $invalidAddressNumber = "Please include a house/apartment number with a space AFTER the street address!";
